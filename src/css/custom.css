@@ -1,39 +1,23 @@
-/* 确保 Navbar 为相对定位父容器，便于中间 Announcement 绝对居中 */
-.navbar {
-  position: relative;
-}
-
 /* ================= Navbar Logo 尺寸适配 ================= */
 .navbar__brand .navbar__logo {
   height: 22px;
   margin-right: 8px;
 }
 
-/* ================= 免责声明绝对居中样式 ================= */
+/* ================= 极简 Announcement 样式 ================= */
 .nav-announcement-inline {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 13.5px;
   color: #8c6b00;
   background-color: #fffbe6;
   border: 1px solid #ffe58f;
-  padding: 3px 14px;
+  padding: 3px 12px;
   border-radius: 6px;
-  white-space: nowrap;
-  pointer-events: auto;
-  z-index: 10;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  margin-left: 15px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
-/* 移动端/窄屏时自动隐去免责声明，避免遮挡标题和下拉菜单 */
-@media (max-width: 996px) {
-  .nav-announcement-inline {
-    display: none !important;
-  }
-}
-
-/* ================= 双语模式切换下拉框样式 ================= */
+/* ================= 模式切换下拉框样式 ================= */
 .mode-select-dropdown {
   margin-right: 12px;
   padding: 4px 10px;
@@ -44,14 +28,9 @@
   font-size: 13px;
   cursor: pointer;
   outline: none;
-  transition: border-color 0.2s ease;
 }
 
-.mode-select-dropdown:hover {
-  border-color: var(--ifm-color-primary);
-}
-
-/* ================= 模式 1：鼠标悬停显示原文 (修饰后) ================= */
+/* ================= 模式 1：鼠标悬停显示原文 ================= */
 body.mode-hover .bilingual-text {
   position: relative;
   cursor: help;
@@ -62,9 +41,9 @@ body.mode-hover .bilingual-text {
 body.mode-hover .bilingual-text:hover::after {
   content: attr(data-original);
   position: absolute;
-  top: 120%; /* 改为向下弹出，防止顶部被遮挡 */
+  top: 120%;
   left: 0;
-  width: 380px; /* 显式固定宽度，防止变形为狭长条 */
+  width: 380px;
   max-height: 200px;
   overflow-y: auto;
   background: #0f172a;

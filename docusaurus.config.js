@@ -14,7 +14,7 @@ activeLocales.forEach((code) => {
   };
 });
 
-// 构建激活语种的前缀匹配逻辑
+// 构建特定语种跳转映射
 const redirectionLogic = activeLocales
   .map((code) => {
     const prefixes = SUPPORTED_LOCALES[code].detectPrefixes;
@@ -60,53 +60,49 @@ const config = {
         window.__ACTIVE_I18N_UI__ = ${JSON.stringify(activeDropdownUI)};
 
         (function() {
-          function setPref(lang) {
-            document.cookie = "pref_lang=" + lang + "; path=/; max-age=" + (30 * 24 * 60 * 60);
-            try { localStorage.setItem('pref_lang', lang); } catch(e) {}
+          function setCookie(name, val) {
+            document.cookie = name + "=" + val + "; path=/; max-age=" + (30 * 24 * 60 * 60);
+            try { localStorage.setItem(name, val); } catch(e) {}
           }
 
-          function getPref() {
+          function getCookie(name) {
             var value = "; " + document.cookie;
-            var parts = value.split("; pref_lang=");
+            var parts = value.split("; " + name + "=");
             if (parts.length === 2) return parts.pop().split(";").shift();
-            try { return localStorage.getItem('pref_lang'); } catch(e) {}
+            try { return localStorage.getItem(name); } catch(e) {}
             return null;
           }
 
-          var rawPath = window.location.pathname;
-          var cleanPath = rawPath.endsWith('/') ? rawPath.slice(0, -1) : rawPath;
+          var path = window.location.pathname;
           var activeLocales = ${JSON.stringify(activeLocales)};
+          var cleanPath = path.endsWith('/') ? path.slice(0, -1) : path;
 
-          // 检测当前 URL 究竟处于哪个语种路径下
-          var pathSegments = cleanPath.split('/').filter(Boolean);
-          var currentPathLang = activeLocales.find(function(code) {
-            return pathSegments.indexOf(code) !== -1;
-          }) || 'en';
+          // 1. 如果当前页面本身就是某个语言子路径（例如 /zh-Hans/...），刷新 Cookie 记录
+          var matchedPathLocale = activeLocales.find(function(code) {
+            return path.indexOf('/mikrotik-docs-i18n/' + code) === 0;
+          });
 
-          // 核心点：当用户已经在某个语言页面时，刷新该语言的持久化记忆
-          if (cleanPath !== '/mikrotik-docs-i18n') {
-            setPref(currentPathLang);
+          if (matchedPathLocale) {
+            setCookie('pref_lang', matchedPathLocale);
+            return;
           }
 
-          // 如果访问的是根路径 /mikrotik-docs-i18n 或 /mikrotik-docs-i18n/
+          // 2. 如果当前处于根目录路径 (/mikrotik-docs-i18n)
           if (cleanPath === '/mikrotik-docs-i18n') {
-            var savedLang = getPref();
+            var savedLang = getCookie('pref_lang');
 
-            // 首次访问无任何记忆时，依据浏览器语言判断并写入记忆
+            // 如果没有记录，才按浏览器语言自动判断
             if (!savedLang) {
               var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
               var matchedLang = '';
               ${redirectionLogic}
               savedLang = matchedLang || 'en';
-              setPref(savedLang);
+              setCookie('pref_lang', savedLang);
             }
 
-            // 如果记忆语种为非默认英文（如 zh-Hans），跳转到对应语言目录
-            if (savedLang !== 'en') {
+            // 当且仅当 Cookie 中明确记录的不是 en 时才进行跳转
+            if (savedLang && savedLang !== 'en') {
               window.location.replace('/mikrotik-docs-i18n/' + savedLang + '/');
-            } else {
-              // 记忆明确为英文时，保持停留在根路径并确认记忆为 en
-              setPref('en');
             }
           }
         })();
@@ -149,14 +145,16 @@ const config = {
         title: 'MikroTik Docs i18n',
         logo: {
           alt: 'MikroTik Logo',
-          src: 'https://manual.mikrotik.com/img/logo.svg',
+          src: 'img/logo.svg', // 使用本地 static/img/logo.svg
         },
         items: [
+          // Navbar 中间的 Announcement
           {
             type: 'html',
             position: 'left',
             value: '<div id="nav-announcement-bar" class="nav-announcement-inline" style="display:none;"></div>',
           },
+          // 模式切换下拉框
           {
             type: 'html',
             position: 'right',

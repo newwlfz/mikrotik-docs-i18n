@@ -1,5 +1,5 @@
 // static/mode-switch.js
-function setPrefLang(lang) {
+function setPrefLangCookie(lang) {
   document.cookie = "pref_lang=" + lang + "; path=/; max-age=" + (30 * 24 * 60 * 60);
   try { localStorage.setItem('pref_lang', lang); } catch(e) {}
 }
@@ -22,17 +22,17 @@ function initBilingualUI() {
   const switcher = document.getElementById('mode-switcher');
   const announcementContainer = document.getElementById('nav-announcement-bar');
 
-  // 1. 处于纯英文原生页面：显式覆盖记忆为 en
+  // 1. 如果处于纯英文原生页面
   if (!currentLocaleKey) {
     if (switcher) switcher.style.display = 'none';
     if (announcementContainer) announcementContainer.style.display = 'none';
     document.body.classList.remove('mode-hover', 'mode-collapse', 'mode-clean');
-    setPrefLang('en');
+    setPrefLangCookie('en');
     return;
   }
 
-  // 2. 处于已激活的翻译语种页面：更新记忆为当前语种
-  setPrefLang(currentLocaleKey);
+  // 2. 处于已开启的翻译语种页面
+  setPrefLangCookie(currentLocaleKey);
 
   if (announcementContainer) {
     if (activeMap[currentLocaleKey] && activeMap[currentLocaleKey].announcement) {
@@ -63,6 +63,24 @@ function initBilingualUI() {
     };
   }
 }
+
+// 拦截全局 Navbar 语言下拉框点击事件：点击切换 English 时立即使 Cookie 生效为 'en'
+document.addEventListener('click', function(e) {
+  const target = e.target.closest('a');
+  if (target && target.classList.contains('dropdown__link')) {
+    const href = target.getAttribute('href') || '';
+    // 如果点击的是切换到英文（根目录路径或包含 /en/）
+    if (href === '/mikrotik-docs-i18n/' || href.includes('/mikrotik-docs-i18n/en/')) {
+      setPrefLangCookie('en');
+    } else {
+      // 提取目标语种
+      const matches = href.match(/\/mikrotik-docs-i18n\/([^\/]+)\//);
+      if (matches && matches[1]) {
+        setPrefLangCookie(matches[1]);
+      }
+    }
+  }
+});
 
 document.addEventListener('DOMContentLoaded', initBilingualUI);
 
