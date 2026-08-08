@@ -7,9 +7,9 @@ const config = {
   favicon: 'img/favicon.ico',
 
   url: 'https://newwlfz.github.io', // 部署时替换为你的 GitHub 用户名
-  baseUrl: '/mikrotik-docs-zh/',
+  baseUrl: '/mikrotik-docs-i18n/',
   organizationName: 'newwlfz', // 替换为你的 GitHub 用户名
-  projectName: 'mikrotik-docs-zh',
+  projectName: 'mikrotik-docs-i18n',
 
   onBrokenLinks: 'ignore',
     markdown: {
@@ -18,17 +18,25 @@ const config = {
       },
     },
 
-  // 1. 多语言配置 (简体 / 繁体 / 英文)
+  // 1. 多语言配置 (英文 / 简体 / 繁体 ）
   i18n: {
-    defaultLocale: 'zh-Hans',
-    locales: ['zh-Hans', 'zh-Hant', 'en'],
+    defaultLocale: 'en',
+    locales: ['en', 'zh-Hans', 'zh-Hant'],
     localeConfigs: {
-      'zh-Hans': { label: '简体中文' },
-      'zh-Hant': { label: '繁體中文' },
-      'en': { label: 'English (Original)' },
+      en: {
+        label: 'English',
+        direction: 'ltr',
+      },
+      'zh-Hans': {
+        label: '简体中文',
+        direction: 'ltr',
+      },
+      'zh-Hant': {
+        label: '繁體中文',
+        direction: 'ltr',
+      },
     },
   },
-
   presets: [
     [
       'classic',

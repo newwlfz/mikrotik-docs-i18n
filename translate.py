@@ -1,16 +1,20 @@
 import hashlib
 import json
 import os
-import re
 import requests
 
 DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
 DEEPSEEK_API_URL = "https://api.deepseek.com/v1/chat/completions"
 CACHE_FILE = "doc_cache.json"
 
+# 需要自动翻译的目标语言清单（对应 Docusaurus i18n 标识）
+TARGET_LOCALES = {
+    "zh-Hans": "简体中文",
+    "zh-Hant": "繁體中文（请使用台湾/香港网络技术常用词汇）",
+}
+
 
 def get_file_hash(content: str) -> str:
-  """计算字符串的 SHA-256 哈希值"""
   return hashlib.sha256(content.encode("utf-8")).hexdigest()
 
 
@@ -26,19 +30,17 @@ def save_cache(cache: dict):
     json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
-def translate_text_with_deepseek(text: str) -> str:
-  """调用 DeepSeek V3 将正文翻译为双语对照标签格式"""
+def translate_doc(text: str, target_lang_name: str) -> str:
+  """调用 DeepSeek 翻译整篇文档为指定语言，同时保留双语气泡节点"""
   if not DEEPSEEK_API_KEY:
-    print("⚠️ 未配置 DEEPSEEK_API_KEY，跳过翻译调用（保留原文）")
+    print("⚠️ 未配置 DEEPSEEK_API_KEY，保留原文")
     return text
 
   prompt = (
-      "你是一个精通网络工程和 RouterOS 的专业翻译专家。"
-      "请将输入的英文技术文档转换为中文，并保持技术术语准确。"
-      "对正文段落，请包装为带有双语属性的 HTML 标签，格式如："
-      '<span class="bilingual-text" data-original="英文原文">中文译文</span>。\n'
-      "注意：Markdown 标题（#）、代码块（```）、表格语法和Front"
-      " Matter元数据不要包装标签，仅翻译标题文本或保持代码原样。"
+      f"你是一个精通网络工程和 RouterOS 的专业翻译专家。"
+      f"请将输入的英文技术文档翻译为【{target_lang_name}】。\n"
+      f'对于正文段落，请转换为带双语属性的标签：<span class="bilingual-text" data-original="英文原文">译文</span>。\n'
+      f"注意：Markdown 标题（#）、代码块（```）、表格结构和 Front Matter 元数据不要包含在 span 标签内，仅翻译标题文字。"
   )
 
   headers = {
@@ -57,7 +59,7 @@ def translate_text_with_deepseek(text: str) -> str:
 
   try:
     response = requests.post(
-        DEEPSEEK_API_URL, headers=headers, json=payload, timeout=60
+        DEEPSEEK_API_URL, headers=headers, json=payload, timeout=90
     )
     if response.status_code == 200:
       return response.json()["choices"][0]["message"]["content"]
@@ -69,42 +71,52 @@ def translate_text_with_deepseek(text: str) -> str:
     return text
 
 
-def process_docs():
+def process_i18n_docs():
   docs_dir = "docs"
   cache = load_cache()
-  updated_count = 0
 
   if not os.path.exists(docs_dir):
-    os.makedirs(docs_dir)
+    return
 
   for root, _, files in os.walk(docs_dir):
     for file in files:
       if file.endswith(".md") or file.endswith(".mdx"):
         file_path = os.path.join(root, file)
+        rel_path = os.path.relpath(file_path, docs_dir)
 
         with open(file_path, "r", encoding="utf-8") as f:
           raw_content = f.read()
 
-        current_hash = get_file_hash(raw_content)
+        file_hash = get_file_hash(raw_content)
 
-        # 比对 Hash 决定是否发起翻译
-        if cache.get(file_path) == current_hash:
-          print(f"⚡ [跳过] {file_path} 内容未变动（耗费 0 Token）")
-          continue
+        # 遍历所有配置的目标语种
+        for locale, lang_name in TARGET_LOCALES.items():
+          target_dir = os.path.join(
+              "i18n", locale, "docusaurus-plugin-content-docs", "current"
+          )
+          target_file_path = os.path.join(target_dir, rel_path)
+          cache_key = f"{locale}:{rel_path}"
 
-        print(f"🚀 [更新] 检测到 {file_path} 变更/新建，进行整篇翻译...")
-        translated_content = translate_text_with_deepseek(raw_content)
+          # 检查缓存：如果该语言的文件 Hash 没变，直接 Skip！
+          if cache.get(cache_key) == file_hash and os.path.exists(
+              target_file_path
+          ):
+            print(f"⚡ [{locale}] 跳过 {rel_path} (未变更)")
+            continue
 
-        # 覆写文件并更新哈希缓存
-        with open(file_path, "w", encoding="utf-8") as f:
-          f.write(translated_content)
+          print(
+              f"🚀 [{locale} - {lang_name}] 正在翻译/更新文件: {rel_path}..."
+          )
+          translated_content = translate_doc(raw_content, lang_name)
 
-        cache[file_path] = get_file_hash(translated_content)
-        updated_count += 1
+          os.makedirs(os.path.dirname(target_file_path), exist_ok=True)
+          with open(target_file_path, "w", encoding="utf-8") as f:
+            f.write(translated_content)
+
+          cache[cache_key] = file_hash
 
   save_cache(cache)
-  print(f"✅ 处理完成，本次共更新/翻译了 {updated_count} 个文档。")
 
 
 if __name__ == "__main__":
-  process_docs()
+  process_i18n_docs()
