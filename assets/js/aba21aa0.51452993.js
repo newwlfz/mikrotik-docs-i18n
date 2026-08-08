@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmikrotik_docs_zh=self.webpackChunkmikrotik_docs_zh||[]).push([[742],{7093(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);
