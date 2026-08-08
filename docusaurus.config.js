@@ -14,14 +14,14 @@ activeLocales.forEach((code) => {
   };
 });
 
-// 仅拦截/重定向至 enabled: true 的激活语种
+// 构建特定语种跳转映射
 const redirectionLogic = activeLocales
   .map((code) => {
     const prefixes = SUPPORTED_LOCALES[code].detectPrefixes;
     const cond = prefixes
       .map((p) => `userLang.indexOf('${p}') === 0`)
       .join(' || ');
-    return `if (${cond}) { target = '/mikrotik-docs-i18n/${code}/'; }`;
+    return `if (${cond}) { matchedLang = '${code}'; }`;
   })
   .join(' else ');
 
@@ -60,19 +60,41 @@ const config = {
         window.__ACTIVE_I18N_UI__ = ${JSON.stringify(activeDropdownUI)};
 
         (function() {
-          var path = window.location.pathname.replace(/\\/$/, '');
-          var isBaseRoot = (path === '/mikrotik-docs-i18n');
+          function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+            return null;
+          }
+
+          var savedLang = getCookie('pref_lang') || localStorage.getItem('pref_lang');
+          var path = window.location.pathname;
+
+          // 提取当前路径中的语言标识
+          var pathSegments = path.split('/').filter(Boolean);
+          var activeLocales = ${JSON.stringify(activeLocales)};
+          var currentPathLang = activeLocales.find(function(code) { return pathSegments.includes(code); }) || 'en';
+
+          // 如果访问根路径或域名入口
+          var isBaseRoot = (path.replace(/\\/$/, '') === '/mikrotik-docs-i18n');
 
           if (isBaseRoot) {
-            var hasRedirected = sessionStorage.getItem('i18n-redirected');
-            if (!hasRedirected) {
+            var targetLang = savedLang;
+
+            if (!targetLang) {
+              // 没有记录时按浏览器语言判断
               var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-              var target = '';
+              var matchedLang = '';
               ${redirectionLogic}
-              if (target) {
-                sessionStorage.setItem('i18n-redirected', 'true');
-                window.location.replace(target);
-              }
+              targetLang = matchedLang || 'en';
+
+              // 记录到 Cookie (保留 30 天) 和 localStorage
+              document.cookie = "pref_lang=" + targetLang + "; path=/; max-age=" + (30 * 24 * 60 * 60);
+              localStorage.setItem('pref_lang', targetLang);
+            }
+
+            if (targetLang !== 'en') {
+              window.location.replace('/mikrotik-docs-i18n/' + targetLang + '/');
             }
           }
         })();
@@ -111,13 +133,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      announcementBar: {
-        id: 'ai_translation_notice',
-        content: ' ',
-        backgroundColor: '#fffbe6',
-        textColor: '#8c6b00',
-        isCloseable: true,
-      },
       navbar: {
         title: 'MikroTik Docs',
         items: [
@@ -127,6 +142,13 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
+          // 预留中间红框位置：AI 翻译免责声明
+          {
+            type: 'html',
+            position: 'left',
+            value: '<div id="nav-announcement-bar" class="nav-announcement-inline" style="display:none;"></div>',
+          },
+          // 预留右侧位置：模式切换下拉菜单
           {
             type: 'html',
             position: 'right',
