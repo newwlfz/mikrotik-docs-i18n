@@ -1,4 +1,38 @@
+// docusaurus.config.js
 // @ts-check
+const { SUPPORTED_LOCALES, activeLocales } = require('./i18n.config');
+
+const buildDate = new Date().toISOString().split('T')[0];
+
+const localeConfigs = {
+  en: { label: 'English', direction: 'ltr' },
+};
+activeLocales.forEach((code) => {
+  localeConfigs[code] = {
+    label: SUPPORTED_LOCALES[code].label,
+    direction: 'ltr',
+  };
+});
+
+// 仅拦截/重定向至 enabled: true 的激活语种
+const redirectionLogic = activeLocales
+  .map((code) => {
+    const prefixes = SUPPORTED_LOCALES[code].detectPrefixes;
+    const cond = prefixes
+      .map((p) => `userLang.indexOf('${p}') === 0`)
+      .join(' || ');
+    return `if (${cond}) { target = '/mikrotik-docs-i18n/${code}/'; }`;
+  })
+  .join(' else ');
+
+const activeDropdownUI = {};
+activeLocales.forEach((code) => {
+  const item = SUPPORTED_LOCALES[code];
+  activeDropdownUI[code] = {
+    ...item.dropdownLabels,
+    announcement: item.announcement ? item.announcement.replace('{time}', buildDate) : '',
+  };
+});
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,29 +52,27 @@ const config = {
     },
   },
 
-  // 1. 注入 head 顶部的极速内联重定向（0延迟、无闪烁、不阻塞资源渲染）
   headTags: [
     {
       tagName: 'script',
-      attributes: {
-        type: 'text/javascript',
-      },
+      attributes: { type: 'text/javascript' },
       innerHTML: `
+        window.__ACTIVE_I18N_UI__ = ${JSON.stringify(activeDropdownUI)};
+
         (function() {
-          var path = window.location.pathname;
-          var hasRedirected = sessionStorage.getItem('i18n-redirected');
-          // 仅在根路径首次访问时触发自动跳转
-          if (!hasRedirected && (path === '/mikrotik-docs-i18n/' || path === '/mikrotik-docs-i18n')) {
-            sessionStorage.setItem('i18n-redirected', 'true');
-            var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-            var target = '';
-            if (lang.indexOf('zh-tw') === 0 || lang.indexOf('zh-hk') === 0 || lang.indexOf('zh-hant') === 0) {
-              target = '/mikrotik-docs-i18n/zh-Hant/';
-            } else if (lang.indexOf('zh') === 0) {
-              target = '/mikrotik-docs-i18n/zh-Hans/';
-            }
-            if (target) {
-              window.location.replace(target);
+          var path = window.location.pathname.replace(/\\/$/, '');
+          var isBaseRoot = (path === '/mikrotik-docs-i18n');
+
+          if (isBaseRoot) {
+            var hasRedirected = sessionStorage.getItem('i18n-redirected');
+            if (!hasRedirected) {
+              var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+              var target = '';
+              ${redirectionLogic}
+              if (target) {
+                sessionStorage.setItem('i18n-redirected', 'true');
+                window.location.replace(target);
+              }
             }
           }
         })();
@@ -48,25 +80,12 @@ const config = {
     },
   ],
 
-  // 2. 多语言配置 (英文 / 简体 / 繁体)
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'zh-Hans', 'zh-Hant'],
-    localeConfigs: {
-      en: {
-        label: 'English',
-        direction: 'ltr',
-      },
-      'zh-Hans': {
-        label: '简体中文',
-        direction: 'ltr',
-      },
-      'zh-Hant': {
-        label: '繁體中文',
-        direction: 'ltr',
-      },
-    },
+    locales: ['en', ...activeLocales],
+    localeConfigs: localeConfigs,
   },
+
   presets: [
     [
       'classic',
@@ -74,17 +93,14 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          routeBasePath: '/', // 让文档直接作为网站首页展示
+          routeBasePath: '/',
         },
-        blog: false, // 禁用博客功能
-        theme: {
-          customCss: require.resolve('./src/css/custom.css'),
-        },
+        blog: false,
+        theme: { customCss: require.resolve('./src/css/custom.css') },
       }),
     ],
   ],
 
-  // 注入双语模式控制脚本（控制页面内部 UI 悬停/折叠/纯中文模式）
   scripts: [
     {
       src: '/mikrotik-docs-i18n/mode-switch.js',
@@ -95,6 +111,13 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      announcementBar: {
+        id: 'ai_translation_notice',
+        content: ' ',
+        backgroundColor: '#fffbe6',
+        textColor: '#8c6b00',
+        isCloseable: true,
+      },
       navbar: {
         title: 'MikroTik Docs',
         items: [
@@ -104,17 +127,12 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          // 右侧：双语交互模式切换下拉框（初始化留空，由 mode-switch.js 依据页面语种动态填充）
           {
             type: 'html',
             position: 'right',
             value: '<select id="mode-switcher" class="mode-select-dropdown" style="display:none;"></select>',
           },
-          // 多语言下拉切换
-          {
-            type: 'localeDropdown',
-            position: 'right',
-          },
+          { type: 'localeDropdown', position: 'right' },
         ],
       },
       footer: {

@@ -1,3 +1,4 @@
+# .github/workflows/deploy.yml
 name: 自动构建与部署文档站点
 
 on:
@@ -5,8 +6,8 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * 0' # 每周日自动同步更新
-  workflow_dispatch: # 支持在 GitHub 网页上直接手动触发点击运行
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -52,4 +53,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          force_orphan: true # 强制重置 gh-pages 部署分支，彻底清空已禁用语种的遗留静态文件
+          force_orphan: true # 强行覆盖物理擦除线上遗留的历史文件

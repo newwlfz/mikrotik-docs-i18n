@@ -1,3 +1,4 @@
+// static/mode-switch.js
 window.switchBilingualMode = function (mode) {
   document.body.classList.remove('mode-hover', 'mode-collapse', 'mode-clean');
   document.body.classList.add('mode-' + mode);
@@ -11,24 +12,24 @@ function initBilingualUI() {
 
   const announcementBar = document.querySelector('.announcementBar_src-theme-AnnouncementBar-styles-module, [class*="announcementBar"]');
 
-  // 精确拆分 URL 路径段，兼容 GitHub Pages 二级目录
-  // 例如 "/mikrotik-docs-i18n/zh-Hans/docs/intro" -> ["mikrotik-docs-i18n", "zh-Hans", "docs", "intro"]
   const pathSegments = path.split('/').filter(Boolean);
 
-  // 判断路径中是否包含已激活的语种 Key
   const currentLocaleKey = Object.keys(activeMap).find((key) =>
     pathSegments.includes(key)
   );
 
-  // 1. 处于纯英文原生页面
+  // 1. 处于英文原生页面
   if (!currentLocaleKey) {
     if (switcher) switcher.style.display = 'none';
     if (announcementBar) announcementBar.style.display = 'none';
     document.body.classList.remove('mode-hover', 'mode-collapse', 'mode-clean');
+
+    // 主动切回英文时，移除重定向已完成标记
+    sessionStorage.removeItem('i18n-redirected');
     return;
   }
 
-  // 2. 处于已开启的翻译语种页面
+  // 2. 处于激活的翻译语种页面
   if (announcementBar) {
     announcementBar.style.display = 'block';
     const innerTextElement = announcementBar.querySelector('div') || announcementBar;
