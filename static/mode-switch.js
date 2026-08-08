@@ -1,58 +1,69 @@
-// 切换模式并保存至 LocalStorage
 window.switchBilingualMode = function (mode) {
   document.body.classList.remove('mode-hover', 'mode-collapse', 'mode-clean');
   document.body.classList.add('mode-' + mode);
   localStorage.setItem('bilingual-mode', mode);
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+function initBilingualUI() {
   const path = window.location.pathname;
   const switcher = document.getElementById('mode-switcher');
+  const activeMap = window.__ACTIVE_I18N_UI__ || {};
 
-  if (!switcher) return;
+  // 获取页面顶部的 AI 免责声明 Bar
+  const announcementBar = document.querySelector('.announcementBar_src-theme-AnnouncementBar-styles-module, [class*="announcementBar"]');
 
-  // 判断是否为英文原版页面（根目录或 /en/ 开头）
-  // 注意：以你的 baseUrl (/mikrotik-docs-i18n/) 为基准
-  const isEnglish = path.endsWith('/en/') || path.includes('/en/doc') || 
-                    (path.includes('/mikrotik-docs-i18n/') && !path.includes('/zh-Hans/') && !path.includes('/zh-Hant/'));
+  // 匹配当前 URL 是否处于某个【已激活语种】路径下
+  const currentLocaleKey = Object.keys(activeMap).find((key) =>
+    path.includes('/' + key + '/')
+  );
 
-  if (isEnglish) {
-    // 1. 英文版：只有原文，隐藏模式切换菜单
-    switcher.style.display = 'none';
+  // 1. 处于英文原生页面：隐藏下拉菜单，隐藏顶栏 AI 免责声明
+  if (!currentLocaleKey) {
+    if (switcher) switcher.style.display = 'none';
+    if (announcementBar) announcementBar.style.display = 'none';
     document.body.classList.remove('mode-hover', 'mode-collapse', 'mode-clean');
     return;
   }
 
-  // 2. 翻译版页面：显示下拉菜单，并根据当前语言动态匹配菜单选项文本
+  // 2. 处于翻译语种页面：显示顶栏声明与更新时间
+  if (announcementBar) {
+    announcementBar.style.display = 'block';
+    const innerTextElement = announcementBar.querySelector('div') || announcementBar;
+    if (activeMap[currentLocaleKey].announcement) {
+      innerTextElement.innerHTML = activeMap[currentLocaleKey].announcement;
+    }
+  }
+
+  if (!switcher) return;
+
   switcher.style.display = 'inline-block';
+  const labels = activeMap[currentLocaleKey];
 
-  const isHant = path.includes('/zh-Hant/');
-  
-  // 多语言下拉菜单选项字典
-  const labels = isHant ? {
-    hover: '🔍 懸停顯示原文',
-    collapse: '📖 折疊顯示原文',
-    clean: '📄 僅顯示中文'
-  } : {
-    hover: '🔍 悬停显示原文',
-    collapse: '📖 折叠显示原文',
-    clean: '📄 仅显示中文'
-  };
-
-  // 动态更新下拉框中的 option 文本
   switcher.innerHTML = `
     <option value="hover">${labels.hover}</option>
     <option value="collapse">${labels.collapse}</option>
     <option value="clean">${labels.clean}</option>
   `;
 
-  // 读取上次保存的模式，还原生效
   const savedMode = localStorage.getItem('bilingual-mode') || 'hover';
   window.switchBilingualMode(savedMode);
   switcher.value = savedMode;
 
-  // 绑定切换事件
-  switcher.addEventListener('change', function (e) {
+  switcher.onchange = function (e) {
     window.switchBilingualMode(e.target.value);
-  });
+  };
+}
+
+document.addEventListener('DOMContentLoaded', initBilingualUI);
+
+let lastPath = window.location.pathname;
+const observer = new MutationObserver(() => {
+  if (window.location.pathname !== lastPath) {
+    lastPath = window.location.pathname;
+    setTimeout(initBilingualUI, 100);
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  observer.observe(document.body, { childList: true, subtree: true });
 });
