@@ -1,0 +1,63 @@
+/* 顶部模式切换下拉框样式 */
+.mode-select-dropdown {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-content);
+  font-size: 13px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+/* ================= 模式 1：鼠标悬停显示原文 (默认) ================= */
+body.mode-hover .bilingual-text {
+  position: relative;
+  cursor: help;
+  border-bottom: 1px dashed #3b82f6;
+}
+
+body.mode-hover .bilingual-text:hover::after {
+  content: attr(data-original);
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  pointer-events: none;
+}
+
+/* ================= 模式 2：折叠展开显示原文 ================= */
+body.mode-collapse .bilingual-text {
+  display: block;
+  margin-bottom: 8px;
+}
+
+body.mode-collapse .bilingual-text::after {
+  content: "💡 英文原文: " attr(data-original);
+  display: block;
+  font-size: 0.85rem;
+  color: #64748b;
+  background: rgba(241, 245, 249, 0.6);
+  padding: 4px 8px;
+  border-left: 3px solid #94a3b8;
+  margin-top: 4px;
+  border-radius: 2px;
+}
+
+/* ================= 模式 3：纯译文模式 ================= */
+body.mode-clean .bilingual-text {
+  border-bottom: none !important;
+}
+body.mode-clean .bilingual-text:hover::after,
+body.mode-clean .bilingual-text::after {
+  display: none !important;
+}
