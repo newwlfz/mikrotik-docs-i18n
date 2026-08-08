@@ -9,15 +9,18 @@ function initBilingualUI() {
   const switcher = document.getElementById('mode-switcher');
   const activeMap = window.__ACTIVE_I18N_UI__ || {};
 
-  // 获取页面顶部的 AI 免责声明 Bar
   const announcementBar = document.querySelector('.announcementBar_src-theme-AnnouncementBar-styles-module, [class*="announcementBar"]');
 
-  // 匹配当前 URL 是否处于某个【已激活语种】路径下
+  // 精确拆分 URL 路径段，兼容 GitHub Pages 二级目录
+  // 例如 "/mikrotik-docs-i18n/zh-Hans/docs/intro" -> ["mikrotik-docs-i18n", "zh-Hans", "docs", "intro"]
+  const pathSegments = path.split('/').filter(Boolean);
+
+  // 判断路径中是否包含已激活的语种 Key
   const currentLocaleKey = Object.keys(activeMap).find((key) =>
-    path.includes('/' + key + '/')
+    pathSegments.includes(key)
   );
 
-  // 1. 处于英文原生页面：隐藏下拉菜单，隐藏顶栏 AI 免责声明
+  // 1. 处于纯英文原生页面
   if (!currentLocaleKey) {
     if (switcher) switcher.style.display = 'none';
     if (announcementBar) announcementBar.style.display = 'none';
@@ -25,11 +28,11 @@ function initBilingualUI() {
     return;
   }
 
-  // 2. 处于翻译语种页面：显示顶栏声明与更新时间
+  // 2. 处于已开启的翻译语种页面
   if (announcementBar) {
     announcementBar.style.display = 'block';
     const innerTextElement = announcementBar.querySelector('div') || announcementBar;
-    if (activeMap[currentLocaleKey].announcement) {
+    if (activeMap[currentLocaleKey] && activeMap[currentLocaleKey].announcement) {
       innerTextElement.innerHTML = activeMap[currentLocaleKey].announcement;
     }
   }
@@ -39,11 +42,13 @@ function initBilingualUI() {
   switcher.style.display = 'inline-block';
   const labels = activeMap[currentLocaleKey];
 
-  switcher.innerHTML = `
-    <option value="hover">${labels.hover}</option>
-    <option value="collapse">${labels.collapse}</option>
-    <option value="clean">${labels.clean}</option>
-  `;
+  if (labels) {
+    switcher.innerHTML = `
+      <option value="hover">${labels.hover}</option>
+      <option value="collapse">${labels.collapse}</option>
+      <option value="clean">${labels.clean}</option>
+    `;
+  }
 
   const savedMode = localStorage.getItem('bilingual-mode') || 'hover';
   window.switchBilingualMode(savedMode);
