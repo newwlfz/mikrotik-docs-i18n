@@ -10,28 +10,32 @@
   margin-right: 12px;
 }
 
-/* ================= 模式 1：鼠标悬停显示原文 (默认) ================= */
+/* ================= 模式 1：鼠标悬停显示原文 (修饰后) ================= */
 body.mode-hover .bilingual-text {
   position: relative;
   cursor: help;
   border-bottom: 1px dashed #3b82f6;
+  display: inline;
 }
 
 body.mode-hover .bilingual-text:hover::after {
   content: attr(data-original);
   position: absolute;
-  bottom: 100%;
+  top: 120%; /* 改为向下弹出，防止顶部被遮挡 */
   left: 0;
-  background: #1e293b;
-  color: #f8fafc;
-  padding: 8px 12px;
-  border-radius: 6px;
+  width: 380px; /* 显式固定宽度，防止变形为狭长条 */
+  max-height: 200px;
+  overflow-y: auto;
+  background: #0f172a;
+  color: #f1f5f9;
+  padding: 10px 14px;
+  border-radius: 8px;
   font-size: 0.85rem;
-  line-height: 1.4;
-  white-space: pre-wrap;
-  z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 450px;
+  line-height: 1.5;
+  white-space: normal;
+  z-index: 10000;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  border: 1px solid #334155;
   pointer-events: none;
 }
 
@@ -47,10 +51,10 @@ body.mode-collapse .bilingual-text::after {
   font-size: 0.85rem;
   color: #64748b;
   background: rgba(241, 245, 249, 0.6);
-  padding: 4px 8px;
-  border-left: 3px solid #94a3b8;
+  padding: 6px 10px;
+  border-left: 3px solid #3b82f6;
   margin-top: 4px;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 /* ================= 模式 3：纯译文模式 ================= */
