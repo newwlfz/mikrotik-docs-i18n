@@ -14,14 +14,14 @@ activeLocales.forEach((code) => {
   };
 });
 
-// 构建特定语种跳转映射
+// 构建激活语种的前缀匹配逻辑
 const redirectionLogic = activeLocales
   .map((code) => {
     const prefixes = SUPPORTED_LOCALES[code].detectPrefixes;
     const cond = prefixes
-      .map((p) => `userLang.indexOf('${p}') === 0`)
+      .map((p) => "userLang.indexOf('" + p + "') === 0")
       .join(' || ');
-    return `if (${cond}) { matchedLang = '${code}'; }`;
+    return "if (" + cond + ") { matchedLang = '" + code + "'; }";
   })
   .join(' else ');
 
@@ -60,41 +60,53 @@ const config = {
         window.__ACTIVE_I18N_UI__ = ${JSON.stringify(activeDropdownUI)};
 
         (function() {
-          function getCookie(name) {
+          function setPref(lang) {
+            document.cookie = "pref_lang=" + lang + "; path=/; max-age=" + (30 * 24 * 60 * 60);
+            try { localStorage.setItem('pref_lang', lang); } catch(e) {}
+          }
+
+          function getPref() {
             var value = "; " + document.cookie;
-            var parts = value.split("; " + name + "=");
+            var parts = value.split("; pref_lang=");
             if (parts.length === 2) return parts.pop().split(";").shift();
+            try { return localStorage.getItem('pref_lang'); } catch(e) {}
             return null;
           }
 
-          var savedLang = getCookie('pref_lang') || localStorage.getItem('pref_lang');
-          var path = window.location.pathname;
-
-          // 提取当前路径中的语言标识
-          var pathSegments = path.split('/').filter(Boolean);
+          var rawPath = window.location.pathname;
+          var cleanPath = rawPath.endsWith('/') ? rawPath.slice(0, -1) : rawPath;
           var activeLocales = ${JSON.stringify(activeLocales)};
-          var currentPathLang = activeLocales.find(function(code) { return pathSegments.includes(code); }) || 'en';
 
-          // 如果访问根路径或域名入口
-          var isBaseRoot = (path.replace(/\\/$/, '') === '/mikrotik-docs-i18n');
+          // 检测当前 URL 究竟处于哪个语种路径下
+          var pathSegments = cleanPath.split('/').filter(Boolean);
+          var currentPathLang = activeLocales.find(function(code) {
+            return pathSegments.indexOf(code) !== -1;
+          }) || 'en';
 
-          if (isBaseRoot) {
-            var targetLang = savedLang;
+          // 核心点：当用户已经在某个语言页面时，刷新该语言的持久化记忆
+          if (cleanPath !== '/mikrotik-docs-i18n') {
+            setPref(currentPathLang);
+          }
 
-            if (!targetLang) {
-              // 没有记录时按浏览器语言判断
+          // 如果访问的是根路径 /mikrotik-docs-i18n 或 /mikrotik-docs-i18n/
+          if (cleanPath === '/mikrotik-docs-i18n') {
+            var savedLang = getPref();
+
+            // 首次访问无任何记忆时，依据浏览器语言判断并写入记忆
+            if (!savedLang) {
               var userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
               var matchedLang = '';
               ${redirectionLogic}
-              targetLang = matchedLang || 'en';
-
-              // 记录到 Cookie (保留 30 天) 和 localStorage
-              document.cookie = "pref_lang=" + targetLang + "; path=/; max-age=" + (30 * 24 * 60 * 60);
-              localStorage.setItem('pref_lang', targetLang);
+              savedLang = matchedLang || 'en';
+              setPref(savedLang);
             }
 
-            if (targetLang !== 'en') {
-              window.location.replace('/mikrotik-docs-i18n/' + targetLang + '/');
+            // 如果记忆语种为非默认英文（如 zh-Hans），跳转到对应语言目录
+            if (savedLang !== 'en') {
+              window.location.replace('/mikrotik-docs-i18n/' + savedLang + '/');
+            } else {
+              // 记忆明确为英文时，保持停留在根路径并确认记忆为 en
+              setPref('en');
             }
           }
         })();
@@ -134,21 +146,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'MikroTik Docs',
+        title: 'MikroTik Docs i18n',
+        logo: {
+          alt: 'MikroTik Logo',
+          src: 'https://manual.mikrotik.com/img/logo.svg',
+        },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Documentation',
-          },
-          // 预留中间红框位置：AI 翻译免责声明
           {
             type: 'html',
             position: 'left',
             value: '<div id="nav-announcement-bar" class="nav-announcement-inline" style="display:none;"></div>',
           },
-          // 预留右侧位置：模式切换下拉菜单
           {
             type: 'html',
             position: 'right',
