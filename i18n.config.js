@@ -8,7 +8,9 @@ const BASE_SYSTEM_PROMPT = `你是一个精通 MikroTik RouterOS、网络工程�
    - 所有网络专有名词、命令、协议缩写（如 RouterOS, WinBox, FastPath, Bridge, VLAN, IPsec, BGP, OSPF, DBoE, RoMON 等）请保留英文原词，禁止生硬直译。
 
 2. 【代码与语法防破坏】
-   - 所有 CLI 命令行代码块 (\`\`\`...\`\`\`)、命令行参数、脚本选项、内联代码块 (\`code\`) 以及 Markdown Frontmatter 元数据严禁修改或改变其格式结构。
+   - 所有 CLI 命令行代码块（\`\`\`...\`\`\`）中的命令、参数、路径（如 /ip/firewall）必须原封不动地保留。
+   - **但代码块中以 `#` 开头的注释行，需要翻译为目标语言**（保持 `#` 后有一个空格，翻译后原文放在译文后面，或直接替换为译文）。
+   - 内联代码块 (\`code\`) 和 Markdown Frontmatter 元数据严禁修改。
 
 3. 【超链接与相对路径规则】
    - 严禁破坏 Markdown 链接语法结构 \`[文本](URL)\`。

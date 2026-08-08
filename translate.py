@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import json
 import shutil
@@ -42,7 +43,6 @@ target_prompts = config_data.get("prompts", {})
 
 
 def load_cache():
-    """加载 MD5 增量缓存，避免重复翻译未修改的文件"""
     if os.path.exists(CACHE_FILE):
         try:
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
@@ -53,21 +53,17 @@ def load_cache():
 
 
 def save_cache(cache):
-    """保存缓存"""
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
 def compute_md5(text):
-    """计算文本 MD5"""
     return hashlib.md5(text.encode("utf-8")).hexdigest()
 
 
 def cleanup_disabled_locales():
-    """清理已禁用的语种目录"""
     if not os.path.exists(I18N_DIR):
         return
-
     for item in os.listdir(I18N_DIR):
         item_path = os.path.join(I18N_DIR, item)
         if os.path.isdir(item_path) and item not in active_locales:
@@ -76,22 +72,18 @@ def cleanup_disabled_locales():
 
 
 def fix_mikrotik_links(content):
-    """后处理：将官方绝对链接自动替换为相对路径"""
     pattern = r'https?://manual\.mikrotik\.com/docs/([a-zA-Z0-9_\-/\#]+)'
     return re.sub(pattern, r'/docs/\1', content)
 
 
 def call_deepseek_api(system_prompt, text_content):
-    """调用 DeepSeek API 进行翻译"""
     if not DEEPSEEK_API_KEY:
         print("⚠️ 未检测到 DEEPSEEK_API_KEY，跳过翻译！")
         return text_content
-
     headers = {
         "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
         "Content-Type": "application/json"
     }
-
     payload = {
         "model": "deepseek-chat",
         "messages": [
@@ -100,7 +92,6 @@ def call_deepseek_api(system_prompt, text_content):
         ],
         "temperature": 0.2
     }
-
     try:
         response = requests.post(DEEPSEEK_API_URL, headers=headers, json=payload, timeout=120)
         response.raise_for_status()
@@ -112,8 +103,46 @@ def call_deepseek_api(system_prompt, text_content):
         return None
 
 
+def cleanup_translations():
+    """清理 i18n 目录下孤立的翻译文件（对应英文源文件已不存在的）"""
+    if not os.path.exists(DOCS_DIR):
+        return
+    print("\n🧹 开始清理孤立的翻译文件...")
+    # 收集所有现有的英文文件相对路径
+    existing_en = set()
+    for root, _, files in os.walk(DOCS_DIR):
+        for file in files:
+            if file.endswith(".md") or file.endswith(".mdx"):
+                rel = os.path.relpath(os.path.join(root, file), DOCS_DIR)
+                existing_en.add(rel)
+
+    removed_count = 0
+    for lang in active_locales:
+        lang_root = os.path.join(I18N_DIR, lang, "docusaurus-plugin-content-docs", "current")
+        if not os.path.exists(lang_root):
+            continue
+        for root, _, files in os.walk(lang_root):
+            for file in files:
+                if file.endswith(".md") or file.endswith(".mdx"):
+                    trans_path = os.path.join(root, file)
+                    rel_path = os.path.relpath(trans_path, lang_root)
+                    if rel_path not in existing_en:
+                        os.remove(trans_path)
+                        print(f"   🗑️ 删除孤立翻译 [{lang}]: {rel_path}")
+                        removed_count += 1
+        # 尝试删除空目录（非强制）
+        try:
+            os.removedirs(lang_root)
+        except OSError:
+            pass
+
+    if removed_count == 0:
+        print("   ✅ 没有孤立的翻译文件。")
+    else:
+        print(f"   ✅ 清理完成，共删除 {removed_count} 个孤立翻译文件。")
+
+
 def process_translation():
-    """遍历 docs/ 目录，将文件翻译并写入对应 i18n 语种目录"""
     if not os.path.exists(DOCS_DIR):
         print(f"⚠️ 未找到 {DOCS_DIR} 目录，结束执行。")
         return
@@ -122,12 +151,10 @@ def process_translation():
     translated_count = 0
     skipped_count = 0
 
-    # 遍历 docs 目录下的所有 Markdown 文件
     for root, _, files in os.walk(DOCS_DIR):
         for file in files:
             if not (file.endswith(".md") or file.endswith(".mdx")):
                 continue
-
             src_file_path = os.path.join(root, file)
             rel_path = os.path.relpath(src_file_path, DOCS_DIR)
 
@@ -136,21 +163,17 @@ def process_translation():
 
             content_md5 = compute_md5(source_content)
 
-            # 对每个启用的语种进行翻译处理
             for lang in active_locales:
                 system_prompt = target_prompts.get(lang)
                 if not system_prompt:
                     continue
 
-                # Docusaurus 规定的 i18n 目标路径结构
                 target_dir = os.path.join(
                     I18N_DIR, lang, "docusaurus-plugin-content-docs", "current", os.path.dirname(rel_path)
                 )
                 target_file_path = os.path.join(target_dir, os.path.basename(rel_path))
-
                 cache_key = f"{lang}:{rel_path}"
 
-                # 检查缓存与文件是否存在，若未变动则跳过
                 if cache.get(cache_key) == content_md5 and os.path.exists(target_file_path):
                     skipped_count += 1
                     continue
@@ -162,8 +185,6 @@ def process_translation():
                     os.makedirs(target_dir, exist_ok=True)
                     with open(target_file_path, "w", encoding="utf-8") as f:
                         f.write(translated_content)
-
-                    # 更新缓存
                     cache[cache_key] = content_md5
                     translated_count += 1
                     print(f"✅ 完成 [{lang}]: {target_file_path}")
@@ -172,6 +193,9 @@ def process_translation():
 
     save_cache(cache)
     print(f"\n🎉 翻译处理结束：完成 {translated_count} 个文件，跳过未修改文件 {skipped_count} 个。")
+
+    # 最后清理孤儿翻译
+    cleanup_translations()
 
 
 if __name__ == "__main__":
