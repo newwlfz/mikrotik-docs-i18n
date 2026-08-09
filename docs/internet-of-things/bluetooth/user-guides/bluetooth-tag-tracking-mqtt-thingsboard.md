@@ -56,7 +56,7 @@ The scripts we've prepared also allow you to set up a filter (that will be shown
 
 One of the use cases is shown in the topology below:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-01.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-01.webp)
 
 :::note
 The scale of objects and Bluetooth operating ranges are just shown as an example, to help visually understand and imagine the topology!
@@ -84,19 +84,19 @@ Create 2 KNOTs under the ThingsBoard GUI and make them "gateways".
 
 Go to the "Devices" section, click on the "+" button and "Add new device":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-02.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-02.webp)
 
 Name the device and check the "Is gateway" option:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-03.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-03.webp)
 
 Do that for each KNOT that you have:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-04.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-04.webp)
 
 Set up a unique access token (unique credentials) for each KNOT under the device you've just created, under the "Manage credentials" tab:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-05.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-05.webp)
 
 ##### RouterOS configuration
 
@@ -331,39 +331,39 @@ The JSON message structured using the script has a `ts` value (timestamp) assign
 
 After you run the script with `/system/script/run tracking` or via a scheduler and refresh the GUI portal, all MAC addresses (tags) that are found in the JSON message will be made into new devices under the ThingsBoard GUI:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-06.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-06.webp)
 
 To help you visualize the data, you can use the built-in [widgets](https://thingsboard.io/docs/user-guide/ui/widget-library/) or create your own.
 
 Select the tag's MAC address from the list of devices, go to the "Latest telemetry" section, check the "reporter" parameter, and click on the "Show on widget" button:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-07.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-07.webp)
 
 Select a widget that you wish to use, for example, under the "Cards" bundle, "Timeseries table", and click on "Add to dashboard":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-08.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-08.webp)
 
 Create a new dashboard and name it however you like. Click on "Add":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-09.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-09.webp)
 
 Do the same steps for your other tags that appeared under the "Devices" tab. Create a new widget for each unique tag under the same dashboard.
 
 Change the widget's "Timewindow" from "Realtime-last minute" (which is used by default) to "Realtime-current day":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-10.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-10.webp)
 
 As a result, if both tags are inside the **KNOT A** **range**, the dashboard would show:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-11.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-11.webp)
 
 If they move to the **KNOT B range**, it would show:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-12.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-12.webp)
 
 If the tags move to the **overlapped area**, inside both ranges, both reporters (KNOT\_A and KNOT\_B) should show up within a few seconds of each other, depending on the interval used in the scheduler:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-13.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-13.webp)
 
 ### Example #2
 
@@ -406,19 +406,19 @@ Create 3 KNOTs under the ThingsBoard GUI and make them "gateways".
 
 Go to the "Devices" section, click on the "+" button and "Add new device":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-02.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-02.webp)
 
 Name the device and checkbox the "Is gateway" option:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-14.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-14.webp)
 
 Do that for each KNOT that you have:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-15.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-15.webp)
 
 Set up a unique access token (unique credentials) for each KNOT under the device you've just created, under the "Manage credentials" tab:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-16.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-16.webp)
 
 ##### RouterOS configuration
 
@@ -984,35 +984,35 @@ The JSON message structured using the script has a `ts` value (timestamp) assign
 
 After you run the script with `/system/script/run tracking` or via a scheduler and refresh the GUI portal → all MAC addresses (tags) that are found in the JSON message will be made into new devices under the ThingsBoard GUI:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-06.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-06.webp)
 
 To help you visualize the data, you can use the built-in [widgets](https://thingsboard.io/docs/user-guide/ui/widget-library/) or create your own one.
 
 Select the tag's MAC address from the list of devices, go to the "Latest telemetry" section, select KNOT IDs that you wish to monitor, and click on the "Show on widget" button:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-17.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-17.webp)
 
 Select a widget that you wish to use, for example, under the "Charts" bundle, "Timeseries Bar Chart" and click on "Add to dashboard":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-18.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-18.webp)
 
 Create a new dashboard and name it however you like. Click on "Add":
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-19.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-19.webp)
 
 Change the widget's "Timewindow" from "Realtime-last minute" (which is used by default) to "Realtime-last 5 hours" and disable "data aggregation function" (select "none"):
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-20.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-20.webp)
 
 To help you better visualize the result, edit the widget and then edit each "KNOT\_X" parameter/key. Enable the "Show points" checkbox for each key:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-21.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-21.webp)
 
 Check the ThingsBoard widget [guide](https://thingsboard.io/docs/user-guide/ui/chart-widget/#timeseries-bar-chart) for more options that you have.
 
 The end result would look like this:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-22.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-22.webp)
 
 Per the dashboard, we can tell that:
 
@@ -1027,13 +1027,13 @@ Per the dashboard, we can tell that:
 
 Select the tag's MAC address from the list of devices, go to the "Latest telemetry" section, check the `temp` parameter, and click on the "Show on widget" button:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-23.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-23.webp)
 
 Select a widget that you wish to use, for example under the "Charts" bundle, "Timeseries Line Chart". Click on "Add to dashboard", and choose the dashboard where you want to add the widget.
 
 The result would look like this:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-24.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-24.webp)
 
 Now you have an additional graph that indicates how the tag's temperature changes during different time intervals.
 
@@ -1041,17 +1041,17 @@ Now you have an additional graph that indicates how the tag's temperature change
 
 Per the script in the [Script that includes GPS data](#script-that-includes-gps-data-optional) section, the script sends x2 MQTT messages. Each message is sent to a different MQTT topic. The GPS coordinate message will be posted to a topic named "v1/devices/me/telemetry", while Bluetooth data will be posted to a topic named "v1/gateway/telemetry". Coordinates will be available to you under the ThingsBoard device list, under the specific gateway:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-25.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-25.webp)
 
 Check both "latitude" and "longitude" parameters, click on the "Show on widget button", set "Current bundle" to "Maps", and choose the "Route Map - OpenStreetMap" widget:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-26.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-26.webp)
 
 To finish things up, click on the "Add to dashboard" button and choose the dashboard where you want the widget to be shown.
 
 After adding 3 widgets into 1 dashboard (temperature line chart, Bluetooth reporter bar chart, and GPS coordinates map), you would get something similar to this:
 
-![](./img/bluetooth-tag-tracking-mqtt-thingsboard-27.webp)
+![](/docs/internet-of-things/bluetooth/user-guides/img/bluetooth-tag-tracking-mqtt-thingsboard-27.webp)
 
 - You will have a graph showing temperature changes (the tag's surrounding temperature).
 - You will have a chart that indicates which specific KNOT has sent the report that tells you in which KNOT's Bluetooth range the tag is currently in.

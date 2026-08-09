@@ -108,7 +108,7 @@ This type of port is used on RouterBOARD 2011, 3011, 4011, CCR1072, CCR1036 r2, 
 
 #### RJ45 to DB9 Cable Pinout
 
-![](./img/serial-console-01.webp)
+![](/docs/management-tools/img/serial-console-01.webp)
 
 | Signal | Console Port (DTE) RJ-45 | RJ-45 Rolled Cable RJ-45 Pin | Adapter DB-9 Pin | Adapter DB-25 Pin | Signal |
 | :-- | --: | --: | --: | --: | :-- |
@@ -131,7 +131,7 @@ The Cloud Core Router series devices have a serial header on the PCB board, call
 
 Here is the pin-out of that connector:
 
-![](./img/serial-console-02.webp)
+![](/docs/management-tools/img/serial-console-02.webp)
 
 ## Serial Terminal Usage
 
@@ -191,7 +191,7 @@ Special login can be used to access another device (like a switch, for example) 
 
 For this demonstration we will use two RouterBoards and one PC.
 
-![](./img/serial-console-03.webp)
+![](/docs/management-tools/img/serial-console-03.webp)
 
 Routers R1 and R2 are connected with a serial cable and a PC is connected to R1 via ethernet. Let's say we want to access router R2 via serial cable from our PC. To do this you have to set up a serial interface proxy on R1. It can be done by a feature called **special-login**.
 

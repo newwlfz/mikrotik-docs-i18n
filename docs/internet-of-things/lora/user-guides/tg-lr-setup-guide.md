@@ -197,7 +197,7 @@ data humid-histo-cfg 1,86400,0,0,1,1,10,20,30,40,50,60,70,80,90
 
 ##### Orientation
 
-![](./img/tg-lrx2-axis.webp)
+![](/docs/internet-of-things/lora/user-guides/img/tg-lrx2-axis.webp)
 
 Fig. 1 Device accelerometer axis.
 

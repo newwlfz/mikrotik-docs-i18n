@@ -15,7 +15,7 @@ It is recommended to use the same version of RouterOS for all devices with the s
 
 :::
 
-![](./img/vrrp-configuration-examples-01.webp)
+![](/docs/high-availability-solutions/user-guides/img/vrrp-configuration-examples-01.webp)
 
 According to this configuration, as long as the master, R1, is functional, all traffic destined for the external network gets directed to R1. But as soon as R1 fails, R2 takes over as the master and starts handling packets forwarded to the interface associated with IP(R1). In this setup router "R2" is completely idle during the Backup period.
 
@@ -80,7 +80,7 @@ In the basic configuration example, R2 is completely idle during the Backup stat
 The obvious advantage of this configuration is the establishment of a load-sharing scheme. But by doing so, the R2 router is not protected by the current VRRP setup.  
 To make this setup work we need two virtual routers.
 
-![](./img/vrrp-configuration-examples-02.webp)
+![](/docs/high-availability-solutions/user-guides/img/vrrp-configuration-examples-02.webp)
 
 Configuration for the V1 virtual router will be identical to a configuration in the basic example - R1 is the Master and R2 is the Backup router. In V2 the Master is R2 and the Backup is R1.  
 With this configuration, we establish load-sharing between R1 and R2; moreover, we create a protection setup by having two routers acting as backups for each other.

@@ -87,7 +87,7 @@ It is sometimes possible to change router configuration in a way that will make 
 
 The **"Safe Mode"** button in the Winbox GUI allows you to enter Safe Mode, while in the CLI, you can access it by either using the keyboard shortcut <kbd>F4</kbd> or pressing **[CTRL]+[X]**. To exit without saving the changes made in CLI, hit **[CTRL]+[D].**
 
-![](./img/configuration-management-01.webp)
+![](/docs/getting-started/configuration-management/img/configuration-management-01.webp)
 
 ```ros
 [admin@MikroTik] /ip/route>[CTRL]+[X] 
@@ -389,7 +389,7 @@ Dangerous! Reset anyway? [y/N]: y
 
 And the same using Winbox:
 
-![](./img/configuration-management-02.webp)
+![](/docs/getting-started/configuration-management/img/configuration-management-02.webp)
 
 ## Related topics
 

@@ -10,13 +10,13 @@ MikroTik Beacon Manager application is designed for Bluetooth tag (TG-BT5-XX) co
 
 For Android devices, you can find the app following the [link](https://play.google.com/store/apps/details?id=com.mikrotik.android.bt5&hl=en_US&gl=US&pli=1).
 
-![](./img/app_qr.png)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/app_qr.png)
 
 ## Beacon manager screen
 
 The first screen you see when you launch the app is the "MikroTik Beacon Manager" screen where all the nearby Bluetooth tags are shown.
 
-![](./img/image2021-6-10_8-16-34.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-10_8-16-34.webp)
 
 If the list is empty, it means that all the nearby tags are in factory-sleep mode. Once the tag is in advertising or configuration mode, it will show up on the list. To wake up the tag from the factory sleep mode, put the magnet over the tag (activate the reed-switch) for 3-10 seconds.
 
@@ -25,13 +25,13 @@ If the list does not capture any tags even though you are certain there is a tag
 :::
 In the right upper corner of the screen there are 3 buttons:
 
-![](./img/image2021-6-10_8-17-49.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-10_8-17-49.webp)
 
 ### OR Code Reader
 
 "QR Code reader" button which allows you to add the tag via QR code (MAC address is used as tag's ID):
 
-![](./img/image2021-7-7_13-13-39.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-13-39.webp)
 
 #### NFC support
 
@@ -45,17 +45,17 @@ All you need to do is to enable NFC in your phone settings and open the MikroTik
 
 Once you see the initial screen (list of tags), position the tag near the phone's NFC antenna and you will be provided with an option to open device settings:
 
-![](./img/image2021-7-7_13-6-34.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-6-34.webp)
 
 If you press "YES", you will be redirected to the page shown below. In the menu, you have an option to delete the device from the list or to enter configuration mode via the "Configure" button.
 
-![](./img/image2021-7-7_13-15-48.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-15-48.webp)
 
 ### Order by
 
 The "Order by" button, which allows you to change the order of the device list or just filter the list to only show MikroTik beacons by checking the "Show only MikroTik beacons" checkbox:
 
-![](./img/image2021-7-7_14-17-41.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-17-41.webp)
 
 ### Settings and Batch Configuration
 
@@ -65,7 +65,7 @@ The "⋮" tab is divided into 2 sub-tabs - "Settings" and "Batch Configuration".
 
 The first option in this tab is to set up a "Discovery refresh interval", which is the interval for scanning for the nearby tags.
 
-![](./img/image2021-7-7_14-18-17.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-18-17.webp)
 
 The second option is to enable or disable the "Save triggers" setting. When enabled, the app saves detected triggers in the database. You can check the triggers in the "Sensor Triggers" menu (the "Sensor Triggers" menu is shown in the "**Tag Management**" section of this guide). If this option is disabled, "Sensor Triggers" data is erased as soon as the app is closed.
 
@@ -79,17 +79,17 @@ In order to do that, you will need to export the configuration file from one of 
 
 After you have saved the configuration file, just press the "Batch Configuration" button and it will take you to the file menu where you need to select the file. Choose the configuration file (that you wish to apply to multiple units) and the app will show you the screen with all the nearby-detected tags:
 
-![](./img/image2021-7-7_13-16-53.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-16-53.webp)
 
 The last step is to put those tags into the configuration mode (by putting the magnet over the tag for 5-10 seconds). After the device is put into configuration mode, you will see the "Uploading configuration" message. The message will change to "Configuration updated" when the configuration is successfully applied.
 
-![](./img/image2021-7-7_13-17-19.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-17-19.webp)
 
 ## Tag Management
 
 When the tag is on the list, you can click on its MAC address and you will be presented with the following options:
 
-![](./img/image2021-7-7_13-40-36.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-40-36.webp)
 
 To "SAVE" the tag or to immediately go to the tag's configuration menu via the "CONFIG ONLY" button.
 
@@ -97,7 +97,7 @@ First, we will explain the "SAVE" option in more detail. The tag's configuration
 
 When you click on the tag that was previously saved, you will see the following menu:
 
-![](./img/image2021-6-9_10-39-56.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-9_10-39-56.webp)
 
 The first thing you should notice is the signal strength indication (RSSI signal for the tag - how far the tag is). When all circles are green, it means the signal strength is about -60 RSSI. When only 2 circles are green, it means the signal strength is about -70 RSSI. When only one circle is green, it means that the signal strength is at -80 RSSI. When no circles are green, it means that the signal strength is at -90 RSSI or more.
 
@@ -105,7 +105,7 @@ Under the signal strength indicator, you have 2 options - to go to the tag's con
 
 In the "Name/Display Name" field, you can change the tag's name:
 
-![](./img/image2021-7-7_13-42-16.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-42-16.webp)
 
 In the "Sensors" field, you can check the tag's battery level or temperature.
 
@@ -115,45 +115,45 @@ TG-BT5-IN model does not have a temperature sensor
 
 In the "Sensor Triggers" field, you can check triggers that were reported by the tag:
 
-![](./img/image2021-7-7_13-44-46.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-44-46.webp)
 
 ## Tag Configuration
 
 In order to access the tag's configuration menu, you need to either press the "CONFIG ONLY" button or the "Configure" button as shown below:
 
-![](./img/image2021-7-7_13-45-49.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-45-49.webp)
 
-![](./img/image2021-7-7_13-46-7.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-46-7.webp)
 
 Right after that, you will need to put a magnet over the reed-switch for 5-10 seconds:
 
-![](./img/image2021-7-7_13-47-1.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-47-1.webp)
 
 After a short wind up time, the device should be in the configuration mode:
 
-![](./img/image2021-6-30_10-33-30.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-30_10-33-30.webp)
 
 The app will show general information about the tag in the "Status" tab (as shown in the screenshot above).
 
 Configuration can be altered in the "Settings" tab:
 
-![](./img/image2021-6-30_10-34-13.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-30_10-34-13.webp)
 
-![](./img/image2021-6-30_10-34-50.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-30_10-34-50.webp)
 
-![](./img/image2021-6-30_10-35-5.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-30_10-35-5.webp)
 
 ### Write Protection
 
 This menu allows you to lock the settings of the tag with a 6-symbol long password:
 
-![](./img/image-2023-9-8_12-2-12.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-9-8_12-2-12.webp)
 
 Once the password is set, there is no way to remove password protection (you can only edit it).
 
 The next time you try to configure the tag, you will be notified that it is "write protected" and you can choose either to stay in the "READ-ONLY" mode (which allows you to browse/read through the settings and restricts making configuration changes) or to "UNLOCK" the settings by inputting the configured password:
 
-![](./img/image-2023-9-8_12-1-51.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-9-8_12-1-51.webp)
 
 ### Beacon settings
 
@@ -163,13 +163,13 @@ At the moment, these are all the supported types:
 
 DeviceName, MikroTik, [Eddystone-TLM](https://play.google.com/store/apps/details?id=com.mikrotik.android.bt5&hl=en_US&gl=US&pli=1), [Eddystone-UID](https://github.com/google/eddystone/tree/master/eddystone-uid) and [iBeacon](https://developer.apple.com/ibeacon/).
 
-![](./img/image-2023-9-8_12-16-54.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-9-8_12-16-54.webp)
 
-![](./img/image-2023-9-8_12-17-4.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-9-8_12-17-4.webp)
 
-![](./img/image-2023-9-8_12-17-16.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-9-8_12-17-16.webp)
 
-![](./img/image-2023-9-8_12-17-23.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-9-8_12-17-23.webp)
 
 | Property | Description |
 | --- | --- |
@@ -197,7 +197,7 @@ DeviceName, MikroTik, [Eddystone-TLM](https://play.google.com/store/apps/detail
 
 This section displays the estimated battery life:
 
-![](./img/image2021-7-7_13-52-0.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-52-0.webp)
 
 Estimated battery life is heavily dependant on the number of advertising packets sent (configured to be sent). The app calculates how many packets are estimated to be broadcasted daily, for how long the tag will be active, and the estimate for the average daily power consumption.
 
@@ -207,11 +207,11 @@ Accelerometer can be toggled (turned) off completey and can be turned on by usin
 
 This section allows you to change the parameters shown in the screenshot below:
 
-![](./img/image2021-6-30_11-47-16.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-30_11-47-16.webp)
 
 #### Mode and Data Rate
 
-![](./img/image2021-7-7_13-53-8.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-53-8.webp)
 
 This menu allows you to choose between 2 modes: "Low power" and "High power". In "Low power" mode, you will get lower precision but also lower power consumption. In "High power" mode, you will get higher precision but also higher power consumption.
 
@@ -219,13 +219,13 @@ This menu allows you to choose between 2 modes: "Low power" and "High power". In
 
 #### Full Scale
 
-![](./img/image-2022-11-14_11-57-58.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2022-11-14_11-57-58.webp)
 
 Can vary between (2g...16g). It is the measurement range that is used to calculate the wake-up threshold. Full scale defines the range of acceleration, that the accelerometer is capable of measuring (the bigger the range, the lower the accuracy of the measured acceleration).
 
 #### Bandwith Filter
 
-![](./img/image2021-7-7_13-53-53.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-53-53.webp)
 
 Is a digital filtering cutoff (a high pass filter bandwidth).
 
@@ -235,17 +235,17 @@ For example, if the device is laying on the table, the acceleration will show 0g
 
 #### Wakeup Threshold and Duration
 
-![](./img/image2021-7-7_13-54-18.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-54-18.webp)
 
 The "Wakeup Threshold" defines a wakeup zone/acceleration range. The "Wakeup Duration" defines the time during which the acceleration is over the configured wakeup threshold. A wakeup event will be generated (a wakeup condition will be triggered) when the acceleration on any axis (X, Y, or Z) exceeds a threshold for the configured wakeup duration. To better understand what is meant by "acceleration on any axis (X, Y, or Z)", imagine a 3-D Cartesian coordinate system and in the origin point (common point) the tag's accelerometer or the tag itself:
 
-![](./img/intagaxis.png) ![](./img/outtagaxis.png)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/intagaxis.png) ![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/outtagaxis.png)
 
 For example, the wakeup threshold is set to 1.0g (it means that any acceleration between -1.0g to +1.0g falls under the configured threshold/acceleration range) and the wakeup duration is set to 0.12s. As a result, as soon as the device is pushed/thrown against any of the axis (the device begins moving in any direction) with the acceleration exceeding the configured threshold (acceleration> +1.0g or acceleration&lt; -1.0g) for longer than 0.12s → wakeup condition is triggered.
 
 #### Free Fall Threshold and Duration
 
-![](./img/image2021-7-7_13-54-38.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-54-38.webp)
 
 The "Free Fall Threshold" defines a free-fall zone/acceleration range. The "Free Fall Duration" defines the time during which the acceleration is going to be within the configured free-fall threshold. The free-fall event will be generated (free-falling condition will be triggered) when the acceleration on all 3 axes (X, Y, and Z) is within the free-fall zone/threshold for the configured free-fall duration. To better understand what is meant by "acceleration on all axis (X, Y, and Z)", check the device photoes above in the "Wakeup Threshold and Duration" section.
 
@@ -253,13 +253,13 @@ For example, the freefall threshold is set to 156.25g (it means that any acceler
 
 #### Angle Threshold
 
-![](./img/image2021-7-7_13-55-18.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-55-18.webp)
 
 Can vary between 50°...80°. It is the threshold for a tilt function. When the threshold is set to, for example, 60° and the device is tilted by that degree - the tilt action is triggered and the advertisement packet is sent.
 
 #### Low noise filter
 
-![](./img/image2021-7-7_13-57-32.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-57-32.webp)
 
 An option to enable or disable a low noise filter. A low noise filter is used to reduce noise density in the measurements. Enabling this feature will slightly increase power consumption.
 
@@ -269,13 +269,13 @@ An option to enable or disable a low noise filter. A low noise filter is used to
 TG-BT5-IN model does not have a temperature sensor!
 :::
 
-![](./img/image2021-7-7_13-57-5.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-57-5.webp)
 
 Can vary between -10°C...+10°C. Offset in centicelsius to apply to raw temperature measurements.
 
 #### Tx Power
 
-![](./img/image2021-7-7_13-58-19.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_13-58-19.webp)
 
 The transmit power level in decibel-milliwatts. Can vary between -28dBm...6dBm. Tx Power is simply used to increase/decrease transmit power of the tag.
 
@@ -287,17 +287,17 @@ This section is available only for the TG-BT5-OUT model.
 
 This section allows you to configure/view logs (that are only accessible using the app):
 
-![](./img/image2021-7-7_14-0-8.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-0-8.webp)
 
 #### Configure logging
 
 In the "Configure logging" menu, you can set up logging settings:
 
-![](./img/image2021-7-7_14-9-24.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-9-24.webp)
 
 You have an option to set up "Periodic logging interval (s)" (or you can disable it). When enabled, the data logs will automatically get saved every "x" seconds:
 
-![](./img/image2021-7-7_14-5-45.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-5-45.webp)
 
 Another option is to enable "Log Triggers" (periodic logging and trigger logging can be used together). When log triggers are used - logs will be saved whenever the tilt, free fall, and/or impact action is detected.
 
@@ -305,11 +305,11 @@ For example, when a tilt trigger is enabled and is detected by the tag - the mes
 
 You can set up which parameters are going to be logged in the "Field config" section:
 
-![](./img/image2021-6-9_15-5-2.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-9_15-5-2.webp)
 
-![](./img/image2021-6-9_15-5-25.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-9_15-5-25.webp)
 
-![](./img/image2021-6-9_15-5-53.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-9_15-5-53.webp)
 
 You have an option to log 3 parameters: 1) Battery level; 2) Temperature; 3) Acceleration.
 
@@ -321,41 +321,41 @@ If you are not interested in logging battery level unless it is less than 40%, y
 
 The logged messages will be displayed in the "Data Logs" tab:
 
-![](./img/image2021-7-7_14-10-30.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-10-30.webp)
 
 You can export the log as a .csv file via "Export as .csv" button:
 
-![](./img/image2021-7-7_14-10-58.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-10-58.webp)
 
 ### System
 
 In the "System" tab you synchronize the time, view the system log, put the tag into a factory sleep mode, and upgrade the firmware:
 
-![](./img/image2021-6-30_14-24-6.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-6-30_14-24-6.webp)
 
 #### Unix Time
 
 Using this setting, you can synchronize the current time and date for the tag:
 
-![](./img/image2021-7-7_14-13-23.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-13-23.webp)
 
 #### Logs
 
 Menu, where you can view system log:
 
-![](./img/image2021-7-7_14-14-10.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-14-10.webp)
 
 #### Factory sleep
 
 This option can initiate factory sleep mode for the tag:
 
-![](./img/image2021-7-7_14-14-52.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-14-52.webp)
 
 #### Upgrade Firmware
 
 This menu allows you to upgrade the tag's firmware version:
 
-![](./img/image2021-7-7_14-15-20.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-15-20.webp)
 
 ##### Automatic upgrade
 
@@ -383,7 +383,7 @@ caf3e333721852077945c8a766db32ee5e478f1e7844dcb3e0e3d700dbab009f bt-tag_OUT_appl
 
 Double-check current tag's firwmare version using the app:
 
-![](./img/image2022-1-31_14-6-50.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2022-1-31_14-6-50.webp)
 
 Knowing, that the tag, for example, is the **TG-BT5-IN** model and that the current version is **1.6.1-000**, we can conclude that the latest release is "bt-tag_IN_app_2.3.1-000.gbl".
 
@@ -412,11 +412,11 @@ b) The tag might disappear from the list of manageable tags. In that case, try t
 
 To enter the additional upgrade setting menu, click on the "Upgrade settings" button:
 
-![](./img/image-2023-8-9_13-9-47.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-8-9_13-9-47.webp)
 
 This will allow you to alter the "Reliable write" configuration:
 
-![](./img/image-2023-8-9_13-11-7.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image-2023-8-9_13-11-7.webp)
 
 When enabled, the checkbox allows you to make the Bluetooth upgrade process "slower" but more "reliable" (where additional exchange and verification steps take place between the phone and the tag).
 
@@ -424,7 +424,7 @@ When enabled, the checkbox allows you to make the Bluetooth upgrade process "slo
 
 In the right upper corner of the screen, you have an option to import/export current settings:
 
-![](./img/image2021-7-7_14-15-43.webp)
+![](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/img/image2021-7-7_14-15-43.webp)
 
 If you press the export button, the app will open the phone's file menu, where you can name the configuration file and save it.
 

@@ -6,7 +6,7 @@
 
 A denial-of-service (DoS) or distributed denial-of-service (DDoS) attack is a malicious attempt to disrupt normal traffic of a targeted server, service, or network by overwhelming the target or its surrounding infrastructure with a flood of Internet traffic. There are several types of DDoS attacks, for example, HTTP flood, SYN flood, DNS amplification, etc.
 
-![](./img/ddos-attack-diagram.jpg)
+![](/docs/firewall-and-quality-of-service/user-guides/img/ddos-attack-diagram.jpg)
 
 ## Protection against DDoS
 

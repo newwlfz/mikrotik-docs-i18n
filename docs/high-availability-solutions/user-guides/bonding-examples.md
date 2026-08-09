@@ -12,7 +12,7 @@ This is an example of aggregating multiple network interfaces into a single pipe
 
 Two routers R1 and R2 are interconnected via wireless links. Wireless interfaces on both sides have assigned IP addresses.
 
-### ![](./img/bonding-examples-01.webp)Configuration
+### ![](/docs/high-availability-solutions/user-guides/img/bonding-examples-01.webp)Configuration
 
 Bonding could be used only on OSI layer 2 (Ethernet level) connections. Thus we need to create EoIP interfaces on each of the wireless links. This is done as follows:
 

@@ -107,7 +107,7 @@ After you make sure that the container has been added and the status has changed
 
 Open your preferred web browser and access the Home-Assistant management portal by specifying the management port ":8123":
 
-![](./img/container-homeassistant-01.webp)
+![](/docs/containers/user-guides/img/container-homeassistant-01.webp)
 
 Proceed with the setup. More information is explained in the [Home-Assistant onboarding guide](https://www.home-assistant.io/getting-started/onboarding/).
 

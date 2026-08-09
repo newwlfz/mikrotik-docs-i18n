@@ -184,7 +184,7 @@ Wait for a couple of minutes for the container to fully load.
 
 After the container is started and installed, access it using any browser, by going to → [http://192.168.88.1:9090](http://192.168.88.1:9090) (where the IP address is the address used in the DNAT rule):
 
-![](./img/container-thingsboard-mqtt-http-server-01.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-01.webp)
 
 By default, credentials are (Username/Password):
 
@@ -197,15 +197,15 @@ The login prompt should confirm that the server is running.
 
 Log in with the **tenant** and create a new device. Go to the "**Devices**" menu, click on the "**+**" (Add Device) button and choose the "**Add new device**" option:
 
-![](./img/container-thingsboard-mqtt-http-server-02.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-02.webp)
 
  Name it, however you like, and click on "**Add**":
 
-![](./img/container-thingsboard-mqtt-http-server-03.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-03.webp)
 
 Check your device access token by clicking on the device you've just created and selecting the "**Manage credentials**" setting (copy the access token generated or type in your own →  "YOUR\_TOKEN"):
 
-![](./img/container-thingsboard-mqtt-http-server-04.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-04.webp)
 
 After these steps, go to the RouterOS settings (back to CHR settings) and create a new [MQTT broker](../../internet-of-things/mqtt/index.md) (**make sure that you have the IoT package installed** because otherwise, you will not have this menu):
 
@@ -221,7 +221,7 @@ Publish a static test MQTT message in the JSON format:
 
 Confirm that the message was posted:
 
-![](./img/container-thingsboard-mqtt-http-server-05.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-05.webp)
 
 ## Enabling HTTPS and SSL MQTT
 
@@ -478,7 +478,7 @@ Make sure to wait for the container to stop (`status=stopped` should be shown af
 
 Now, you should be able to access [https://your\_IP:9090](https://192.168.88.1) (where the IP address is the address used in the DNAT rule):
 
-![](./img/container-thingsboard-mqtt-http-server-06.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-06.webp)
 
 :::info
 Since we are using a self-signed certificate that was not issued by a trusted authority, an error indicating that the connection is not secure might appear but you can view the certificate through the browser (confirm it is the one), accept the risk, and continue.
@@ -512,7 +512,7 @@ Publish a static test MQTT message in the JSON format:
 
 Confirm that it was received by the MQTT broker:
 
-![](./img/container-thingsboard-mqtt-http-server-07.webp)
+![](/docs/containers/user-guides/img/container-thingsboard-mqtt-http-server-07.webp)
 
 #### Testing with another device
 

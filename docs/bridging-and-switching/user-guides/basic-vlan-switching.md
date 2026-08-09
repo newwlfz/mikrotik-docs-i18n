@@ -8,7 +8,7 @@
 
 Many MikroTik devices come with built-in switch chips that support hardware-level VLAN switching. This enables wire-speed performance when using VLANs, provided the appropriate configuration method is employed. Since the configuration method varies across different models, this guide focuses on setting up a basic trunk/access port with a management port from the trunk port using different devices with the right configuration to achieve the best performance and to fully utilize the available hardware components.
 
-![Basic VLAN Switching](./img/basic-vlan-switching-01.webp)
+![Basic VLAN Switching](/docs/bridging-and-switching/user-guides/img/basic-vlan-switching-01.webp)
 
 ## MikroTik devices with Marvell Prestera switch and RTL8367, 88E6393X, 88E6191X, 88E6190, MT7621, MT7531 and EN7523 switch chips
 

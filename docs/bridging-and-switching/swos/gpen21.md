@@ -31,7 +31,7 @@ SwOS Lite is an operating system designed specifically for the administration of
 
 Open your web browser and enter the IP address of your device (192.168.88.1 by default) and a login screen will appear. The device can also run a DHCP client, see if a different IP address has been assigned by the DHCP server.
 
-![Gpen21 login](./img/gpen21-01.webp)
+![Gpen21 login](/docs/bridging-and-switching/swos/img/gpen21-01.webp)
 
 SwOS default IP address: **192.168.88.1**, user name: **admin** and there is no password.
 
@@ -79,7 +79,7 @@ System Tab performs the following functions:
 
 > **Note:** SwOS uses a simple algorithm to ensure TCP/IP communication - it just replies to the same IP and MAC address packet came from. This way there is no need for Default Gateway on the device itself.
 
-![Gpen21 system](./img/gpen21-02.webp)
+![Gpen21 system](/docs/bridging-and-switching/swos/img/gpen21-02.webp)
 
 | Property | Description |
 | --- | --- |
@@ -101,7 +101,7 @@ System Tab performs the following functions:
 
 ### Password and Backup
 
-![Swos system3 css326](./img/gpen21-03.webp)
+![Swos system3 css326](/docs/bridging-and-switching/swos/img/gpen21-03.webp)
 
 ---
 
@@ -109,7 +109,7 @@ System Tab performs the following functions:
 
 Link Tab allows you to configure each interface settings and monitor the link status.
 
-![Gpen21 link](./img/gpen21-04.webp)
+![Gpen21 link](/docs/bridging-and-switching/swos/img/gpen21-04.webp)
 
 | Property | Description |
 | --- | --- |
@@ -133,7 +133,7 @@ The device supports Jumbo frames up to 10222 bytes. Manually decreasing the MTU 
 
 The SFP tab allows you to monitor the status of SFP modules.
 
-![Gpen21 sfp](./img/gpen21-05.webp)
+![Gpen21 sfp](/docs/bridging-and-switching/swos/img/gpen21-05.webp)
 
 ---
 
@@ -141,7 +141,7 @@ The SFP tab allows you to monitor the status of SFP modules.
 
 Forwarding Tab provides advanced forwarding options among device ports, port locking, bandwidth limit, and broadcast storm control features.
 
-![Gpen21 forwarding](./img/gpen21-06.webp)
+![Gpen21 forwarding](/docs/bridging-and-switching/swos/img/gpen21-06.webp)
 
 | Property | Description |
 | --- | --- |
@@ -158,11 +158,11 @@ Forwarding Tab provides advanced forwarding options among device ports, port loc
 
 These menus provide detailed information about received and transmitted packets.
 
-![Gpen21 stats](./img/gpen21-07.webp)
+![Gpen21 stats](/docs/bridging-and-switching/swos/img/gpen21-07.webp)
 
-![Gpen21 errors](./img/gpen21-08.webp)
+![Gpen21 errors](/docs/bridging-and-switching/swos/img/gpen21-08.webp)
 
-![Gpen21 hist](./img/gpen21-09.webp)
+![Gpen21 hist](/docs/bridging-and-switching/swos/img/gpen21-09.webp)
 
 ---
 
@@ -170,7 +170,7 @@ These menus provide detailed information about received and transmitted packets.
 
 VLAN configuration for device ports.
 
-![Gpen21 vlan](./img/gpen21-10.webp)
+![Gpen21 vlan](/docs/bridging-and-switching/swos/img/gpen21-10.webp)
 
 | Property | Description |
 | --- | --- |
@@ -181,7 +181,7 @@ VLAN configuration for device ports.
 
 VLAN membership configuration for device ports.
 
-![Gpen21 vlans](./img/gpen21-11.webp)
+![Gpen21 vlans](/docs/bridging-and-switching/swos/img/gpen21-11.webp)
 
 | Property | Description |
 | --- | --- |
@@ -194,33 +194,33 @@ The VLAN configuration examples are taken from the [CSS610 switch user manual](h
 
 #### Trunk and Access Ports
 
-![Access ports](./img/gpen21-12.webp)
+![Access ports](/docs/bridging-and-switching/swos/img/gpen21-12.webp)
 
 1. In the VLANs menu add VLAN entries and specify port membership.
 
-![Css610 vlans](./img/gpen21-13.webp)
+![Css610 vlans](/docs/bridging-and-switching/swos/img/gpen21-13.webp)
 
 1. In the VLAN menu configure Default VLAN ID on planned access ports (untagged), select the correct VLAN Receive setting (Port2 only tagged, Port6-8 only untagged) and enable strict VLAN filtering to ensure only allowed VLANs can pass through the ports.
 
-![Css610 vlan](./img/gpen21-14.webp)
+![Css610 vlan](/docs/bridging-and-switching/swos/img/gpen21-14.webp)
 
 #### Trunk and Hybrid Ports
 
-![Hybrid ports](./img/gpen21-15.webp)
+![Hybrid ports](/docs/bridging-and-switching/swos/img/gpen21-15.webp)
 
 1. In the VLANs menu add VLAN entries and specify port membership.
 
-![Css610 vlans hybrid](./img/gpen21-16.webp)
+![Css610 vlans hybrid](/docs/bridging-and-switching/swos/img/gpen21-16.webp)
 
 1. In the VLAN menu configure Default VLAN ID on planned hybrid ports (for untagged VLAN), select the correct VLAN Receive setting (Port2 only tagged, Port6-8 any) and enable strict VLAN filtering to ensure only allowed VLANs can pass through the ports.
 
-![Css610 vlan hybrid](./img/gpen21-17.webp)
+![Css610 vlan hybrid](/docs/bridging-and-switching/swos/img/gpen21-17.webp)
 
 #### Management Access
 
 In this example, device management access on VLAN 200 will be created. The configuration scheme is the same as "**Trunk and Access Ports**" and steps **1., 2.** are identical. The additional **3rd** step requires specifying the management VLAN ID in the System menu. After applying the configuration, the device will only respond to tagged VLAN 200 packets on Port2 and untagged packets on Port6. The DHCP client will also work in the specified VLAN ID.
 
-![Css610 system vlan](./img/gpen21-18.webp)
+![Css610 system vlan](/docs/bridging-and-switching/swos/img/gpen21-18.webp)
 
 > **Warning:** Changing management VLAN can completely disable access to the device management if VLAN settings are not correctly configured. Save a configuration backup before changing this setting and use [Reset and Reinstall](#reset-and-reinstall) in case management access is lost.
 
@@ -232,7 +232,7 @@ This table represents dynamically learned MAC address to port mapping entries. I
 
 Static entries will take over dynamic entries if a dynamic entry with the same MAC address already exists. Adding a static entry also provides access to more functionality.
 
-![Gpen21 hosts](./img/gpen21-19.webp)
+![Gpen21 hosts](/docs/bridging-and-switching/swos/img/gpen21-19.webp)
 
 **Static host properties**
 
@@ -262,7 +262,7 @@ Available SNMP data:
 - Interface statistics
 - Host table information
 
-![Swos snmp2 1](./img/gpen21-20.webp)
+![Swos snmp2 1](/docs/bridging-and-switching/swos/img/gpen21-20.webp)
 
 | Property | Description |
 | --- | --- |
@@ -277,7 +277,7 @@ Available SNMP data:
 
 An access control list (ACL) rule table is a very powerful tool allowing wire-speed packet filtering, forwarding, and VLAN tagging based on L2, L3, and L4 protocol header field conditions. Each rule contains a conditions part and an action part.
 
-![Gpen21 acl](./img/gpen21-21.webp)
+![Gpen21 acl](/docs/bridging-and-switching/swos/img/gpen21-21.webp)
 
 **Conditions part parameters**
 

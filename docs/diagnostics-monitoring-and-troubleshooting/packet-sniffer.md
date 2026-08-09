@@ -32,11 +32,11 @@ Columns: NAME, TYPE, SIZE, CREATION-TIME
 
 You can download captured packets from a file section. Then you can use a packet analyzer such as [Wireshark](https://www.wireshark.org/) to analyze a file:
 
-![](./img/packet-sniffer-01.webp)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/packet-sniffer-01.webp)
 
 If you are using packet streaming to a PC and are using Wireshark, to ensure you are only viewing the streamed data, you will need to apply a filter that matches the port the sniffer is using; by default, 37008 is used. In addition, we recommend using `filter-stream=yes`.
 
-![](./img/packet-sniffer-timestamp.png)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/packet-sniffer-timestamp.png)
 
 :::warning
 Please note that sniffed packets will be available for 10 minutes. If you need them permanently, set a "file-name" to save them directly or issue a "save" command as described previously.

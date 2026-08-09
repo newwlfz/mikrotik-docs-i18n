@@ -6,7 +6,7 @@
 
 Starting from RouterOS v6.45, it is possible to establish an IKEv2 secured tunnel to NordVPN servers using EAP authentication. This manual page explains how to configure it.
 
-![](./img/ikev2-eap-between-nordvpn-and-routeros-01.webp)
+![](/docs/virtual-private-networks/ipsec/img/ikev2-eap-between-nordvpn-and-routeros-01.webp)
 
 ### Installing the root CA
 
@@ -32,7 +32,7 @@ Flags: K - private-key, L - crl, C - smart-card-key, A - authority, I - issued, 
 
 Navigate to [https://nordvpn.com/servers/tools/](https://nordvpn.com/servers/tools/) and find out the recommended server's hostname. In this case, it is lv20.nordvpn.com.
 
-![](./img/ikev2-eap-between-nordvpn-and-routeros-02.webp)
+![](/docs/virtual-private-networks/ipsec/img/ikev2-eap-between-nordvpn-and-routeros-02.webp)
 
 ### Setting up the IPsec tunnel
 

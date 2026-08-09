@@ -39,7 +39,7 @@ GRE tunnel adds a 24-byte overhead (4-byte gre header + 20-byte IP header). GRE 
 
 The goal of this example is to get Layer 3 connectivity between two remote sites over the internet
 
-![](./img/gre-01.webp)
+![](/docs/virtual-private-networks/img/gre-01.webp)
 
 We have two sites, **Site1** with a local network range 10.1.101.0/24 and **Site2** with a local network range 10.1.202.0/24.
 

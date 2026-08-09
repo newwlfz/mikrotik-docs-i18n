@@ -52,12 +52,12 @@ These ZeroTier recommended guidelines are consistent with the vast majority of t
 
 ## Configuration example
 
-![](./img/zerotier-01.webp)
+![](/docs/virtual-private-networks/img/zerotier-01.webp)
 
 By default, ZeroTier is designed to be zero-configuration. A user can start a new ZeroTier node without having to write configuration files or provide the IP addresses of other nodes. It’s also designed to be fast. Any two devices in the world should be able to locate each other and communicate almost instantly so the following example will enable ZeroTier on a RouterOS device and connect one mobile phone using the ZeroTier application.
 
 1. Register on [my.zerotier.com](https://my.zerotier.com/) and **Create A Network**, obtain the *Network ID*, in this example: *1d71939404912b40*.  
-   ![](./img/zerotier-02.webp)
+   ![](/docs/virtual-private-networks/img/zerotier-02.webp)
 2. [Download](https://mikrotik.com/download) and Install ZeroTier NPK package in RouterOS, you can find it under the "Extra packages", upload the package to the device and reboot the unit.
 3. Enable the default (official) ZeroTier instance:
 
@@ -90,7 +90,7 @@ By default, ZeroTier is designed to be zero-configuration. A user can start a ne
 
 7. Install a ZeroTier client on your smartphone or computer, follow the ZeroTier manual on how to connect to the same network from there.
 8. If **"****Access Control"** is set to **"Private"**, you must authorize nodes before they become members:  
-   ![](./img/zerotier-03.webp)
+   ![](/docs/virtual-private-networks/img/zerotier-03.webp)
 
 9. ```ros
    [admin@MikroTik] > `/ip/address/print` where interface~"zero"
@@ -190,7 +190,7 @@ Every ZeroTier instance has a self-hosting network controller that can be used t
 
 In the following example, we will use the RouterOS built-in ZeroTier controller to send our new network hosts appropriate certificates, credentials, and configuration information. The controller will operate from the "RouterOS Home" device and we will join 3 units to our network: mobile phone, laptop, RouterOS Office device, but theoretically, you can join up to 100 devices in one network.
 
-![](./img/zerotier-04.webp)
+![](/docs/virtual-private-networks/img/zerotier-04.webp)
 
 ### RouterOS Home
 
@@ -316,6 +316,6 @@ DAc 172.27.27.0/24  ZT-interface         0
 Also all other new hosts you have to authorize under the */zerotier/controller/member/* section.
 :::
 
-![](./img/zerotier-05.webp)
+![](/docs/virtual-private-networks/img/zerotier-05.webp)
 
-![](./img/zerotier-network-config.png)
+![](/docs/virtual-private-networks/img/zerotier-network-config.png)

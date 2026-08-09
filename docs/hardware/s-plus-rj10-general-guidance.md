@@ -20,15 +20,15 @@ Due to high operating temperatures, it is recommended to use S+RJ10 transceivers
 
 As mentioned, S+RJ10 heat up more than regular transceivers, and keeping them side by side can result in overheating, especially in devices with 4 linear SFP cages. It is recommended to place S+RJ10 in every second interface while keeping an optical transceiver or an empty port in between them.
 
-![](./img/s-plus-rj10-general-guidance-01.webp)
+![](/docs/hardware/img/s-plus-rj10-general-guidance-01.webp)
 
 Even when using devices that come with separated SFP+ cages, for example, CRS309-1G-8S+, it is still not recommended to deploy the S+RJ10 transceivers beside each other. Use S+RJ10 in every second interface to avoid transceiver overheating, which may cause unpredictable behavior.
 
-![](./img/s-plus-rj10-general-guidance-02.webp)Recommended S+RJ10 placement![](./img/s-plus-rj10-general-guidance-03.webp)It is not recommended to place transceivers side by side
+![](/docs/hardware/img/s-plus-rj10-general-guidance-02.webp)Recommended S+RJ10 placement![](/docs/hardware/img/s-plus-rj10-general-guidance-03.webp)It is not recommended to place transceivers side by side
 
 Devices that come with 4 or 8-block SFP+ cages are not exceptions. It is recommended to use one S+RJ10 transceiver per 4xSFP+ cage block and avoid placing them side by side. Keep at least one vertical row empty (without S+RJ10) after plugging the S+RJ10 transceiver.
 
-![](./img/s-plus-rj10-general-guidance-04.webp)Recommended S+RJ10 placement![](./img/s-plus-rj10-general-guidance-05.webp)We do not recommend placing transceivers side by side
+![](/docs/hardware/img/s-plus-rj10-general-guidance-04.webp)Recommended S+RJ10 placement![](/docs/hardware/img/s-plus-rj10-general-guidance-05.webp)We do not recommend placing transceivers side by side
 
 ### Using the S+RJ10 Side by Side or with passive cooling devices
 

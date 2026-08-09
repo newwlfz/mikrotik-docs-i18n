@@ -190,7 +190,7 @@ RouterOS allows setting any bridge priority value between 0 and 65535. However, 
 
 #### Root path cost example
 
-![Root Path](./img/spanning-tree-protocol-01.webp)
+![Root Path](/docs/bridging-and-switching/user-guides/img/spanning-tree-protocol-01.webp)
 
 This example outlines how the root path cost works. SW1 will be the root bridge, due to it having the lowest priority of 0x1000, as the root bridge. Each bridge will calculate the path cost to the root bridge. When calculating root path cost, bridges take into account the configured path cost on their ports + root path cost advertised by neighboring bridges.
 
@@ -210,7 +210,7 @@ You can configure path cost on the root bridge, but it will only be taken into a
 
 #### STP example
 
-![STP Example 1](./img/spanning-tree-protocol-02.webp)
+![STP Example 1](/docs/bridging-and-switching/user-guides/img/spanning-tree-protocol-02.webp)
 
 In this example, we want to ensure Layer2 redundancy for connections from ServerA to ServerB. If a port is connected to a device that is not a bridge and not running (R)STP, then this port is considered as an edge port. In this case, ServerA and ServerB are connected to an edge port. This is possible by using STP in a network. Below are configuration examples for each switch:
 
@@ -292,7 +292,7 @@ MSTP works in groups called regions. For each region there will be a regional ro
 
 It is possible to create an MSTP enabled network without regions, though to be able to do load balancing per VLAN group it is required for a bridge to receive a BPDU from a bridge that is connected to it with the same parameters mentioned above. In RouterOS the default region name is empty and the region revision is 0, which are valid values, but you must make sure that they match to get multiple bridges in a single MSTP region. A region cannot exist if its bridges are scattered over the network; these bridges must be connected in at least one way, in which they can send and receive BPDUs without leaving the region, for example, if a bridge with different region related parameters is between two bridges that have the same region related parameters, then there will exist at least 3 different MSTP regions.
 
-![MSTP Topology](./img/spanning-tree-protocol-03.webp)
+![MSTP Topology](/docs/bridging-and-switching/user-guides/img/spanning-tree-protocol-03.webp)
 
 The downside of running every single bridge in a single MSTP region is the excess CPU cycles. In comparison, PVST(+) creates a Spanning Tree Instance for each VLAN ID that exists on the network, since there will be very limited paths that can exist in a network, this approach creates a lot of overhead and unnecessary CPU cycles. This also means that this approach does not scale very well and can overload switches with not very powerful CPUs. MSTP solves this problem by dividing the network into MSTP regions, where each bridge inside this region will exchange and process information about VLANs that exist inside the same region, but will run a single instance of Spanning Tree Protocol in the background to maintain the network topology between regions. This approach has been proven to be much more effective and much more scalable. This means that regions should be used for larger networks to reduce CPU cycles.
 
@@ -427,7 +427,7 @@ It is also possible to monitor a certain MST Override entry. This is useful to d
 
 Let's say that we need to design a topology and configure MSTP in a way that VLAN 10,20 will be forwarded in one path, but VLAN 30,40 will be forwarded in a different path, while all other VLAN IDs will be forwarded in one of those paths. This can easily be done by setting up MST Instances and assigning port path costs. Below you can find a network topology that needs to do load balancing per VLAN group with 3 separate regions as an example:
 
-![MSTP Example](./img/spanning-tree-protocol-04.webp)
+![MSTP Example](/docs/bridging-and-switching/user-guides/img/spanning-tree-protocol-04.webp)
 
 The topology of an MSTP-enabled network with load balancing per VLAN group
 

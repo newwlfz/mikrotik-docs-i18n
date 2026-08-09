@@ -82,7 +82,7 @@ add bridge=bridge1 hw=yes interface=ether2 learn=yes
 
 When running [Sniffer](../../diagnostics-monitoring-and-troubleshooting/packet-sniffer.md) or [Torch](../../diagnostics-monitoring-and-troubleshooting/torch.md) tools to capture packets, you might notice that barely any packets are visible, only some unicast packets, but mostly broadcast/multicast packets are captured, while the interfaces report that much larger traffic is flowing through certain interfaces than the traffic that was captured. If you add two or more Ethernet interfaces to a bridge and enable [Hardware Offloading](../#bridge-hardware-offloading), then the switch chip will be used to forward packets between ports. To understand why only some packets are captured, we must first examine how the switch chip is interconnected with the CPU. In this example, we can use a block diagram from a generic 5-Port Ethernet router:
 
-![Switch Chip Block Diagram](./img/layer2-misconfiguration-01.webp)
+![Switch Chip Block Diagram](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-01.webp)
 
 For this device, each Ethernet port is connected to the switch chip and the switch chip is connected to the CPU using the CPU port (sometimes called the **switch-cpu** port). For packets to be visible in Sniffer or Torch tools, the packet must be sent from an Ethernet port to the CPU port, this means that the packet must be destined to the CPU port (destination MAC address of the packet matches the bridge's MAC address) or the packet's MAC address has not been learnt (packet is flooded to all ports), this behavior is because of **MAC learning**.
 
@@ -114,7 +114,7 @@ If the packet is sent to the CPU, then the packet must be processed by the CPU; 
 
 Consider the following scenario: you have created a LAG interface to increase total bandwidth between 2 network nodes; usually, these are switches. For testing purposes to make sure that the LAG interface is working properly, you have attached two servers that transfer data, most commonly the well-known network performance measurement tool [Iperf](https://en.wikipedia.org/wiki/Iperf) is used to test such setups. For example, you might have made a LAG interface out of two Gigabit Ethernet ports, which gives you a virtual interface that can load balance traffic over both interfaces and theoretically reach 2Gbps throughput, while the servers are connected using a 10Gbps interface, for example, SFP+.
 
-![LACP Setup](./img/layer2-misconfiguration-02.webp)
+![LACP Setup](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-02.webp)
 
 ### Configuration
 
@@ -195,7 +195,7 @@ Change the interface on which the VLAN interface will be listening for traffic, 
 
 Consider the following scenario: you have a set of interfaces (don't have to be physical interfaces) and you want all of them to be in the same Layer2 segment. The solution is to add them to a single bridge, but you require that traffic from one port tags all traffic into a certain VLAN. This can be done by creating a VLAN interface on top of the bridge interface and by creating a separate bridge that contains this newly created VLAN interface and an interface that is supposed to add a VLAN tag to all received traffic. A network diagram can be found below:
 
-![VLAN on Bridge in Bridge](./img/layer2-misconfiguration-03.webp)
+![VLAN on Bridge in Bridge](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-03.webp)
 
 ### Configuration
 
@@ -317,7 +317,7 @@ By enabling `vlan-filtering` you will be filtering out traffic destined to the C
 
 A very similar case to [VLAN on a bridge in a bridge](layer2-misconfiguration.md#vlan-on-a-bridge-in-a-bridge): consider the following scenario. You have a couple of switches in your network and you are using VLANs to isolate certain Layer2 domains and connect these switches to a router that assigns addresses and routes the traffic to the world. For redundancy, you connect all switches directly to the router and have enabled RSTP, but to be able to set up DHCP Server you decide that you can create a VLAN interface for each VLAN on each physical interface that is connected to a switch and add these VLAN interfaces in a bridge. A network diagram can be found below:
 
-![Bridged VLANs](./img/layer2-misconfiguration-04.webp)
+![Bridged VLANs](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-04.webp)
 
 ### Configuration
 
@@ -572,7 +572,7 @@ This issue has been resolved since **RouterOS v7.15**. Dynamic VLANs are now alw
 
 You need to create a network setup where multiple clients are connected to separate access ports and isolated by different VLANs. This traffic should be tagged and sent to the appropriate trunk port. Access ports are configured using a pvid property. As the trunk port is used on both VLANs, you decide to simplify configuration by adding a single bridge VLAN table entry and separating VLANs by a comma. This is especially useful when tagged trunk ports are used across large numbers of VLANs or even certain VLAN ranges (e.g. vlan-id=100-200). See the network diagram and configuration below.
 
-![Switch Multiple Untagged](./img/layer2-misconfiguration-05.webp)
+![Switch Multiple Untagged](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-05.webp)
 
 ### Configuration
 
@@ -660,7 +660,7 @@ set VLAN99 mtu=9000
 
 Consider the following scenario: you have multiple devices in your network. Most of them are used as a switch/bridge in your network, and there are certain endpoints that are supposed to receive and process traffic. To decrease the overhead in your network, you have decided to increase the MTU size, so you set a larger MTU size on both endpoints, but you start to notice that some packets are being dropped.
 
-![MTU Issues](./img/layer2-misconfiguration-06.webp)
+![MTU Issues](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-06.webp)
 
 ### Configuration
 
@@ -757,7 +757,7 @@ The IEEE 802.1x standard is meant to be used between a switch and a client direc
 
 Consider the following scenario: you have set up multiple Wireless links and to achieve maximum throughput and yet to achieve redundancy you have decided to place Ethernet interfaces into a bond and depending on the traffic that is being forwarded you have chosen a certain bonding mode. This scenario can be applied to any case where a bonding interface is created between links that are not directly connected to each other.
 
-![LACP over WLAN](./img/layer2-misconfiguration-07.webp)
+![LACP over WLAN](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-07.webp)
 
 ### Configuration
 
@@ -835,7 +835,7 @@ LACP (802.3ad) is not meant to be used in setups, where devices' bonding slaves 
 
 Consider the following scenario: you set up a link between two devices. This can be any link, an Ethernet cable, a wireless link, a tunnel or any other connection. You decide that you want to test the link's bandwidth, but for convenience reasons, you decide to start testing the link with the same devices that are running the link.
 
-![Bad Bandwidth Setup](./img/layer2-misconfiguration-08.webp)
+![Bad Bandwidth Setup](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-08.webp)
 
 ### Problem
 
@@ -852,7 +852,7 @@ Below is a list of possible symptoms that might be a result of this kind of misc
 
 Use a proper testing method. Don't use Bandwidth-test to test large capacity links and don't run any tool that generates traffic on the same device you are testing. Design your network properly so you can attach devices that will generate and receive traffic on both ends. If you are familiar with **Iperf**, then this concept should be clear. Remember that in the real world, a router or a switch does not generate large amounts of traffic (at least it shouldn't, otherwise, it might indicate an existing security issue), a server/client generates the traffic while a router/switch forwards the traffic (and does some manipulations to the traffic in appropriate cases).
 
-![Good Bandwidth Setup](./img/layer2-misconfiguration-09.webp)
+![Good Bandwidth Setup](/docs/bridging-and-switching/user-guides/img/layer2-misconfiguration-09.webp)
 
 ## Bridge split-horizon usage
 

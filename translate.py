@@ -75,27 +75,6 @@ def get_locales_config():
         return {"supported": {}, "active": ["zh-Hans"], "prompts": {}}
 
 
-def fix_content_links(content, rel_path):
-    """
-    后处理：
-    1. 将官方绝对链接替换为相对路径（镜像站内部）
-    2. 将本地相对图片链接替换为官方 CDN 绝对 URL（避免下载图片）
-    """
-    # 1. 替换文档内部绝对链接为相对路径
-    content = re.sub(r'https?://manual\.mikrotik\.com/docs/([a-zA-Z0-9_\-/\#]+)', r'/docs/\1', content)
-
-    # 2. 替换图片链接：./img/  ->  官方对应目录的 img/
-    dir_name = os.path.dirname(rel_path)
-    if dir_name:
-        base_url = f"https://manual.mikrotik.com/docs/{dir_name}/"
-        content = re.sub(r'\(\./img/', f'({base_url}img/', content)
-    else:
-        # 根目录文档（如 introduction.md）
-        content = re.sub(r'\(\./img/', '(https://manual.mikrotik.com/docs/img/', content)
-
-    return content
-
-
 def is_fatal_error(status_code):
     """判断是否为致命错误（401/402）"""
     return status_code in (401, 402)
@@ -142,8 +121,7 @@ def call_deepseek_api(system_prompt, text_content, lang, rel_path):
             if response.status_code == 200:
                 res_json = response.json()
                 translated = res_json['choices'][0]['message']['content']
-                # 🆕 应用后处理（链接和图片）
-                translated = fix_content_links(translated, rel_path)
+                # 直接返回翻译结果，无需额外处理
                 return translated, None, None
 
             # 处理错误码

@@ -12,7 +12,7 @@ The application is available for both Android and iOS operating systems. It is a
 
 MikroTik application is available to download on the App Store and Google Play, please see our web [page Software section](https://mikrotik.com/mobile_app) for direct download links or scan the QR code.
 
-| ![](./img/mikrotik-mobile-app-01.webp) |
+| ![](/docs/management-tools/img/mikrotik-mobile-app-01.webp) |
 | --- |
 
 Use the MikroTik smartphone app to configure your router in the field, or to apply the most basic initial settings for your MikroTik home access point.

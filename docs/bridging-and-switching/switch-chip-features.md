@@ -107,7 +107,7 @@ Port switching in RouterOS v6.41 and newer is done using the bridge configuratio
 
 Ether1 port on RB450G/RB435G/RB850Gx2 devices has a feature that allows it to be removed/added to the default switch group. This setting is available on the `/interface/ethernet/switch` menu. By default ether1 port will be included in the switch group.
 
-![Switch 4](./img/switch-chip-features-01.webp)
+![Switch 4](/docs/bridging-and-switching/img/switch-chip-features-01.webp)
 
 | Property | Description |
 | :-- | :-- |
@@ -360,7 +360,7 @@ Switch chips with VLAN table support (**QCA8337**, **Atheros8327**, **Atheros831
 
 In some scenarios, you might need to forward all traffic to an uplink port while all other ports are isolated from each other. This kind of setup is called **Private VLAN** configuration. The **Switch** will forward all Ethernet frames directly to the uplink port allowing the **Router** to filter unwanted packets and limit access between devices that are behind switch ports.
 
-![Port Isolation](./img/switch-chip-features-02.webp)
+![Port Isolation](/docs/bridging-and-switching/img/switch-chip-features-02.webp)
 
 To configure switch port isolation, you need to switch all required ports:
 
@@ -399,7 +399,7 @@ In some scenarios you might need to isolate a group of devices from other groups
 Port isolation is only available between ports that are members of the same switch.
 :::
 
-![Port Isolation 2](./img/switch-chip-features-03.webp)
+![Port Isolation 2](/docs/bridging-and-switching/img/switch-chip-features-03.webp)
 
 To configure isolated switch groups you must first switch all ports:
 
@@ -565,7 +565,7 @@ For VLAN related matchers or VLAN related action parameters to work on the **88E
 
 RouterBOARDs with Atheros switch chips can be used for 802.1Q Trunking. This feature in RouterOS v6 is supported by **QCA8337, Atheros8316, Atheros8327, Atheros8227** and **Atheros7240** switch chips. In this example, **ether3**, **ether4,** and **ether5** interfaces are access ports, while **ether2** is a trunk port. VLAN IDs for each access port: ether3 - 200, ether4 - 300, ether5 - 400.
 
-![Access Ports](./img/switch-chip-features-04.webp)
+![Access Ports](/docs/bridging-and-switching/img/switch-chip-features-04.webp)
 
 Switch together the required ports:
 
@@ -615,7 +615,7 @@ On **QCA8337** and **Atheros8327** switch chips, a default `vlan-header=leave-as
 
 VLAN Hybrid ports can forward both tagged and untagged traffic. This configuration is supported only by some Gigabit switch chips (**QCA8337, Atheros8327**).
 
-![Hybrid Ports](./img/switch-chip-features-05.webp)
+![Hybrid Ports](/docs/bridging-and-switching/img/switch-chip-features-05.webp)
 
 Switch together the required ports:
 
@@ -780,7 +780,7 @@ This configuration example is not possible for devices with the **Atheros8316** 
 
 Many MikroTik devices come with a built-in switch chip that can be used to greatly improve overall throughput when configured properly. Devices with a switch chip can be used as a router and a switch at the same time. This gives you the possibility to use a single device instead of multiple devices for your network.
 
-![Switch Router](./img/switch-chip-features-06.webp)
+![Switch Router](/docs/bridging-and-switching/img/switch-chip-features-06.webp)
 
 For this type of setup to work, you must switch all required ports together
 

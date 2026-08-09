@@ -16,7 +16,7 @@ SwOS is managed exclusively through a web browser (HTTP) over IPv4. Console acce
 
 Open a web browser and enter the default management IP address.
 
-![Swos login css326](./img/crs3-01.webp)
+![Swos login css326](/docs/bridging-and-switching/swos/img/crs3-01.webp)
 
 * **Default IP Address**: `192.168.88.1`
 * **Default Username**: `admin`
@@ -28,7 +28,7 @@ Open a web browser and enter the default management IP address.
 
 The System tab manages general configuration parameters, device discovery options, and administrative security.
 
-![Swos system css326](./img/crs3-02.webp)
+![Swos system css326](/docs/bridging-and-switching/swos/img/crs3-02.webp)
 
 ### System Management Settings
 
@@ -41,19 +41,19 @@ The System tab manages general configuration parameters, device discovery option
 | **Allow From Ports** | Limits web access to designated physical switch interfaces. |
 | **Allow From VLAN** | Restricts access to a specific incoming VLAN ID profile. |
 
-![SwOS Management](./img/crs3-03.webp)
+![SwOS Management](/docs/bridging-and-switching/swos/img/crs3-03.webp)
 
 ### DHCP & PPPoE Snooping
 
 SwOS features built-in security mechanics to block unauthorized or rogue DHCP servers and PPPoE discovery sequences on specified untrusted interfaces.
 
-![CSS326 DHCP Snooping](./img/crs3-04.webp)
+![CSS326 DHCP Snooping](/docs/bridging-and-switching/swos/img/crs3-04.webp)
 
 ### Configuration Security and Maintenance
 
 The lower section handles backups and administrative passwords.
 
-![Swos system3 css326](./img/crs3-05.webp)
+![Swos system3 css326](/docs/bridging-and-switching/swos/img/crs3-05.webp)
 
 * **Change Password**: Updates the device access keys.
 * **Backup Configuration**: Saves current settings to a local file.
@@ -65,7 +65,7 @@ The lower section handles backups and administrative passwords.
 
 The Link tab configures physical link parameters and monitors active connection properties for each interface.
 
-![Swos link css326](./img/crs3-06.webp)
+![Swos link css326](/docs/bridging-and-switching/swos/img/crs3-06.webp)
 
 * **Link Profiles**: Manage interface states, toggle speed/duplex auto-negotiation, and control flow control pause frames.
 
@@ -75,7 +75,7 @@ The Link tab configures physical link parameters and monitors active connection 
 
 *(Available on devices supporting Power over Ethernet distribution features)*
 
-![SwOS PoE](./img/crs3-07.webp)
+![SwOS PoE](/docs/bridging-and-switching/swos/img/crs3-07.webp)
 
 * Supports configuring power delivery settings (`auto`, `on`, `off`) and establishing port prioritization during power constraint events.
 
@@ -85,7 +85,7 @@ The Link tab configures physical link parameters and monitors active connection 
 
 Provides visual diagnostics for connected SFP/SFP+ optical transceivers.
 
-![Swos sfp1 css326](./img/crs3-08.webp)
+![Swos sfp1 css326](/docs/bridging-and-switching/swos/img/crs3-08.webp)
 
 * Monitors internal diagnostics such as operating temperatures, laser supply voltages, TX/RX power levels, and hardware serialization strings.
 
@@ -95,15 +95,15 @@ Provides visual diagnostics for connected SFP/SFP+ optical transceivers.
 
 Manages Layer 2 packet-forwarding tables across the switching architecture.
 
-![Swos forw css326](./img/crs3-09.webp)
-![Swos ivl system](./img/crs3-10.webp)
+![Swos forw css326](/docs/bridging-and-switching/swos/img/crs3-09.webp)
+![Swos ivl system](/docs/bridging-and-switching/swos/img/crs3-10.webp)
 
 ### Port Isolation and Isolated Groups
 
 Port isolation splits broadcast domains internally, controlling client communications without adding subnet layers.
 
-![SwOS Isolated Groups](./img/crs3-11.webp)
-![SwO isolation example3](./img/crs3-12.webp)
+![SwOS Isolated Groups](/docs/bridging-and-switching/swos/img/crs3-11.webp)
+![SwO isolation example3](/docs/bridging-and-switching/swos/img/crs3-12.webp)
 
 ---
 
@@ -111,7 +111,7 @@ Port isolation splits broadcast domains internally, controlling client communica
 
 Bundles physical interfaces into single high-throughput channels using either dynamic LACP links or static arrays.
 
-![Swos lag css326](./img/crs3-13.webp)
+![Swos lag css326](/docs/bridging-and-switching/swos/img/crs3-13.webp)
 
 ---
 
@@ -119,7 +119,7 @@ Bundles physical interfaces into single high-throughput channels using either dy
 
 Provides loop avoidance architectures and structural redundancy parameters.
 
-![Swos rstp css326](./img/crs3-14.webp)
+![Swos rstp css326](/docs/bridging-and-switching/swos/img/crs3-14.webp)
 
 * Supports configuring custom bridge path costs utilizing classic short or modern long path evaluation structures.
 
@@ -133,34 +133,34 @@ VLAN routing rules split ingress packet sorting behavior from egress formatting 
 
 Handles port behaviors for incoming traffic streams.
 
-![Swos vlan css326](./img/crs3-15.webp)
+![Swos vlan css326](/docs/bridging-and-switching/swos/img/crs3-15.webp)
 
 * **VLAN Modes**: Configures entry constraints across `disabled`, `optional`, `enabled`, and `strict` modes.
 
-![Swos strict vlans](./img/crs3-16.webp)
+![Swos strict vlans](/docs/bridging-and-switching/swos/img/crs3-16.webp)
 
 * **Default VLAN ID**: Sets the Port VLAN ID (PVID) assigned to incoming untagged traffic.
 
-![Default vlan id](./img/crs3-17.webp)
+![Default vlan id](/docs/bridging-and-switching/swos/img/crs3-17.webp)
 
 ### VLANs Tab (Egress Mapping)
 
 Defines broadcast memberships and handling across target trunk ports.
 
-![Swos vlans css326](./img/crs3-18.webp)
-![Swos vlans menu](./img/crs3-19.webp)
+![Swos vlans css326](/docs/bridging-and-switching/swos/img/crs3-18.webp)
+![Swos vlans menu](/docs/bridging-and-switching/swos/img/crs3-19.webp)
 
 #### Traditional Mode Templates
 
 * **Access Interfaces**: Pairs standard untagged endpoints to specific target VLAN tags.
 
-  ![Access ports](./img/crs3-20.webp)
+  ![Access ports](/docs/bridging-and-switching/swos/img/crs3-20.webp)
 
 * **Trunk and Hybrid Options**: Blends multiple tagged streams with optional untagged native routing paths across primary core uplinks.
 
-  ![Hybrid ports](./img/crs3-21.webp)
-  ![Swos hybrid](./img/crs3-22.webp)
-  ![Swos hybrid vlan](./img/crs3-23.webp)
+  ![Hybrid ports](/docs/bridging-and-switching/swos/img/crs3-21.webp)
+  ![Swos hybrid](/docs/bridging-and-switching/swos/img/crs3-22.webp)
+  ![Swos hybrid vlan](/docs/bridging-and-switching/swos/img/crs3-23.webp)
 
 ---
 
@@ -168,7 +168,7 @@ Defines broadcast memberships and handling across target trunk ports.
 
 Enforces secure structural port communication profiles across shared infrastructure spaces.
 
-![SwOS Private VLAN](./img/crs3-24.webp)
+![SwOS Private VLAN](/docs/bridging-and-switching/swos/img/crs3-24.webp)
 
 ---
 
@@ -176,7 +176,7 @@ Enforces secure structural port communication profiles across shared infrastruct
 
 Exposes the active hardware Forwarding Database (FDB) dynamic entries discovered via incoming source addresses.
 
-![Swos shost css326](./img/crs3-25.webp)
+![Swos shost css326](/docs/bridging-and-switching/swos/img/crs3-25.webp)
 
 ---
 
@@ -184,9 +184,9 @@ Exposes the active hardware Forwarding Database (FDB) dynamic entries discovered
 
 Filters multicast distributions, tracking active group subscriptions to block multicast flooding.
 
-![IGMP snooping](./img/crs3-26.webp)
-![CSSxx IGMP](./img/crs3-27.webp)
-![IGMP vlantab](./img/crs3-28.webp)
+![IGMP snooping](/docs/bridging-and-switching/swos/img/crs3-26.webp)
+![CSSxx IGMP](/docs/bridging-and-switching/swos/img/crs3-27.webp)
+![IGMP vlantab](/docs/bridging-and-switching/swos/img/crs3-28.webp)
 
 ---
 
@@ -194,7 +194,7 @@ Filters multicast distributions, tracking active group subscriptions to block mu
 
 Enables monitoring via standard SNMP structures.
 
-![Swos snmp2 1](./img/crs3-29.webp)
+![Swos snmp2 1](/docs/bridging-and-switching/swos/img/crs3-29.webp)
 
 ---
 
@@ -202,7 +202,7 @@ Enables monitoring via standard SNMP structures.
 
 Executes hardware-offloaded filtering rules matching patterns across L2/L3/L4 frame headers to drop or redirect packets.
 
-![CRS326 ACL table](./img/crs3-30.webp)
+![CRS326 ACL table](/docs/bridging-and-switching/swos/img/crs3-30.webp)
 
 ---
 
@@ -210,9 +210,9 @@ Executes hardware-offloaded filtering rules matching patterns across L2/L3/L4 fr
 
 Tracks interface counters, dropped frames, error patterns, and detailed structural link history diagnostics.
 
-![Swos stat1 css326](./img/crs3-31.webp)
-![Swos stat2 css326](./img/crs3-32.webp)
-![Swos stat3 css326](./img/crs3-33.webp)
+![Swos stat1 css326](/docs/bridging-and-switching/swos/img/crs3-31.webp)
+![Swos stat2 css326](/docs/bridging-and-switching/swos/img/crs3-32.webp)
+![Swos stat3 css326](/docs/bridging-and-switching/swos/img/crs3-33.webp)
 
 ---
 
@@ -220,7 +220,7 @@ Tracks interface counters, dropped frames, error patterns, and detailed structur
 
 Monitors hardware operating environments, tracking system core temperatures and operating input voltages.
 
-![SwOS CRS328 health](./img/crs3-34.webp)
+![SwOS CRS328 health](/docs/bridging-and-switching/swos/img/crs3-34.webp)
 
 ---
 
@@ -228,9 +228,9 @@ Monitors hardware operating environments, tracking system core temperatures and 
 
 Many CRS hardware units support a dual-boot design, allowing toggle operations between running RouterOS or SwOS.
 
-![Router board settings](./img/crs3-35.webp)
-![Router board settings webfig](./img/crs3-36.webp)
-![Dual boot option](./img/crs3-37.webp)
+![Router board settings](/docs/bridging-and-switching/swos/img/crs3-35.webp)
+![Router board settings webfig](/docs/bridging-and-switching/swos/img/crs3-36.webp)
+![Dual boot option](/docs/bridging-and-switching/swos/img/crs3-37.webp)
 
 Swapping operating systems toward SwOS using the RouterOS CLI interface utilizes the following system command structure:
 
@@ -271,4 +271,4 @@ To reset SwOS configuration:
 2. Boot SwOS
 3. Choose "r - reset configuration"
 
-![Swos reset](./img/crs3-38.webp)
+![Swos reset](/docs/bridging-and-switching/swos/img/crs3-38.webp)

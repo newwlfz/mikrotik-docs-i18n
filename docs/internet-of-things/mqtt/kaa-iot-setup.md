@@ -48,11 +48,11 @@ After you log into the portal, to start, follow the steps from the [playbook](ht
 
 a) Create an application, under "**Home>Device management>Applications**", by clicking on the "**Add application**" button, name it, and "**Create**" it:
 
-![](./img/kaa-iot-setup-01.webp)
+![](/docs/internet-of-things/mqtt/img/kaa-iot-setup-01.webp)
 
 b) Create a device, under "**Home>Device management>Devices**", by clicking on the "**Add device**" button, name it, and "**Create**" it:
 
-![](./img/kaa-iot-setup-02.webp)
+![](/docs/internet-of-things/mqtt/img/kaa-iot-setup-02.webp)
 
 Input your own "Endpoint token" or let the system auto-generate one for you. Make sure to "save" it (because you will not be able to access it again).
 
@@ -240,12 +240,12 @@ The JSON message will look like this:
 
 To visualize previously posted data, go to "**Home>Solutions>Your\_Solution>Dashboards>Your\_Dashboard**" and click on "**Add widget**":
 
-![](./img/kaa-iot-setup-03.webp)
+![](/docs/internet-of-things/mqtt/img/kaa-iot-setup-03.webp)
 
 Select a widget type (we will use "**Device management**"), and a pre-set widget (we will use "**Endpoint metadata**").
 
 "**Edit**" the widget and choose your "Endpoint ID" under "**Data source>Endpoint ID**". From here, you can customize the dashboard further:
 
-![](./img/kaa-iot-setup-04.webp)
+![](/docs/internet-of-things/mqtt/img/kaa-iot-setup-04.webp)
 
 And so, you can create your own scripts that collect information that is important to you instead, and then just apply a [scheduler](../../system-information-and-utilities/scheduler.md) to run the script with an interval of your choice. Maybe you want to collect GPS coordinates from your [LTAP](https://mikrotik.com/product/ltap#fndtn-specifications) and visualize them using the "map" widget? It is only up to you!

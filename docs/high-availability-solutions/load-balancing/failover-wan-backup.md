@@ -14,7 +14,7 @@ Let's assume that our gateway has two public network uplinks ("ISP1", "ISP2"). T
 
 Then we mark traffic in two parts, one with the name "ISP1" and the second as "ISP2" which goes through the ether1 and ether2 accordingly. In this setup, we want to monitor two hosts: Host1 and Host2. We will use Google DNS servers with IP 8.8.8.8 (Host1) and 8.8.4.4 (Host2), but it is not mandatory to use these specific addresses.
 
-![failover.png](./img/failover-wan-backup-01.webp)
+![failover.png](/docs/high-availability-solutions/load-balancing/img/failover-wan-backup-01.webp)
 
 ## Configuration
 

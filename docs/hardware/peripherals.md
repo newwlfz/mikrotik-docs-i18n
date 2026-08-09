@@ -129,7 +129,7 @@ Not all modems are listed. Localized and locked units may have compatibility iss
 
 For some modems with USB3.0 support in some cases USB3.0 pins need to be isolated to ensure correct initialization:
 
-![](./img/peripherals-01.webp)
+![](/docs/hardware/img/peripherals-01.webp)
 
 ## SFP modules
 

@@ -22,7 +22,7 @@ As described in the [First Time Configuration](../getting-started/first-time-con
 
  Simply open a Web browser and in the search bar type the device IP address which by default is **192.168.88.1.** Be sure your device has an IP address from the same network, for example, 192.168.88.2 otherwise Layer3 communication will not work.
 
-![](./img/webfig_01.png)
+![](/docs/management-tools/img/webfig_01.png)
 
 ## Enable HTTPS
 
@@ -121,7 +121,7 @@ The certificate is renewed automatically once 80% of its validity period has ela
 
 The **Terminal** (Command Line Interface, CLI) in WebFig is available in the top-right corner. It provides the same functionality as the New Terminal in the WinBox interface.
 
-![WebFig Terminal](./img/webfig-terminal_01.png)
+![WebFig Terminal](/docs/management-tools/img/webfig-terminal_01.png)
 
 ## Skins
 
@@ -135,7 +135,7 @@ To restrict access to the **Design Skin** menu, disable the `policy` and `sensit
 
 **Available operations include:**
 
-![](./img/webfig-design-skin_01.png)
+![](/docs/management-tools/img/webfig-design-skin_01.png)
 
 - **Hide menu** - hides a menu and all of its submenus.
 - **Hide submenu** - hides a specific submenu.
@@ -145,13 +145,13 @@ To restrict access to the **Design Skin** menu, disable the `policy` and `sensit
 - **Make item read-only** - prevents editing of selected fields for safety.
 - **Hide flags** - hides flags in both list and detailed views.
 
-![](./img/webfig-design-skin_02.png)
+![](/docs/management-tools/img/webfig-design-skin_02.png)
 
 - **Add field limits** - restricts allowed values in the detailed view:
   - **Numeric intervals (..)** - defines allowed ranges, for example `1..10` for numeric fields such as **MTU**.
   - **Field prefix limits** - restricts allowed prefixes for text-based fields. A trailing `$` enforces exact prefix matching. For example, `station$` limits values to **station** only.
 
-  ![](./img/webfig-design-skin_03.png)
+  ![](/docs/management-tools/img/webfig-design-skin_03.png)
 
 - **Add tab** - inserts a labeled section divider before a field.
 - **Add separator** - inserts a horizontal separator before a field.
@@ -172,13 +172,13 @@ Restrictions applied to combo-box fields also limit the available dropdown optio
 
 To restrict a user to specific services, add a limit to the RADIUS Service field.
 
-![](./img/webfig-01.webp)
+![](/docs/management-tools/img/webfig-01.webp)
 
 The resulting configuration will allow only the services specified in the **Limit** field.
 
-![](./img/webfig-02.webp)
+![](/docs/management-tools/img/webfig-02.webp)
 
-![](./img/webfig-03.webp)
+![](/docs/management-tools/img/webfig-03.webp)
 
 ### Customizing skins
 
@@ -210,7 +210,7 @@ The alias path (for example: **`"IP:Firewall:Filter Rules:*17:Statistics:Packet 
 - **Tab name** (if applicable) → `Statistics`
 - **Field name** → `Packet Rate Graph`
 
-![](./img/webfig-design-skin_04.png)
+![](/docs/management-tools/img/webfig-design-skin_04.png)
 
 ### Using skins
 

@@ -102,4 +102,4 @@ map.fitBounds(polyline.getBounds());
 
 ## Result
 
-![](./img/gps-tracking-using-http-post-01.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-http-post-01.webp)

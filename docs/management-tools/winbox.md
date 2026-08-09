@@ -29,7 +29,7 @@ WinBox loader can be downloaded from the [MikroTik download page](https://www.mi
 
 When you open the WinBox loader for the first time, the simple mode layout will be used:
 
-![](./img/winbox-01.webp)
+![](/docs/management-tools/img/winbox-01.webp)
 
 To connect to the router, enter the IP or MAC address of the router, specify the username and password (if any) and click on the **Connect** button. You can also enter the port number after the IP address, separating them with a colon, like this 192.168.88.1:9999. The port can be changed in the RouterOS **services** menu.
 
@@ -40,7 +40,7 @@ It is recommended to use an IP address whenever possible. A MAC session uses net
 
 You can also use neighbor discovery to list available routers. Use the **Neighbors** tab:
 
-![](./img/winbox-02.webp)
+![](/docs/management-tools/img/winbox-02.webp)
 
 From the list of discovered routers, you can click on the IP or MAC address column to connect to that router. If you click on the IP address then the IP will be used to connect, but if you click on the MAC Address then the MAC address will be used to connect to the router.
 
@@ -80,7 +80,7 @@ Neighbor discovery will show also devices that are not compatible with WinBox, l
 
 Additional WinBox loader parameters are revealed when an **advanced mode** is enabled with *Tools → Advanced Mode:*
 
-![](./img/winbox-03.webp)
+![](/docs/management-tools/img/winbox-03.webp)
 
 #### Buttons/check-boxes and Other Fields
 
@@ -172,7 +172,7 @@ The WinBox interface has been designed to be intuitive for most of the users. Th
 - The menu bar on the left - list of all available menus and sub-menus. This list changes depending on what packages are installed. For example, if the IPv6 package is disabled, then the **IPv6** menu and all its sub-menus will not be displayed.
 - Work area - an area where all menu windows are opened.
 
-![](./img/winbox-04.webp)
+![](/docs/management-tools/img/winbox-04.webp)
 
 The title bar shows information to identify with which router the WinBox session is opened. Information is displayed in the following format:
 
@@ -202,7 +202,7 @@ On the right side is located:
 
 WinBox has an MDI interface meaning that all menu configuration (child) windows are attached to the main (parent) WinBox window and are shown in the work area.
 
-![](./img/winbox-05.webp)
+![](/docs/management-tools/img/winbox-05.webp)
 
 Child windows can not be dragged out of the working area. Notice in the screenshot above that the **Interface** window is dragged out of the visible working area and a horizontal scroll bar appeared at the bottom. If any window is outside the visible work area boundaries the vertical and/or horizontal scrollbars will appear.
 
@@ -210,16 +210,16 @@ Child windows can not be dragged out of the working area. Notice in the screensh
 
 Each child window has its own toolbar. Most of the windows have the same set of toolbar buttons:
 
-- ![](./img/winbox-06.webp) **Add** - add a new item to the list.
-- ![](./img/winbox-07.webp) **Remove** - remove the selected item from the list.
-- ![](./img/winbox-enable.png) **Enable** - enable the selected item (the same as **enable** command from console).
-- ![](./img/winbox-disable.png) **Disable** - disable the selected item (the same as **disable** command from console).
-- ![](./img/winbox-comment.png) **Comment** - add or edit a comment.
-- ![](./img/winbox-sort.png)  **Sort** - allows you to sort out items depending on various parameters.  [Sorting out displayed items](#sorting-out-displayed-items)
+- ![](/docs/management-tools/img/winbox-06.webp) **Add** - add a new item to the list.
+- ![](/docs/management-tools/img/winbox-07.webp) **Remove** - remove the selected item from the list.
+- ![](/docs/management-tools/img/winbox-enable.png) **Enable** - enable the selected item (the same as **enable** command from console).
+- ![](/docs/management-tools/img/winbox-disable.png) **Disable** - disable the selected item (the same as **disable** command from console).
+- ![](/docs/management-tools/img/winbox-comment.png) **Comment** - add or edit a comment.
+- ![](/docs/management-tools/img/winbox-sort.png)  **Sort** - allows you to sort out items depending on various parameters.  [Sorting out displayed items](#sorting-out-displayed-items)
 
 Almost all windows have a quick search input field on the right side of the toolbar. Any text entered in this field is searched through all the items and highlighted as illustrated in the screenshot below.
 
-![](./img/winbox-08.webp)
+![](/docs/management-tools/img/winbox-08.webp)
 
 Notice that on the right side next to the quick find input field there is a drop-down box. For the currently opened (IP Route) window, this drop-down box allows to quickly sort out items by routing tables. For example, if the **main** is selected, then only routes from the main routing table will be listed.
 A similar drop-down box is also in all firewall windows to quickly sort out rules by chains.
@@ -228,7 +228,7 @@ A similar drop-down box is also in all firewall windows to quickly sort out rule
 
 Almost every window has a **Sort** button. When clicking on this button, several options appear as illustrated in the screenshot below.
 
-![](./img/winbox-09.webp)
+![](/docs/management-tools/img/winbox-09.webp)
 
 The example shows how to quickly filter out routes that are in the 10.0.0.0/8 range:
 
@@ -261,7 +261,7 @@ WinBox allows you to customize displayed columns for each individual window. For
 - Click on the little arrow button (**1**) on the right side of the column titles or right mouse click on the route list.
 - From the popped up menu move to **Show Columns** (**2**) and from the sub-menu pick the desired column, in our case click on **BGP AS Path** (**3**).
 
-![](./img/winbox-10.webp)
+![](/docs/management-tools/img/winbox-10.webp)
 
 Changes made to the window layout are saved and the next time WinBox is opened the same column order and size are applied.
 
@@ -271,7 +271,7 @@ It is also possible to enable **Detail mode**. In this mode all parameters are d
 
 To enable detail mode, right mouse click on the item list and from the popup menu pick **Detail mode**
 
-![](./img/winbox-11.webp)
+![](/docs/management-tools/img/winbox-11.webp)
 
 #### Category view
 
@@ -279,7 +279,7 @@ It is possible to list items by categories. In this mode, all items will be grou
 
 To enable Category view, right mouse click on the item list and from the popup menu pick **Show Categories**.
 
-![](./img/winbox-12.webp)
+![](/docs/management-tools/img/winbox-12.webp)
 
 ### Drag & Drop
 
@@ -294,7 +294,7 @@ Drag & Drop works if WinBox is running on Linux using wine4. Drag and drop betwe
 
 WinBox can be used as a tool to monitor the traffic of every interface, queue, or firewall rule in real-time. The screenshot below shows Ethernet traffic monitoring graphs.
 
-![](./img/winbox-13.webp)
+![](/docs/management-tools/img/winbox-13.webp)
 
 ### Item copy
 
@@ -302,19 +302,19 @@ This shows how easy it is to copy an item in WinBox. In this example, we will us
 
 This image shows us the initial state. As you see, DR indicates "D" which means Dynamic:
 
-![](./img/winbox-14.webp)
+![](/docs/management-tools/img/winbox-14.webp)
 
 Double-Click on the interface and click on COPY:
 
-![](./img/winbox-15.webp)
+![](/docs/management-tools/img/winbox-15.webp)
 
 A new interface window will appear, and a new name will be created automatically (in this case pppoe-in1).
 
-![](./img/winbox-16.webp)
+![](/docs/management-tools/img/winbox-16.webp)
 
 After this Down/Up event this interface will be Static:
 
-![](./img/winbox-17.webp)
+![](/docs/management-tools/img/winbox-17.webp)
 
 ## Transferring Settings
 

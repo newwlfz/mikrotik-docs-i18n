@@ -22,13 +22,13 @@ To generate this file in Winbox, click on "Make Supout.rif".
 
 To save the file to your computer, right mouse click on the file and select "Download" to get the support output file or simply drag the file to your desktop.
 
-### ![](./img/supout-rif-01.webp)Webfig
+### ![](/docs/getting-started/img/supout-rif-01.webp)Webfig
 
 To generate this file in Webfig, click on "Make Supout.rif" and then "Download" to get it on your computer.
 
-![](./img/supout-rif-02.webp)
+![](/docs/getting-started/img/supout-rif-02.webp)
 
-![](./img/supout-rif-03.webp)
+![](/docs/getting-started/img/supout-rif-03.webp)
 
 ### Console
 

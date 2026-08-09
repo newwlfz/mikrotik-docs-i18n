@@ -8,7 +8,7 @@ import WideTable from '@site/src/components/WideTable';
 
 ---
 
-![Bridge diagram](./img/index-01.webp)
+![Bridge diagram](/docs/bridging-and-switching/img/index-01.webp)
 
 Ethernet-like networks (Ethernet, Ethernet over IP, IEEE 802.11 in ap-bridge or bridge mode, WDS, VLAN) can be connected together using MAC bridges. The bridge feature allows the interconnection of hosts connected to separate LANs (using EoIP, geographically distributed networks can be bridged as well if any kind of IP network interconnection exists between them) as if they were attached to a single LAN. As bridges are transparent, they do not appear in the traceroute list, and no utility can make a distinction between a host working in one LAN and a host working in another LAN if these LANs are bridged. However, depending on the way the LANs are interconnected, latency and data rate between hosts may vary.
 
@@ -716,7 +716,7 @@ Columns: GROUP, VID, ON-PORTS, BRIDGE
 
 It is possible to switch multiple ports together if a device has a built-in switch chip. While a bridge is a software feature that will consume CPU's resources, the bridge hardware offloading will allow you to use the built-in switch chip to forward packets at wire speed. This allows you to achieve higher throughput if configured correctly.
 
-![HWoffloading_diagram](./img/index-02.webp)
+![HWoffloading_diagram](/docs/bridging-and-switching/img/index-02.webp)
 
 A packet that is received by one of the ports always passes through the switch logic first. Switch logic decides which ports the packet should be going to - usually based on the destination MAC address. Hardware-forwarded packets will not be visible to RouterOS (only statistics will show that a packet has passed through). This is because the packet was already processed by the switch chip and never reached the CPU.
 
@@ -988,7 +988,7 @@ Flags: X - disabled, I - invalid, D - dynamic, L - local, E - external
 
 This section demonstrates how to configure a basic VLAN setup with one trunk port and multiple access ports. The trunk port (ether2) carries tagged VLAN traffic between switches or to a router, while access ports (ether6, ether7, ether8) connect to end devices and use untagged VLAN traffic.
 
-![access_ports](./img/index-03.webp)
+![access_ports](/docs/bridging-and-switching/img/index-03.webp)
 
 #### Step 1: Create the Bridge Interface
 
@@ -1040,7 +1040,7 @@ As an optional security measure, you can set the bridge to reject untagged traff
 
 ### VLAN Example - Trunk and Hybrid Ports
 
-![hybrid_ports](./img/index-04.webp)
+![hybrid_ports](/docs/bridging-and-switching/img/index-04.webp)
 
 Create a bridge with disabled `vlan-filtering` to avoid losing access to the router before VLANs are completely configured. If you need management access to the bridge, see the [Management access configuration](index.md#management-access-configuration) section.
 
@@ -1086,7 +1086,7 @@ You don't have to add access ports as untagged ports, because they will be added
 
 ### VLAN Example - InterVLAN Routing by Bridge
 
-![vlan_routing](./img/index-05.webp)
+![vlan_routing](/docs/bridging-and-switching/img/index-05.webp)
 
 Create a bridge with disabled `vlan-filtering` to avoid losing access to the router before VLANs are completely configured.  If you need management access to the bridge, see the [Management access configuration](index.md#management-access-configuration) section.
 
@@ -1270,7 +1270,7 @@ If the connection to the router/switch through an IP address is not required, th
 
 Since RouterOS v6.43 the RouterOS bridge is IEEE 802.1ad compliant and it is possible to filter VLAN IDs based on Service VLAN ID (0x88a8) rather than Customer VLAN ID (0x8100). The same principles can be applied as with IEEE 802.1Q VLAN filtering (the same setup examples can be used). Below is a topology for a common **Provider bridge**:
 
-![Provider_bridge](./img/index-06.webp)
+![Provider_bridge](/docs/bridging-and-switching/img/index-06.webp)
 
 In this example, **R1**, **R2**, **R3,** and **R4** might be sending any VLAN tagged traffic by 802.1Q (CVID), but **SW1** and **SW2** need to isolate traffic between routers in a way that **R1** is able to communicate only with **R3**, and **R2** is only able to communicate with **R4**. To do so, you can tag all ingress traffic with an SVID and only allow these VLANs on certain ports. Start by enabling the service tag 0x88a8, introduced by `802.1ad`, on the bridge. Use these commands on **SW1** and **SW2**:
 
@@ -1324,7 +1324,7 @@ Devices with switch chip Marvell-98DX3257 (e.g. CRS354 series) do not support VL
 
 Since RouterOS v6.43 it is possible to forcefully add a new VLAN tag over any existing VLAN tags. This feature can be used to achieve a CVID stacking setup, where a CVID (0x8100) tag is added before an existing CVID tag. This type of setup is very similar to the Provider bridge setup. To achieve the same setup but with multiple CVID tags (CVID stacking) we can use the same topology:
 
-![Tag_stacking](./img/index-07.webp)
+![Tag_stacking](/docs/bridging-and-switching/img/index-07.webp)
 
 In this example **R1**, **R2**, **R3,** and **R4** might be sending any VLAN tagged traffic, it can be 802.1ad, 802.1Q or any other type of traffic, but **SW1** and **SW2** need to isolate traffic between routers in a way that **R1** is able to communicate only with **R3**, and **R2** is only able to communicate with **R4**. To do so, you can tag all ingress traffic with a new CVID tag and only allow these VLANs on certain ports. Start by selecting the proper EtherType, use these commands on **SW1** and **SW2**:
 
@@ -1383,7 +1383,7 @@ As noted before, MVRP is only active on ports that are forwarding. In the case o
 
 The point-to-point ports speed up the process of registration (or leaving). Manually configuring `point-to-point=yes` can be advantageous for non-Ethernet interfaces.
 
-![MVRP](./img/index-08.webp)
+![MVRP](/docs/bridging-and-switching/img/index-08.webp)
 
 #### Property Reference
 
@@ -1530,7 +1530,7 @@ The bridge supports IGMP/MLD snooping. It controls multicast streams and prevent
 
 DHCP Snooping and DHCP Option 82 are supported by bridge. The DHCP Snooping is a Layer2 security feature that prevents unauthorized DHCP servers from providing malicious information to users. In RouterOS, you can specify which bridge ports are trusted (where a known DHCP server resides and DHCP messages should be forwarded) and which are untrusted (usually used for access ports, received DHCP server messages will be dropped). The DHCP Option 82 is additional information (Agent Circuit ID and Agent Remote ID) provided by DHCP Snooping enabled devices that allows identifying the device itself and DHCP clients.
 
-![Dhcp_snooping](./img/index-09.webp)
+![Dhcp_snooping](/docs/bridging-and-switching/img/index-09.webp)
 
 In this example, SW1 and SW2 are DHCP Snooping and Option 82-enabled devices. First, we need to create a bridge, assign interfaces and mark trusted ports. Use these commands on **SW1**:
 
@@ -1588,11 +1588,11 @@ When VLAN filtering is enabled on the bridge each host is identified not only by
 
 The active DHCP binding table entries in Winbox:
 
-![FDB with DHCP binding table in Winbox](./img/dhcpv4-snooping-binding-table-winbox.png)
+![FDB with DHCP binding table in Winbox](/docs/bridging-and-switching/img/dhcpv4-snooping-binding-table-winbox.png)
 
 The active DHCP binding table entries in console:
 
-![FDB with DHCP binding table in console](./img/dhcpv4-snooping-binding-table-console.png)
+![FDB with DHCP binding table in console](/docs/bridging-and-switching/img/dhcpv4-snooping-binding-table-console.png)
 
 ### ARP Inspection and IP Source Guard
 
@@ -1676,7 +1676,7 @@ The RA guard feature is intended for discarding IPv6 packets containing router a
 
 Here are the network scheme and core principle behind IPv6 RA Guard (Router Advertisement Guard).
 
-![RAguard](./img/index-10.webp)
+![RAguard](/docs/bridging-and-switching/img/index-10.webp)
 
 |  |
 | :-- |

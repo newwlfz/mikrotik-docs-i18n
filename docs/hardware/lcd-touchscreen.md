@@ -90,7 +90,7 @@ The Screens menu allows you to configure the display timing for each slide in th
 
 **Sub-menu:** `/lcd/pin`
 
-![](./img/lcd-touchscreen-01.webp)
+![](/docs/hardware/img/lcd-touchscreen-01.webp)
 
 The PIN code protects sensitive menus on the LCD screen. The PIN is requested when Read-Only mode is disabled and you attempt to add an IP address, reset, or reboot the router. The default PIN is **1234**.
 
@@ -105,7 +105,7 @@ Since v6.0, LCD has a menu structure. Menu screens consist of buttons that are u
 
 ### Startup
 
-![](./img/lcd-touchscreen-02.webp)
+![](/docs/hardware/img/lcd-touchscreen-02.webp)
 
 If the router has default configuration - user named "admin" with no password, then a warning on LCD will appear. This screen shows IPs assigned to the interfaces which could be used to connect to the router. Otherwise, the Main menu screen is displayed after booting up.
 
@@ -120,13 +120,13 @@ The Interfaces menu displays all the Ethernet and Wireless interfaces. Bandwidth
 
 |  |  |  |  |
 | :-- | :-- | :-- | :-- |
-| ![](./img/lcd-info.jpg)  Info  | ![](./img/lcd-registration-table.jpg)  Registration Table  | ![](./img/lcd-addresses.jpg)  Addresses  | ![](./img/lcd-stats.jpg)  Stats selection  |
+| ![](/docs/hardware/img/lcd-info.jpg)  Info  | ![](/docs/hardware/img/lcd-registration-table.jpg)  Registration Table  | ![](/docs/hardware/img/lcd-addresses.jpg)  Addresses  | ![](/docs/hardware/img/lcd-stats.jpg)  Stats selection  |
 
 ### Stats
 
 The Stats screen shows single interface graphs for RX and TX. Values are updated from right to left (newest to oldest). The Info that is shown: RX/TX rate and packets.
 
-![](./img/lcd-touchscreen-03.webp)
+![](/docs/hardware/img/lcd-touchscreen-03.webp)
 
 The interface name is shown at the top right; it is trimmed if it's too long (last characters are cut off). The top right corner shows the time interval for the values. The following time values are available:
 
@@ -148,7 +148,7 @@ The interface name is shown at the top right; it is trimmed if it's too long (la
 
 ### All Interface Graph Screen
 
-![](./img/lcd-touchscreen-04.webp)
+![](/docs/hardware/img/lcd-touchscreen-04.webp)
 
 The All interface graph screen shows the RX/TX bandwidth usage of all interfaces. The max values are calculated like this - for Ethernet interfaces it's the negotiated rate or set speed. For wireless interfaces it's calculated from used band, channel-width and chain count using the theoretical values. The goal of this screen is to see how values are related to each other for a single interface.
 
@@ -176,11 +176,11 @@ The Submenu `/lcd/screen` Informative Slideshow screen cycles through screens wi
 
 |  |  |  |
 | :-- | :-- | :-- |
-| ![](./img/lcd-system.jpg)  System  | ![](./img/lcd-resources.jpg)  Resources  | ![](./img/lcd-health.jpg)  Health  |
+| ![](/docs/hardware/img/lcd-system.jpg)  System  | ![](/docs/hardware/img/lcd-resources.jpg)  Resources  | ![](/docs/hardware/img/lcd-health.jpg)  Health  |
 
 ### Log
 
-![](./img/lcd-touchscreen-05.webp)
+![](/docs/hardware/img/lcd-touchscreen-05.webp)
 The Log screen shows the 5 last log entries where log action=echo.
 
 ### Reboot and Reset Configuration

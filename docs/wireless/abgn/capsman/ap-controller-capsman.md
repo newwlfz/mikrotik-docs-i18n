@@ -31,7 +31,7 @@ Depending on the configuration, data is either forwarded to CAPsMAN for centrali
 
 ## Simple setup of a CAPsMAN system
 
-![](./img/ap-controller-capsman-01.webp)
+![](/docs/wireless/abgn/capsman/img/ap-controller-capsman-01.webp)
 
 Before deep-diving into the details of CAPsMAN operation, let us quickly illustrate how to set up the most basic system where you have a MikroTik router that manages two MikroTik AP devices. The benefit of CAPsMAN is that the CAP units don't need to be configured; all settings are done in the CAPsMAN server.
 
@@ -39,17 +39,17 @@ The CAPsMAN setup consists of defining configuration templates, which will then 
 
 On the central device, which will be your CAPsMAN server, create a new "Configuration" template with only the basic settings (network name, country, the local LAN bridge interface, the wireless password):
 
-![](./img/ap-controller-capsman-02.webp)Add a new configuration profile:
-![](./img/ap-controller-capsman-03.webp)
-![](./img/ap-controller-capsman-04.webp)
+![](/docs/wireless/abgn/capsman/img/ap-controller-capsman-02.webp)Add a new configuration profile:
+![](/docs/wireless/abgn/capsman/img/ap-controller-capsman-03.webp)
+![](/docs/wireless/abgn/capsman/img/ap-controller-capsman-04.webp)
 
 Then create a new "Provisioning" rule, which will assign the created configuration template to the CAP devices:
 
-![](./img/ap-controller-capsman-05.webp)
+![](/docs/wireless/abgn/capsman/img/ap-controller-capsman-05.webp)
 
 All that remains to do on the CAPsMAN is to enable it:
 
-![](./img/ap-controller-capsman-06.webp)
+![](/docs/wireless/abgn/capsman/img/ap-controller-capsman-06.webp)
 
 Most MikroTik AP devices already support CAP mode out of the box, all you need to do is make sure they are on the same network as your CAPsMAN, and then boot them up, while holding the reset button.
 

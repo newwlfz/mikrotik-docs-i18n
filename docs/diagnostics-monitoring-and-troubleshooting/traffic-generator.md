@@ -298,7 +298,7 @@ This sub-menu stores raw statistics data.
 
 Consider the following test setup
 
-![](./img/traffic-generator-01.webp)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/traffic-generator-01.webp)
 
 System Under Test (SUT) consists of two routers connected to a traffic generator server. The connection between both SUT routers is IPSec encrypted.
 

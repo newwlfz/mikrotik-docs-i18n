@@ -12,13 +12,13 @@ Currently, only the [KNOT](https://mikrotik.com/product/knot), [KNOT LR8G kit](h
 :::
 One of the protocols that is widely used in IoT architectures is called Modbus.
 
-![](./img/image2021-3-30_10-57-11.webp)
+![](/docs/internet-of-things/img/image2021-3-30_10-57-11.webp)
 
 You can find more information about this protocol by following this link.
 
 The Modbus-supported device should be connected to the RS485 port. A two-wire connection (A+/B-) is supported by the device (a 2-pin terminal block).
 
-![](./img/image2021-3-22_15-40-37.webp)
+![](/docs/internet-of-things/img/image2021-3-22_15-40-37.webp)
 
 It is important to note that both pins should not be mixed up. Inverting the "A" and "B" connections (incorrect polarisation) will result in communication failure.
 

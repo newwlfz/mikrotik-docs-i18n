@@ -50,7 +50,7 @@ And to enable MLPPP you just need to create a PPP client and specify multiple in
 
 ### Configuration Example
 
-![](./img/mlppp-over-single-and-multiple-links-01.webp)
+![](/docs/virtual-private-networks/pppoe/img/mlppp-over-single-and-multiple-links-01.webp)
 
 The ISP gives to its client two physical links (DSL lines) 1Mbps each. To get an aggregated 2Mbps pipe we have to set up MLPPP. Consider the ISP router is pre-configured to support MLPPP.
 

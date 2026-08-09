@@ -14,7 +14,7 @@ SSTP is commonly used in environments where other VPN protocols, such as PPTP, L
 
 Let's take a look at the SSTP connection mechanism:
 
-![](./img/sstp-01.webp)
+![](/docs/virtual-private-networks/img/sstp-01.webp)
 
 1. A TCP connection is established from client to server (by default on port 443).
 2. SSL validates the server certificate. If a certificate is valid, a connection is established; otherwise, the connection is turned down. (But see note below).
@@ -120,7 +120,7 @@ When the SSL handshake fails, you will see one of the following certificate erro
 
 ## Quick Example
 
-![](./img/sstp-02.webp)
+![](/docs/virtual-private-networks/img/sstp-02.webp)
 
 ### SSTP Client
 

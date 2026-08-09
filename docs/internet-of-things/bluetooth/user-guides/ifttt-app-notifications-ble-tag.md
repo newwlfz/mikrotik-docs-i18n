@@ -59,7 +59,7 @@ Copy this URL - you will need to use it in the script later.
 
 ### Bluetooth tag configuration
 
-Check our tag configuration guides (iOS and Android) by following the [link](https://manual.mikrotik.com/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/).
+Check our tag configuration guides (iOS and Android) by following the [link](/docs/internet-of-things/bluetooth/mikrotik-beacon-manager/).
 
 In this specific use case, the KNOT is going to check the time of the received Bluetooth payload, so it does not matter which packet type is configured for the tag.
 

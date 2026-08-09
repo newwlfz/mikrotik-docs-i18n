@@ -36,7 +36,7 @@ There is no authentication or 'state' for this interface. The bandwidth usage of
 
  Suppose we want to add an IPIP tunnel between routers R1 and R2:
 
-![](./img/ipip-01.webp)
+![](/docs/virtual-private-networks/img/ipip-01.webp)
 
 At first, we need to configure IPIP interfaces and then add IP addresses to them.
   

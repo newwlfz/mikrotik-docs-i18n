@@ -857,7 +857,7 @@ When an interface is in AP mode, default management protection key (configured i
                                                         allowed  disabled  required  
 ```
 
-![](./img/wireless-interface-01.webp)
+![](/docs/wireless/abgn/img/wireless-interface-01.webp)
 
 ### Operation details
 
@@ -1042,13 +1042,13 @@ This tool monitors surrounding frequency usage, and displays which devices occup
 
 **Sub-menu:** `/interface/wireless/snooper`
 
-![](./img/wireless-interface-02.webp)
+![](/docs/wireless/abgn/img/wireless-interface-02.webp)
 
-![](./img/wireless-interface-03.webp)
+![](/docs/wireless/abgn/img/wireless-interface-03.webp)
 
 ### Settings
 
-![](./img/wireless-interface-04.webp)
+![](/docs/wireless/abgn/img/wireless-interface-04.webp)
 
 ## Spectral scan
 

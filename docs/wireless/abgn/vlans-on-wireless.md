@@ -10,7 +10,7 @@ VLANs provide the possibility to isolate devices into different Layer2 segments 
 
 ## Example
 
-![](./img/vlans-on-wireless-01.webp)
+![](/docs/wireless/abgn/img/vlans-on-wireless-01.webp)
 
 [Bridge VLAN Filtering](../../bridging-and-switching/index.md#bridge-vlan-filtering) provides VLAN aware Layer2 forwarding and VLAN tag modifications within the bridge.
 

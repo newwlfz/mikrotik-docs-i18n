@@ -114,7 +114,7 @@ The filters work using the following principle:
 
 You can find the Join EUI used by your node with the help of the RouterOS GUI. Go to the "LoRa" section and to the "Traffic" sub-menu (which is only available using the graphical interface). After you power your LoRaWAN node, the node should send a "Join-request" packet. Double-click on it to inspect it:
 
-![](./img/general-properties-01.webp)
+![](/docs/internet-of-things/lora/img/general-properties-01.webp)
 
 **Sub-menu:** `/iot/lora/joineui`
 

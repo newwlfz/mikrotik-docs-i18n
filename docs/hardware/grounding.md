@@ -17,24 +17,24 @@ Use 2.5-4 mm² Cu (AWG 11–13) wire with corrosion-resistant connectors for gro
 
 ### Device with Shielded Ports
 
-![shielded.png](./img/grounding-01.webp)
-![](./img/grounding-diagram.png)
+![shielded.png](/docs/hardware/img/grounding-01.webp)
+![](/docs/hardware/img/grounding-diagram.png)
 
 ### Device with Unshielded Ports
 
-![unshielded.png](./img/grounding-02.webp)
+![unshielded.png](/docs/hardware/img/grounding-02.webp)
 
 ### PoE injector with shielded connectors
 
-![poeinjector.png](./img/grounding-03.webp)
+![poeinjector.png](/docs/hardware/img/grounding-03.webp)
 
 ## RouterBOARD grounding wire attachment points
 
-![](./img/grounding-04.webp)
+![](/docs/hardware/img/grounding-04.webp)
 
-![screw1.png](./img/grounding-05.webp)
+![screw1.png](/docs/hardware/img/grounding-05.webp)
 
-![screw2.png](./img/grounding-06.webp)
+![screw2.png](/docs/hardware/img/grounding-06.webp)
 
 :::info
 You should not use Power Sourcing Equipment (PSE) with the positive terminal connected to Protective Earth (PE) if it power a MikroTik device. It may cause a short circuit, harm you and your device.

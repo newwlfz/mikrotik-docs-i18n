@@ -14,7 +14,7 @@ This example was created to highlight the queue size impact on traffic that was 
 
 For a simplified visualization, let's assume we are processing data in steps and we know exactly how many packets will be received/transited in every step and there will be no dropped packet retransmission taking place.
 
-![](./img/queue-size-01.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-size-01.webp)
 
 As you can see in the picture above there are **25 steps** and there are a total of **1610 incoming packets** over this time frame.
 
@@ -24,7 +24,7 @@ A queue is a 100% shaper when every packet that is over the allowed limits will 
 
 Let's apply a **max-limit=100 packets per step** limitation to our example:
 
-![](./img/queue-size-02.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-size-02.webp)
 
 With this type of limitation, only 1250 out of 1610 packets were able to pass the queue (**22,4% packet drop**), but all packets arrived without delay.
 
@@ -36,7 +36,7 @@ In each step, the queue must send out queued packets from previous steps first a
 
 We will again use the same limit (**100 packets per step**).
 
-![](./img/queue-size-03.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-size-03.webp)
 
 There was no packet loss, but 630 **(39,1%) packets had 1-step delay**, and the other 170 **(10,6%) packets had 2-step delay**. (delay = latency)
 
@@ -44,7 +44,7 @@ There was no packet loss, but 630 **(39,1%) packets had 1-step delay**, and the 
 
 It is also possible to choose the middle way when the queue uses both of these queuing aspects (shaping and scheduling). By default, most of the queues in RouterOS have a queue size of 10.
 
-![](./img/queue-size-04.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-size-04.webp)
 
 There were 320 **(19,9%) packets dropped** and 80 **(5,0%) packets had 1 step delay**.
 
@@ -52,6 +52,6 @@ There were 320 **(19,9%) packets dropped** and 80 **(5,0%) packets had 1 step de
 
 Another popular queue size in RouterOS is 50.
 
-![](./img/queue-size-05.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-size-05.webp)
 
 There were 190 **(11.8%) packets dropped** and 400 **(24.8%) packets had a 1 step delay**.

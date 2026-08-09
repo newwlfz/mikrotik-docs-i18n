@@ -174,7 +174,7 @@ Let's assume that the router has two links - **ether1** max bandwidth is 10Mbps 
 /interface/bonding/add mode=balance-tlb slaves=ether1,ether2 primary=ether1
 ```
 
-![](./img/bonding-01.webp)
+![](/docs/high-availability-solutions/img/bonding-01.webp)
 
 No additional configuration is required for the switch. The image above illustrates how balance-tlb mode works. As you can see the router can communicate to all the clients connected to the switch with a total bandwidth of both links (15Mbps). But as you already know, balance-tlb is not balancing incoming traffic. In our example, clients can communicate to the router with a total bandwidth of the primary link which is 10Mbps in our configuration.
 
@@ -182,7 +182,7 @@ No additional configuration is required for the switch. The image above illustra
 
 The mode is basically the same as balance-tlb but incoming IPv4 traffic is also balanced. The receive load balancing is achieved by ARP negotiation. The bonding driver intercepts locally generated ARP messages on their way out and overwrites the source hardware address with the unique address of one of the slaves in the bond such that different peers use different hardware addresses. Only MII link monitoring is supported (ARP link monitoring is ignored when configured). The additional downside of this mode is that it requires device driver capability to change MAC address. The mode is not compatible with the local-proxy-arp setting.
 
-![](./img/bonding-02.webp)  
+![](/docs/high-availability-solutions/img/bonding-02.webp)  
 The image above illustrates how balance-alb mode works. Compared to balance-tlb mode, traffic from clients can also use the secondary link to communicate with the router.
 
 ## Bonding monitoring

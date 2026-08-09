@@ -64,7 +64,7 @@ In both cases PPP users must be configured properly - static entries do not repl
 
 ## Example
 
-![](./img/pptp-01.webp)
+![](/docs/virtual-private-networks/img/pptp-01.webp)
 
 ### PPTP Client
 

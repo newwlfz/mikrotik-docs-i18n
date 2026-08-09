@@ -93,7 +93,7 @@ In both cases PPP users must be configured properly - static entries do not repl
 
 ## Quick Example
 
-![](./img/l2tp-01.webp)
+![](/docs/virtual-private-networks/l2tp/img/l2tp-01.webp)
 
 ### L2TP Server
 

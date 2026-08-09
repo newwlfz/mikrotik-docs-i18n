@@ -44,7 +44,7 @@ You can download and install extra packages directly from the router by using th
 
 To make sure the package is installed successfully, check the "Log" section after the device is rebooted. If the package is installed successfully, you will see a message about it. If there have been conflicts or some requirement is not met, this will be explained, so you can take further steps to rectify that.
 
-![](./img/packages-01.webp)Success in the log entries![](./img/packages-02.webp)Failure in the log entries
+![](/docs/getting-started/installation-and-upgrade/img/packages-01.webp)Success in the log entries![](/docs/getting-started/installation-and-upgrade/img/packages-02.webp)Failure in the log entries
 
 ### System packages
 

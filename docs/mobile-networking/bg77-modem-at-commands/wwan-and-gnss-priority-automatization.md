@@ -148,7 +148,7 @@ Alter the broker, topic, and message as you see fit. You can find more informati
 
 For example, if the MQTT server/broker is AWS, the posted result would look like this:
 
-![](./img/image2021-8-30_14-8-26.webp)
+![](/docs/mobile-networking/bg77-modem-at-commands/img/image2021-8-30_14-8-26.webp)
 
 ## Switch to GNSS when no outgoing traffic is detected using scripts and scheduler
 
@@ -301,13 +301,13 @@ The first condition is that both ppp interface (Interfaces>Interface) and GPS (S
 
 The second condition is that AT command "***AT+QGPSCFG="priority",1***" is configured for the ppp interface under the "Modem Init" field:
 
-![](./img/image2021-8-30_12-10-52.webp)
+![](/docs/mobile-networking/bg77-modem-at-commands/img/image2021-8-30_12-10-52.webp)
 
 What this is going to do, is send a WWAN priority command whenever ppp connection gets successfully established.
 
 Lastly, the third condition, is that "dial on demand" is enabled for the ppp interface:
 
-![](./img/image2021-8-30_12-27-59.webp)
+![](/docs/mobile-networking/bg77-modem-at-commands/img/image2021-8-30_12-27-59.webp)
 
 This is required because otherwise, when "dial on demand" is disabled → ppp interface will automatically send the AT command with a WWAN priority setting (attempt to establish the connection), whenever the port is enabled back on. When "dial on demand" is enabled → after the interface gets enabled back on, ppp connection will not be established and the AT command for WWAN priority will not be sent until outgoing packets are detected.
 
@@ -388,4 +388,4 @@ Do not forget to alter the broker, topic, and message as you see fit. You can fi
 
 For example, if the MQTT server is AWS, the result would look like this:
 
-![](./img/image2021-8-30_14-8-26.webp)
+![](/docs/mobile-networking/bg77-modem-at-commands/img/image2021-8-30_14-8-26.webp)

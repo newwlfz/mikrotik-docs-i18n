@@ -14,15 +14,15 @@ After the server is up and running, log into the ChirpStack management portal.
 
 Navigate to "Tenant>Gateways" section and "Add gateway":
 
-![](./img/chirpstack_reg_gw.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_reg_gw.png)
 
 Name the device, and enter "Gateway ID":
 
-![](./img/chirpstack_reg_gw_2.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_reg_gw_2.png)
 
 In RouterOS, the **Gateway EUI** value can be found under "**IoT>LoRa>Devices>Gateway ID**"):
 
-![](./img/chirpstack-01.webp)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack-01.webp)
 
 ### Connecting gateway
 
@@ -83,7 +83,7 @@ You should see "forwarder is ready" message:
 
 On the ChirpStack portal, check status under the "Gateway" dashboard ("Tenant>Gateway" section):
 
-![](./img/chirpstack_reg_gw3.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_reg_gw3.png)
 
 ## Node registration
 
@@ -91,7 +91,7 @@ On the ChirpStack portal, check status under the "Gateway" dashboard ("Tenant>Ga
 
 Add a new ["Device Profile"](https://www.chirpstack.io/docs/chirpstack/use/device-profiles.html):
 
-![](./img/chirpstack_device_profile.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_device_profile.png)
 
 Configure "*Region*", "*MAC version*", "*Regional parameters revision*", "*ADR algorithm*" and other settings, depending on what your node/sensor supports.
 Optionally, you can enable different classes (like Class B).
@@ -100,7 +100,7 @@ MikroTik **TG-LR** tag's information can be found [here](/docs/internet-of-thing
 
 Add "Payload codec":
 
-![](./img/chirpstack_device_profile2.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_device_profile2.png)
 
 - Select "JavaScript functions";
 - Copy/Paste the content of the [provided script **tg-lrx2-2.0-ul-dec.js**](/docs/internet-of-things/lora/user-guides/tg-lr-setup-guide#quickstart-guide) into the "Codec functions" field and "Submit".
@@ -109,7 +109,7 @@ Add "Payload codec":
 
 Add a new ["Application"](https://www.chirpstack.io/docs/chirpstack/use/applications.html):
 
-![](./img/chirpstack_appli.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_appli.png)
 
 ### Create device
 
@@ -117,19 +117,19 @@ If you are using **TG-LR** MikroTik tags, find "**JoinEUI**", "**DevEUI**" and "
 
 Add a new ["Device"](https://www.chirpstack.io/docs/chirpstack/use/devices.html) under previously created "Application":
 
-![](./img/chirpstack_device.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_device.png)
 
 Input "**Device EUI**", "**Join EUI**", select previously created "Device profile" and "Submit".
 
 Lastly:
 
-![](./img/chirpstack_device2.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_device2.png)
 
 Input "**Application key**" and "Submit".
 
 ### Power on the tag
 
-Please check our full guide on the [TG-LR options](https://manual.mikrotik.com/docs/internet-of-things/lora/user-guides/tg-lr-setup-guide).
+Please check our full guide on the [TG-LR options](/docs/internet-of-things/lora/user-guides/tg-lr-setup-guide).
 
 From the get-go, the tag will be in the "Shutdown" mode (sleeping).
 
@@ -147,8 +147,8 @@ End device will send "Join-request" packet and will expect "Join-accept" in retu
 
 In RouterOS, you can see the exchange in the "**IoT>LoRa>Traffic**" tab:
 
-![](./img/joinreq_joinacpt.png)
+![](/docs/internet-of-things/lora/user-guides/img/joinreq_joinacpt.png)
 
 On the portal, you should be able to confirm registration per the "LoRaWAN frames" tab:
 
-![](./img/chirpstack_verification.png)
+![](/docs/internet-of-things/lora/user-guides/img/chirpstack_verification.png)

@@ -29,7 +29,7 @@ To set up Back to Home, you should have a smartphone with the BTH app and should
 - Setup is done. You can now disconnect from the router's Wi-Fi and connect to any other network, like LTE/5G or simply leave your house now.
 - Tap the Connect button to toggle the connection of the selected tunnel.
 
-| ![](./img/back-to-home_01.png) | ![](./img/back-to-home_02.png) | ![](./img/back-to-home_03.png) | ![](./img/back-to-home_04.png) | ![](./img/back-to-home_05.png) |
+| ![](/docs/network-management/cloud/img/back-to-home_01.png) | ![](/docs/network-management/cloud/img/back-to-home_02.png) | ![](/docs/network-management/cloud/img/back-to-home_03.png) | ![](/docs/network-management/cloud/img/back-to-home_04.png) | ![](/docs/network-management/cloud/img/back-to-home_05.png) |
 | :-- | :-- | :-- | :-- | :-- |
 | Tap "Create new" | Provide your router credentials | Connection established | Allow VPN to be added | If the device is not supported, an error is shown |
 
@@ -37,7 +37,7 @@ To set up Back to Home, you should have a smartphone with the BTH app and should
 
 It is possible to create Guest tunnels for your friends and family. You can even specify if you want these people to access your local network as well, or if they should be restricted to only use the internet via your router. Once you create shared tunnels, you can send Invitation links via any chat application on your phone, or show a QR code to your friend in person (in both these cases, the friend will have to also install the BTH app). If you want to connect to your router via the WireGuard(TM) app from another phone or from a computer, it is possible as well. Just select to share the WireGuard(TM) config file, and open this file in the WireGuard(TM) app.
 
-| ![](./img/back-to-home_06.png) | ![](./img/back-to-home_07.png) | ![](./img/back-to-home_08.png) | ![](./img/back-to-home_17.png) | ![](./img/back-to-home_09.jpg) | ![](./img/back-to-home_10.jpg) |
+| ![](/docs/network-management/cloud/img/back-to-home_06.png) | ![](/docs/network-management/cloud/img/back-to-home_07.png) | ![](/docs/network-management/cloud/img/back-to-home_08.png) | ![](/docs/network-management/cloud/img/back-to-home_17.png) | ![](/docs/network-management/cloud/img/back-to-home_09.jpg) | ![](/docs/network-management/cloud/img/back-to-home_10.jpg) |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Manage shares | Connect to your tunnel first | Once connected, create shares | Provide a name and access level | Share sheet opens | Send the invite link via WhatsApp, Signal etc. |
 
@@ -59,13 +59,13 @@ Since there is no BTH app for PCs, you can use the [WireGuard(TM) app](https://w
 
 Let's make a new share, this time for yourself, for using from the PC.
 
-| ![](./img/back-to-home_13.png) | ![](./img/back-to-home_14.png) | ![](./img/back-to-home_15.png) | ![](./img/back-to-home_16.png) | ![](./img/back-to-home_16.png) | ![](./img/back-to-home_18.png) |
+| ![](/docs/network-management/cloud/img/back-to-home_13.png) | ![](/docs/network-management/cloud/img/back-to-home_14.png) | ![](/docs/network-management/cloud/img/back-to-home_15.png) | ![](/docs/network-management/cloud/img/back-to-home_16.png) | ![](/docs/network-management/cloud/img/back-to-home_16.png) | ![](/docs/network-management/cloud/img/back-to-home_18.png) |
 | :-- | :-- | :-- | :-- | :-- | :-- |
 | Create | Specify name and access level | You have two shares now | Click "..." to send an invite | Pick "Share WireGuard config  file" | AirDrop to your macOS or e-mail the file |
 
 Install the WireGuard app on your computer and click "Import Tunnel from file"
 
-![](./img/back-to-home_19.jpg)
+![](/docs/network-management/cloud/img/back-to-home_19.jpg)
 
 ---
 

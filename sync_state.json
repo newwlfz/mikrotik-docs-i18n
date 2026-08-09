@@ -13,7 +13,7 @@
   "virtual-private-networks/eoip.md": {
     "etag": "\"6a758aa9-268e\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "95463d698de7927e4880b683ac24c902",
+    "md5": "b4bbec078aa3b83b36a688fdfd27eb59",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -46,7 +46,7 @@
   "firewall-and-quality-of-service/firewall/mangle.md": {
     "etag": "\"6a758aa8-bee\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d629c485ce9fbec9f07bd7aeac8885b2",
+    "md5": "7dea9e825e22069de3de7ec96159ac60",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -57,7 +57,7 @@
   "high-availability-solutions/user-guides/vrrp-configuration-examples.md": {
     "etag": "\"6a758aa8-13ae\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "a0f65876b7e76f5428e109e293056dd7",
+    "md5": "83650a510f0441dd7b8ab21543d1eedc",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -79,7 +79,7 @@
   "wireless/wifi/interworking-for-wifi6.md": {
     "etag": "\"6a758aa9-4cdc\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "77fbe43261e33b1614923c439780218d",
+    "md5": "f4c8121827689ba87de05d4ac354ed09",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -156,7 +156,7 @@
   "getting-started/installation-and-upgrade/install/chr-installation/vultr.md": {
     "etag": "\"6a758aa8-ef1\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "352e8a40d7592d27f814258905d63855",
+    "md5": "2d7dffd51354ed13484bcbaf6ff6a99d",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -233,7 +233,7 @@
   "wireless/w60g/ptp-gui-example.md": {
     "etag": "\"6a758aa9-9d7\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "cd414df2d0238772defdf9a3ade27740",
+    "md5": "9717e955fbb5c177c76b955251e94677",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -343,7 +343,7 @@
   "wireless/abgn/vlans-on-wireless.md": {
     "etag": "\"6a758aa9-ff2\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "d397f6eba9721f99fe93e5927d229f39",
+    "md5": "ca6ca149d38afb9074977f5cd082949a",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -354,7 +354,7 @@
   "getting-started/configuration-management/index.md": {
     "etag": "\"6a758aa8-485f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "90d2ef05c35de35fff2b7661faa61c52",
+    "md5": "1b5ed0cd5d50a222aba968691a3fda8e",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -420,7 +420,7 @@
   "high-availability-solutions/multi-chassis-link-aggregation-group.md": {
     "etag": "\"6a758aa8-3d70\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "3ead551ef33b0d690f40fec5e855142c",
+    "md5": "2495f8829db9177d107d5090bc8498a1",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -486,7 +486,7 @@
   "management-tools/quick-set.md": {
     "etag": "\"6a758aa9-2572\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "faca5ef29308b5a65a4dc05231c6bad3",
+    "md5": "f3c2d4c7b0bb1526c77672b43070b27e",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -552,7 +552,7 @@
   "management-tools/mikrotik-mobile-app.md": {
     "etag": "\"6a758aa9-568\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "49e7f542e9e21a272ceb0ce8113029d3",
+    "md5": "4f8b3821ec4a1bb0abe096656a70363e",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -651,7 +651,7 @@
   "wireless/w60g/fail-over-ptp-gui-example.md": {
     "etag": "\"6a758aa9-15c0\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "3b07e80771380c34367f7646cb7f849a",
+    "md5": "b1ede9c09cfde76b8ad8ae3019fd2e8e",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -673,7 +673,7 @@
   "high-availability-solutions/vrrp.md": {
     "etag": "\"6a758aa8-5bde\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "5d71a86402fe09f8b15563e322cde943",
+    "md5": "d68026a4e6b7e3bdf5dd67c959206fb4",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -684,7 +684,7 @@
   "high-availability-solutions/bonding.md": {
     "etag": "\"6a758aa8-62a9\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "ebe118cc8a9dfeeb84b550ea03ab7321",
+    "md5": "38496c33b23966eebbe71389448c79cb",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -761,7 +761,7 @@
   "virtual-private-networks/ipip.md": {
     "etag": "\"6a758aa9-14b6\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "d0ea090892eddb0e435af33719ef7d26",
+    "md5": "d6404684f5a49f1c2684f646dc07b603",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -794,7 +794,7 @@
   "firewall-and-quality-of-service/firewall/filter.md": {
     "etag": "\"6a758aa8-3022\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "62fb32e40a04ce3014299d49349d525d",
+    "md5": "aac408506364e0bed26c80b9c8ffbc09",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -827,7 +827,7 @@
   "firewall-and-quality-of-service/queues/pcq-example.md": {
     "etag": "\"6a758aa8-852\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "160c07f941ad4d494fceedf213568a6f",
+    "md5": "7780c52d3085e4d3c45cac99bfcdeda6",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -904,7 +904,7 @@
   "mobile-networking/gps/gps-tracking-using-mqtt-and-thingsboard.md": {
     "etag": "\"6a758aa9-2510\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "463c40cc37939a820b86d753cb7821b1",
+    "md5": "0d3e95dc772de2c6fb0ee751173330c1",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -926,7 +926,7 @@
   "bridging-and-switching/swos/gpen21.md": {
     "etag": "\"6a758aa8-47fe\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "5eb76891a0634733a294f14139e7df16",
+    "md5": "1943f753b4c03fac684c6c7c2506617b",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1047,7 +1047,7 @@
   "bridging-and-switching/swos/css610.md": {
     "etag": "\"6a758aa8-6eb7\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "6bc621cee27a8d9a5e444fe4bf0e17ba",
+    "md5": "cbb2b284bcab7cb536f564ee6211942b",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1069,7 +1069,7 @@
   "network-management/proxy/index.md": {
     "etag": "\"6a758aa9-70d3\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "057cf09b07fae4b2a5c64ac08a9120c6",
+    "md5": "1c2b73b9906ec147514c1defbc43ca52",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1091,7 +1091,7 @@
   "wireless/wifi/index.md": {
     "etag": "\"6a758aa9-13bfc\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "c17993cc78a8d8194f9fabc93f80b965",
+    "md5": "2eddb33f15e665912a081e97e9d433cb",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1146,7 +1146,7 @@
   "internet-of-things/bluetooth/mikrotik-beacon-manager/mikrotik-beacon-manager-android-devices.md": {
     "etag": "\"6a758aa8-5750\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "251cf4dd42ece7b238ffcbaa65f06720",
+    "md5": "4126c8f46ca61b4bc719388700ff6dff",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1256,7 +1256,7 @@
   "internet-of-things/mqtt/mqtt-and-thingsboard-configuration.md": {
     "etag": "\"6a758aa8-2bbd\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "77a795791e06ede356abc4b2e264ab30",
+    "md5": "be704aca6cc8c48078dd76e8f0c0932d",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1366,7 +1366,7 @@
   "bridging-and-switching/user-guides/bridge-vlan-table.md": {
     "etag": "\"6a758aa8-7e1c\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "952458c97665a98b39645223dd2c8ddd",
+    "md5": "901542e9e8ac9356f6d1862c37a0e2ee",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1377,7 +1377,7 @@
   "management-tools/webfig.md": {
     "etag": "\"6a758aa9-2c16\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "30bb07297397e08366b6dfb2dec4ed88",
+    "md5": "38539525a424cb4933267d231e58aaa6",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1388,7 +1388,7 @@
   "virtual-private-networks/sstp.md": {
     "etag": "\"6a758aa9-3071\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "1a88f9dd91fbc7f3c69641ede18de0e9",
+    "md5": "6e1cc549da9c73f57e054dccef4b8288",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1476,7 +1476,7 @@
   "firewall-and-quality-of-service/nat-pmp.md": {
     "etag": "\"6a758aa8-db9\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "c9badfe94fac91c140309cb7dee4b608",
+    "md5": "ca7182d9f89472189c0c87414293a272",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1498,7 +1498,7 @@
   "internet-of-things/modbus.md": {
     "etag": "\"6a758aa8-2839\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "20fbbe457d51f2f0968784f0c98a7265",
+    "md5": "03fddb29412d157b6975e81d82a31271",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1509,7 +1509,7 @@
   "virtual-private-networks/ipsec/index.md": {
     "etag": "\"6a758aa9-16d31\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "628b87af8c1f16f145c3bcc73bb20545",
+    "md5": "2a7c709159bcacfb653acdbdbdcfa198",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1608,7 +1608,7 @@
   "internet-of-things/lora/user-guides/step-by-step-installation.md": {
     "etag": "\"6a758aa8-b5f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "3b8d3a133437db7f0934c26070cdcc94",
+    "md5": "33b6a0d6a5f0d913ed2f0a361e3a3a85",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1685,7 +1685,7 @@
   "bridging-and-switching/user-guides/layer2-misconfiguration.md": {
     "etag": "\"6a758aa8-d85a\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "2e58fe2f33c4fc8357f6bb31681506cc",
+    "md5": "438b30866c91580c201b7321cd06b512",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1762,7 +1762,7 @@
   "storage/raid/index.md": {
     "etag": "\"6a758aa9-214b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "a757563c1b923d55462e820d5eb36b1f",
+    "md5": "05bf5b0190f933ad254e2861459f2327",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1784,7 +1784,7 @@
   "bridging-and-switching/swos/crs3.md": {
     "etag": "\"6a758aa8-239b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "a9d530e1df77aa1633c0687cbbb3ed70",
+    "md5": "bd8902d2257fe890ee582f0d45180131",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1795,7 +1795,7 @@
   "virtual-private-networks/6to4.md": {
     "etag": "\"6a758aa9-1b18\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "1f4551b28d3d0d7649729d20cd81bafb",
+    "md5": "df767486c80ae99e1ffd996930ff2d16",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1916,7 +1916,7 @@
   "internet-of-things/gpio/using-gpio-as-pulse-input-from-meter.md": {
     "etag": "\"6a758aa8-630\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "67ecc13a686da778ad452980611bd543",
+    "md5": "e5d54d130d0e2f285dcafaf316d52ae7",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -1938,7 +1938,7 @@
   "hardware/mtu-in-routeros.md": {
     "etag": "\"6a758aa8-36eb\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "cdb0ef11dcca340ceac82ac640d9d746",
+    "md5": "086d11fbf944fae2b0392fe8af66d7ac",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2004,7 +2004,7 @@
   "bridging-and-switching/user-guides/bridge-igmp-mld-snooping.md": {
     "etag": "\"6a758aa8-6088\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "b83236eb3ee2499e9abdbdffbe0c4764",
+    "md5": "a7675dfc92f48ea2a2df56e1b5d94dcc",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2125,7 +2125,7 @@
   "internet-of-things/lora/user-guides/tg-lr-setup-guide.md": {
     "etag": "\"6a758aa8-bd4f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "fb0bc36255c18ab39cfaac123c73676c",
+    "md5": "f8ebec2a174a396e0446c2eab7ece1ff",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2224,7 +2224,7 @@
   "containers/user-guides/container-thingsboard-mqtt-http-server.md": {
     "etag": "\"6a758aa8-7246\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "f6a24087da300424b203207a5274fd92",
+    "md5": "1e3d17b32aa500ad6cb6b01cf685a657",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2257,7 +2257,7 @@
   "diagnostics-monitoring-and-troubleshooting/graphing.md": {
     "etag": "\"6a758aa8-11fd\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "ae45327576ea5e4210073ac3c4f84321",
+    "md5": "8728e3cb7749d677c97c5ce94c3bb7d2",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2323,7 +2323,7 @@
   "internet-of-things/lora/user-guides/the-things-stack.md": {
     "etag": "\"6a758aa8-235d\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "081813d8cbc2dfb8e754c8ef73944b24",
+    "md5": "98c302fc08c8c1e8974e09ad365d8d3a",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2334,7 +2334,7 @@
   "diagnostics-monitoring-and-troubleshooting/packet-sniffer.md": {
     "etag": "\"6a758aa8-32ad\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "60228f110d86a9215471fbd3e7b36e98",
+    "md5": "ccd0b049b7ae4a4b66825d1daeda9433",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2455,7 +2455,7 @@
   "firewall-and-quality-of-service/upnp.md": {
     "etag": "\"6a758aa8-15eb\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "8e9b6012cc7e1162aeb22c805d12b699",
+    "md5": "e28a2be5592577e3cbb810cd847c750a",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2510,7 +2510,7 @@
   "virtual-private-networks/openvpn.md": {
     "etag": "\"6a758aa9-3a0c\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "95e07c280384f3334951d2f01cd5c1f2",
+    "md5": "4b0250adf4fb4e091481acafa578d0ab",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2664,7 +2664,7 @@
   "bridging-and-switching/switch-chip-features.md": {
     "etag": "\"6a758aa8-db53\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "2407c4891f7b8742964a0ddd79d0a25f",
+    "md5": "19e9e4d899a9b056c62179efdb1c7e3f",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2818,7 +2818,7 @@
   "bridging-and-switching/index.md": {
     "etag": "\"6a758aa8-2739d\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "3e2579067022f1c0bab5d662f7e7fd8e",
+    "md5": "011493981353cbe8b1a836595d41feda",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2829,7 +2829,7 @@
   "wireless/w60g/distance-guide.md": {
     "etag": "\"6a758aa9-648\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "6683ae4931de8a3fd5469859b3ef885f",
+    "md5": "da325d1bf85c0c65f1363bafca3b73f4",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -2961,7 +2961,7 @@
   "network-management/cloud/back-to-home.md": {
     "etag": "\"6a758aa9-355f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "d6a2b2b97d3616064ac9b4d4ce63535d",
+    "md5": "231174fbe6ef57a0ffa34e549fcd4012",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3038,7 +3038,7 @@
   "virtual-private-networks/l2tp/index.md": {
     "etag": "\"6a758aa9-3c06\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "f46034c273a5bd4d753447f3b6c7ce50",
+    "md5": "e44fb6646bae0abe42a845d3c3552d42",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3060,7 +3060,7 @@
   "diagnostics-monitoring-and-troubleshooting/traffic-generator.md": {
     "etag": "\"6a758aa8-6ff3\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "416cfd17fdfafdcd8635367eafe000cf",
+    "md5": "6479759b3de574783af182220174f7df",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3071,7 +3071,7 @@
   "containers/user-guides/container-homeassistant.md": {
     "etag": "\"6a758aa8-1262\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d0af67c54302bb36bcb5595d2529211a",
+    "md5": "a0e6752aeaf12b5c6f6f1c4076f7ced7",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3159,7 +3159,7 @@
   "wireless/abgn/capsman/capsman-with-vlans.md": {
     "etag": "\"6a758aa9-3712\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "91ac704559ba5f506d46ac2614b38b48",
+    "md5": "c74459846872b4a64caf27569d8a16c7",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3181,7 +3181,7 @@
   "network-management/dhcp.md": {
     "etag": "\"6a758aa9-15337\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "54899e39171939f904f6cbe785507ee9",
+    "md5": "5cb95075c66996973ef95ec5bb4c0ac3",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3258,7 +3258,7 @@
   "getting-started/configuration-management/routeros-configuration-reset.md": {
     "etag": "\"6a758aa8-fba\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "c31ac346a50c124ec82de1e868671e86",
+    "md5": "138171742c8c8435b169ec6b87b40479",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3302,7 +3302,7 @@
   "virtual-private-networks/l2tp/lac-and-lns-setup-with-cisco-as-lac.md": {
     "etag": "\"6a758aa9-142c\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "f6c0078f232311ca62e3a2e9c576db05",
+    "md5": "aaed97c60c02eac79b0ec111d58ac3fb",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3313,7 +3313,7 @@
   "internet-of-things/wiliot.md": {
     "etag": "\"6a758aa8-351b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d960fc55a25aba27db5ce6a4a4f91ecc",
+    "md5": "09bf8984cf7eafb599f0c4f03a100b2e",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3368,7 +3368,7 @@
   "firewall-and-quality-of-service/queues/queue-burst.md": {
     "etag": "\"6a758aa8-3c9a\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "cc7efaad4135187e86c7d94df6756209",
+    "md5": "8304a60699a06a27df35c2cf4536be7b",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3401,7 +3401,7 @@
   "getting-started/manual-network-setup.md": {
     "etag": "\"6a758aa8-12fe\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "25d9bb7a1bed2bd6bcdc587de5da98fe",
+    "md5": "629f563ecf597bd7ae92eb9306745d91",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3456,7 +3456,7 @@
   "management-tools/winbox.md": {
     "etag": "\"6a758aa9-4a73\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "1ca0d4418f1a962c23465551c72bb796",
+    "md5": "83aab92a26d2128ea4ec36e5c97345dc",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3555,7 +3555,7 @@
   "virtual-private-networks/wireguard.md": {
     "etag": "\"6a758aa9-615d\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "24b0f753ac5d726f2805e661043c166e",
+    "md5": "e874e715b7bcef11ba759ad5b22eddeb",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3577,7 +3577,7 @@
   "wireless/abgn/wireless-interface.md": {
     "etag": "\"6a758aa9-1cade\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "fd9c44fcf1b361547bb4536f6fdf50f6",
+    "md5": "248ad8edaf2a12240985ba325b2f223b",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3665,7 +3665,7 @@
   "high-availability-solutions/user-guides/bonding-examples.md": {
     "etag": "\"6a758aa8-110e\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "f8d9db8ed7c54bbe0edc84b0f59df13c",
+    "md5": "fcebdb7be1511cc30ddcd30c7a26a82f",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3753,7 +3753,7 @@
   "internet-of-things/lora/user-guides/aws-lorawan-configuration.md": {
     "etag": "\"6a758aa8-1191\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "ac21e7fc9ec6c1e3007b705a922454f2",
+    "md5": "3e4038eb41bf14c0372987045778fe5d",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3808,7 +3808,7 @@
   "getting-started/supout-rif.md": {
     "etag": "\"6a758aa8-7a3\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d9964849ea122a9dc7160db278039508",
+    "md5": "362f419c5351efa7ea7a1627bc847630",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3819,7 +3819,7 @@
   "virtual-private-networks/pptp.md": {
     "etag": "\"6a758aa9-1c5c\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "7c50d31019b6c649a54efd3c03a472da",
+    "md5": "86413eb9cfa8acbd74258b936f31adcb",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3896,7 +3896,7 @@
   "hardware/poe-out.md": {
     "etag": "\"6a758aa8-6edd\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "2283f85da8bc5bbf9ec1e663d279f5ad",
+    "md5": "271eb1c5ad3f292859764bf5ec79de6d",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3929,7 +3929,7 @@
   "internet-of-things/mqtt/kaa-iot-setup.md": {
     "etag": "\"6a758aa8-2f9c\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "04a836aeca32f8ae34088ded2562a022",
+    "md5": "c4599766e065d26c5ab6d01fd4fe3e4c",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3940,7 +3940,7 @@
   "bridging-and-switching/user-guides/crs1xx-2xx-series-switches-examples.md": {
     "etag": "\"6a758aa8-9ad9\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d2270adc069c182131e329ad64e1b01a",
+    "md5": "e436772ee86ea5f2ce134465154edb99",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -3973,7 +3973,7 @@
   "firewall-and-quality-of-service/user-guides/ddos-protection.md": {
     "etag": "\"6a758aa8-11a0\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "38223307b1b2c0bf563ed71a46d02711",
+    "md5": "72ab131ac695306bcb137ce1ee9de553",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4039,7 +4039,7 @@
   "getting-started/first-time-configuration.md": {
     "etag": "\"6a758aa8-462f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "afed5c946421f3c37d9415bfe19926e3",
+    "md5": "e33ced8300f408e57231e730ef0eb0a6",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4061,7 +4061,7 @@
   "wireless/abgn/interworking-profiles.md": {
     "etag": "\"6a758aa9-5810\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "a8621184bfdde3730ec95f1c7073ad2f",
+    "md5": "e2abc4b72d271056e4cf0c2e826d7173",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4116,7 +4116,7 @@
   "authentication-authorization-accounting/user-manager.md": {
     "etag": "\"6a758aa8-a99d\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "a93f2dd733b4a8877a25dc36935371d1",
+    "md5": "cfcb7a8ca021486005c0baec22d46f53",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4193,7 +4193,7 @@
   "getting-started/routeros-licensing/chr/chr-licensing.md": {
     "etag": "\"6a758aa8-44ee\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "e90bc783739e40f26ccaf6fab89fc6ac",
+    "md5": "d2b87235f2a549dd5684f49c63d096ab",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4215,7 +4215,7 @@
   "virtual-private-networks/zerotier.md": {
     "etag": "\"6a758aa9-5a19\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "2cd6cf661ca5a6d3e72020551a0fc49f",
+    "md5": "7e7ccfb87dfe49a98bcb5c2b56631e35",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4413,7 +4413,7 @@
   "internet-of-things/bluetooth/user-guides/ifttt-app-notifications-ble-tag.md": {
     "etag": "\"6a758aa8-2bee\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "4b07c635913782c59cae45d29b5ad79b",
+    "md5": "8a052a8ffb08153b810c6cd0ad2acb31",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4435,7 +4435,7 @@
   "getting-started/routeros-licensing/x86/index.md": {
     "etag": "\"6a758aa8-3c21\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "cabaf9fcd3b25dfd597e2127a8054766",
+    "md5": "e2b9389d2449bb0acbde3a73d00a3faf",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4446,7 +4446,7 @@
   "internet-of-things/lora/general-properties.md": {
     "etag": "\"6a758aa8-564f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d091271057ac3391ed48224771f61130",
+    "md5": "a2813587539f952c6a4d77e342482303",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4545,7 +4545,7 @@
   "firewall-and-quality-of-service/queues/htb-hierarchical-token-bucket.md": {
     "etag": "\"6a758aa8-2f7d\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "1ae17f81abf9b7feb57c97ee34f9964f",
+    "md5": "5e4d1fdee8f384e98ab23d504167b44f",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4622,7 +4622,7 @@
   "management-tools/serial-console.md": {
     "etag": "\"6a758aa9-3121\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "1728a087c2c19a93251fcd67f295485c",
+    "md5": "cf1e402348c8415bfdfa9282814741d4",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4688,7 +4688,7 @@
   "virtual-private-networks/pppoe/mlppp-over-single-and-multiple-links.md": {
     "etag": "\"6a758aa9-13b1\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "eb0fbec9768f72c682daee20520823c4",
+    "md5": "3f25f25163ca2c4e210b82cbc9642f6e",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -4996,7 +4996,7 @@
   "virtual-private-networks/pppoe/index.md": {
     "etag": "\"6a758aa9-4b18\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "9972f8cf9e827dbec086c5768f62fee3",
+    "md5": "08b33adeece5334b20ea8cd7f1c58c8a",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5095,7 +5095,7 @@
   "firewall-and-quality-of-service/packet-flow-in-routeros.md": {
     "etag": "\"6a758aa8-9b8a\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d7e0fac8e76b4c8d94b051e8a017af90",
+    "md5": "6bc12b918ee607fccf227d903928adba",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5117,7 +5117,7 @@
   "high-availability-solutions/load-balancing/per-connection-classifier.md": {
     "etag": "\"6a758aa8-357e\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "6682e59423d77b124fc87aec8c620814",
+    "md5": "23334426ade65aa9282535cc0cd2589d",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5139,7 +5139,7 @@
   "wireless/wifi/configuring-outdoor-cpe-to-ap-links.md": {
     "etag": "\"6a758aa9-2f57\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "ab040c0c4c52e8df79dc898490dbbcc3",
+    "md5": "94ee534a9d53f5adde92d391c5af02bf",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5205,7 +5205,7 @@
   "internet-of-things/bluetooth/mikrotik-beacon-manager/mikrotik-beacon-manager-for-ios-devices.md": {
     "etag": "\"6a758aa8-2dca\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "745da2aa5c99214accdc334fe55746be",
+    "md5": "ed43e6a5f756eeadc9eda9bd3c2028e4",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5227,7 +5227,7 @@
   "high-availability-solutions/load-balancing/failover-wan-backup.md": {
     "etag": "\"6a758aa8-d04\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "5db52ae267a98b694554a446d30f6c15",
+    "md5": "8207a7c7504cd8dfd93bbc6db33e3fad",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5260,7 +5260,7 @@
   "bridging-and-switching/user-guides/wireless-vlan-trunk.md": {
     "etag": "\"6a758aa8-1411\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "3f7eb409311385ef646bd2c40ca18862",
+    "md5": "724dd2a531c02a5f3be048c3264fbf01",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5293,7 +5293,7 @@
   "diagnostics-monitoring-and-troubleshooting/snmp.md": {
     "etag": "\"6a758aa8-2fe5\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "165c37baad41f2a11c65aba13f2547d6",
+    "md5": "1a77b5263eedc2c4e6e7180765f39066",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5337,7 +5337,7 @@
   "getting-started/installation-and-upgrade/upgrade.md": {
     "etag": "\"6a758aa8-2cf5\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "4a47862f1adf3c509f88b91b44208310",
+    "md5": "205f1e5188fb1c15832aae74082cdcbf",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5370,7 +5370,7 @@
   "firewall-and-quality-of-service/firewall/nat.md": {
     "etag": "\"6a758aa8-4ece\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "275085c5a17aff34bc8c898d848f1f0c",
+    "md5": "8bf5717c43a90bd3f4fbb3ea8d48d185",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5392,7 +5392,7 @@
   "getting-started/installation-and-upgrade/packages.md": {
     "etag": "\"6a758aa8-28ff\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "e596d77434093f0aa6f4847c7d685747",
+    "md5": "b75dd21273d88d673c346c5fe9dccbde",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5447,7 +5447,7 @@
   "virtual-private-networks/ipsec/qkd-integration-in-routeros-ipsec-ppk.md": {
     "etag": "\"6a758aa9-2515\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "56f7b7c93becafe7f21b9ef05a6d9de8",
+    "md5": "3581aa7c53c37a40b4e0cde62711116c",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5458,7 +5458,7 @@
   "diagnostics-monitoring-and-troubleshooting/traffic-flow/netflow-analysis-with-elasticsearch.md": {
     "etag": "\"6a758aa8-2a49\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "13242a9e0266bca63865f3fc55a587dc",
+    "md5": "8042f982fb069c0b56b32eeb358d3a7f",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5535,7 +5535,7 @@
   "virtual-private-networks/gre.md": {
     "etag": "\"6a758aa9-1541\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "394be23d00f6a8d4d58716a793721f7d",
+    "md5": "96caff0a8d112601d03204d989c8541b",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5634,7 +5634,7 @@
   "hardware/lcd-touchscreen.md": {
     "etag": "\"6a758aa8-2a2b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "22b1fbddfed7e5f6c2107a5c22796e85",
+    "md5": "827bf2a487001e8df1b26eef2da4ce7b",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5645,7 +5645,7 @@
   "bridging-and-switching/marvell-prestera-switch-chip-features.md": {
     "etag": "\"6a758aa8-ec33\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "59695f8f87a729c9204905c7dd720094",
+    "md5": "8b6795b6e8c7e42bb450a9f60850dae8",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5656,7 +5656,7 @@
   "mobile-networking/gps/gps-tracking-using-http-post.md": {
     "etag": "\"6a758aa9-100f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "4666545964270897c8b8b18dce89967e",
+    "md5": "205b37e78b62da9950d3a5947ca3e664",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5711,7 +5711,7 @@
   "wireless/abgn/capsman/ap-controller-capsman.md": {
     "etag": "\"6a758aa9-e981\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "a1eae6e557f6ed099bb95bafd386271d",
+    "md5": "98dc9affccd9b37512711585975dcaa6",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5744,7 +5744,7 @@
   "internet-of-things/lora/user-guides/chirpstack.md": {
     "etag": "\"6a758aa8-1258\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "c2a6f6fece84dee60c0be48b7a514d4b",
+    "md5": "5d83bfdee1485459ca68079e83a03bb7",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5755,7 +5755,7 @@
   "virtual-private-networks/ipsec/ikev2-eap-between-nordvpn-and-routeros.md": {
     "etag": "\"6a758aa9-193b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "96faf74efdd6e5be90e152235b557d80",
+    "md5": "6d7f388116009b9250a9c9d27b55ea79",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5810,7 +5810,7 @@
   "user-guides/routing-and-networking-protocols/multicast/pim-sm.md": {
     "etag": "\"6a758aa9-25f0\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "060ecf8d29268c8252d843ca0c634ea4",
+    "md5": "b7e35d6489a46138131e233d0e450433",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5821,7 +5821,7 @@
   "hardware/grounding.md": {
     "etag": "\"6a758aa8-82b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "1d529bc770c101b831fd166206d2bed6",
+    "md5": "f8513352546637924d84efd9fcfac622",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5931,7 +5931,7 @@
   "firewall-and-quality-of-service/queues/index.md": {
     "etag": "\"6a758aa8-6ddd\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "dcd2357fb9585d447dbbc6874431168d",
+    "md5": "35876ab629bb69f019af649a7ad5ef11",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5986,7 +5986,7 @@
   "bridging-and-switching/swos/css106.md": {
     "etag": "\"6a758aa8-6165\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "a7188078630fda0c4285fa6466716f21",
+    "md5": "a633e2b09b4473bb1ef256bcda6ebf46",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -5997,7 +5997,7 @@
   "bridging-and-switching/user-guides/basic-vlan-switching.md": {
     "etag": "\"6a758aa8-18e7\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "22b848b8229b421a8a5c4c81300fa22e",
+    "md5": "cea4d662ca920b09919cfb542dc00b36",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6041,7 +6041,7 @@
   "wireless/abgn/spectral-scan.md": {
     "etag": "\"6a758aa9-10b9\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "6fa752c580e715c7f9171fdc5421d24c",
+    "md5": "42edc918a6bed8bb8a160c636f51623f",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6074,7 +6074,7 @@
   "hardware/peripherals.md": {
     "etag": "\"6a758aa8-4f81\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "755b068f0560d415d660d960a714bafb",
+    "md5": "8f32ddb367f3aa4cf07bdf3dc68d367f",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6118,7 +6118,7 @@
   "hardware/s-plus-rj10-general-guidance.md": {
     "etag": "\"6a758aa8-c97\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "ec8c316928a0f2cbb9efa31833731d8a",
+    "md5": "2c8c2e907675e128b2dd4137421300a0",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6151,7 +6151,7 @@
   "firewall-and-quality-of-service/queues/queue-size.md": {
     "etag": "\"6a758aa8-ac8\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "181e3e9ef5904f3312453422bf3ee57d",
+    "md5": "f8904da27e4c94dd1949cb6a11ead0aa",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6261,7 +6261,7 @@
   "getting-started/installation-and-upgrade/netinstall/netinstall-windows.md": {
     "etag": "\"6a758aa8-29a4\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "4b2e3842bd8535082e75c5b89f085b32",
+    "md5": "bf033410e974b99eb80344fd8be0a076",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6294,7 +6294,7 @@
   "wireless/wifi/configuring-repeater.md": {
     "etag": "\"6a758aa9-2e9f\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "03ffc4a573c7cd0a733ee7bdf15d343d",
+    "md5": "7c82c28f1d00ffa1955d69411cdfc8ca",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6327,7 +6327,7 @@
   "authentication-authorization-accounting/dot1x.md": {
     "etag": "\"6a758aa8-4a3c\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "d264332d0e0ff1ff31ab7ea2d71c0a1a",
+    "md5": "467124047c46cc03868eac0da5287bc4",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6404,7 +6404,7 @@
   "network-management/cloud/file-share.md": {
     "etag": "\"6a758aa9-1fe5\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "8fe27eaf9b57a0f5f02f8880e4c11956",
+    "md5": "df68d72afc0b50a48d7ce4af59f00daf",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6426,7 +6426,7 @@
   "getting-started/installation-and-upgrade/install/chr-installation/virtualbox.md": {
     "etag": "\"6a758aa8-a54\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "977c01560dc8e3c67666d266acb5ffc9",
+    "md5": "9fda572fe275c464fb049e3fbdc754b5",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6448,7 +6448,7 @@
   "bridging-and-switching/user-guides/spanning-tree-protocol.md": {
     "etag": "\"6a758aa8-a99b\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "35f27745a9f4233573361fa9a5848848",
+    "md5": "0c57fcc29804a871a07f0fb2e7842085",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6470,7 +6470,7 @@
   "internet-of-things/bluetooth/user-guides/bluetooth-tag-tracking-mqtt-thingsboard.md": {
     "etag": "\"6a758aa8-ed02\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:04 GMT",
-    "md5": "9c9d300a14b5d31e223905da31c55c1c",
+    "md5": "003715c92a77f30cddf5910c0febbd28",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6536,7 +6536,7 @@
   "wireless/abgn/hwmpplus-mesh.md": {
     "etag": "\"6a758aa9-55ca\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "a350c3e7808ad30a1da08eb763975d77",
+    "md5": "685cff23d5a13c85423098e7e8a3bd83",
     "translations": {
       "zh-Hans": {
         "status": "success",
@@ -6569,7 +6569,7 @@
   "mobile-networking/bg77-modem-at-commands/wwan-and-gnss-priority-automatization.md": {
     "etag": "\"6a758aa9-4d98\"",
     "last_modified": "Fri, 07 Aug 2026 07:35:05 GMT",
-    "md5": "b35e7b1a0928b84f1215295565c7972d",
+    "md5": "df268fcc876725139e48e3f6368fd6e3",
     "translations": {
       "zh-Hans": {
         "status": "success",

@@ -14,7 +14,7 @@ Example is done from an empty configuration state with the [[WinBox](https://mik
 
 After configuration reset - only mac-telnet is possible. In the main WinBox screen press on Neighbours, choose your device's MAC address and press Connect:
 
-![](./img/ptp-gui-example-01.webp)
+![](/docs/wireless/w60g/img/ptp-gui-example-01.webp)
 
 ### Configure bridge
 
@@ -24,7 +24,7 @@ Add a new bridge and assign bridge members to it. This will allow passing traffi
 2. Press on "+" to add a new bridge;
 3. Apply your changes.
 
-![](./img/ptp-gui-example-02.webp)
+![](/docs/wireless/w60g/img/ptp-gui-example-02.webp)
 
 Add interface members (ether1 and wlan60-1) to newly created bridge:
 
@@ -33,9 +33,9 @@ Add interface members (ether1 and wlan60-1) to newly created bridge:
 3. Select the correct interfaces;
 4. Apply the settings.
 
-![](./img/ptp-gui-example-03.webp)
+![](/docs/wireless/w60g/img/ptp-gui-example-03.webp)
 
-![](./img/ptp-gui-example-04.webp)
+![](/docs/wireless/w60g/img/ptp-gui-example-04.webp)
 
 ### Set up wireless connection
 
@@ -51,7 +51,7 @@ Configure **bridge** device as follows:
 6. Apply your changes;
 7. Press enable to start transmitting.
 
-![](./img/ptp-gui-example-05.webp)
+![](/docs/wireless/w60g/img/ptp-gui-example-05.webp)
 
 Configure **station** device as follows:
 
@@ -62,7 +62,7 @@ Configure **station** device as follows:
 5. Apply your changes;
 6. Press enable to start transmitting.
 
-![](./img/ptp-gui-example-06.webp)
+![](/docs/wireless/w60g/img/ptp-gui-example-06.webp)
 
 ### Additional configuration
 

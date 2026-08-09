@@ -160,7 +160,7 @@ When you first connect to your MikroTik router, you may see a prompt about the [
 - **The default setup includes:** A basic firewall, a DHCP server, and default wireless security settings (if applicable).
 - **You can safely customize it** while keeping the default structure as a base.
 
-![Default configuration prompt](./img/winbox-first-boot-prompt_01.png)
+![Default configuration prompt](/docs/getting-started/img/winbox-first-boot-prompt_01.png)
 
 :::danger
 Removing the default configuration removes all built-in security rules and services. This is only recommended for advanced users who plan to configure the router manually.
@@ -234,12 +234,12 @@ add disabled=no interface=ether1 user=me password=123 \
 3. Select **PPPoE Client** from the dropdown list.
 4. Enter a name for the connection and select **ether1** as the interface.
 
-   ![](./img/pppoe_client_01.png)
+   ![](/docs/getting-started/img/pppoe_client_01.png)
 5. Go to the **Dial Out** tab and enter your username and password provided by your ISP.
 6. Configure any additional parameters as required by your ISP.
 7. Click <kbd>**OK**</kbd> to save the settings.
 
-   ![](./img/pppoe_client_02.png)
+   ![](/docs/getting-started/img/pppoe_client_02.png)
 
 </TabItem>
 </Tabs>
@@ -362,7 +362,7 @@ set [ find default-name=wifi2 ] configuration.country=Latvia \
   security=myProfile security.wps=disable
 ```
 
-![](./img/wireless-setup_03.png)
+![](/docs/getting-started/img/wireless-setup_03.png)
 
 </TabItem>
 <TabItem value="legacy" label="Legacy Wireless (/interface wireless)">
@@ -442,7 +442,7 @@ The problem with the ping tool is that it says only that the destination is **un
 
 You cannot reach [www.google.com](https://www.google.com) from your computer which is connected to a MikroTik device:
 
-![](./img/troubleshoot-if-ping-fail.jpg)
+![](/docs/getting-started/img/troubleshoot-if-ping-fail.jpg)
 
 :::tip
 If you are not sure how exactly to configure your gateway device, please reach MikroTik's official [consultants](https://mikrotik.com/consultants) for configuration support.

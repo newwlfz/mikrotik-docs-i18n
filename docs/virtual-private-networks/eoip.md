@@ -56,7 +56,7 @@ Let us assume we want to bridge two networks: 'Station' and 'AP'. By using EoIP,
 
 Consider the following setup:
 
-![](./img/eoip-01.webp)
+![](/docs/virtual-private-networks/img/eoip-01.webp)
 
 As you know, wireless stations cannot be bridged; to overcome this limitation (not involving WDS), we will create an EoIP tunnel over the wireless link and bridge it with interfaces connected to local networks.
 

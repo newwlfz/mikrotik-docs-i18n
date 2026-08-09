@@ -19,7 +19,7 @@ RouterOS versions are released in several "release chains": Long term, Stable, T
 - **Testing**: Released every few weeks, it only undergoes basic internal testing, and should not be used in production.
 - **Development**: Released when necessary. Includes raw changes and is available for software enthusiasts for testing new features.
 
-<center>![](./img/upgrade-01.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-01.webp)</center>
 
 **Sub-menu:** `/system/package/update`
 
@@ -97,7 +97,7 @@ If you need to skip some specific package upgrade or a package file is no longer
 
 Choose your system type, and download the upgrade package. Connect to your router with WinBox. Select the downloaded file with your mouse, and drag it to the Files menu. If some files are already present, make sure to put the package in the root menu, not inside the hotspot folder! The upload will start.
 
-<center>![](./img/upgrade-02.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-02.webp)</center>
 
 After it finishes - reboot the device. The new version number will be seen in the Winbox Title and in the Packages menu
 
@@ -143,30 +143,30 @@ You can upgrade one or multiple MikroTik routers within your local network by us
 
 - Place needed packages under the Files menu, on your main router:
 
-<center>![](./img/upgrade-03.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-03.webp)</center>
 
 **Optional**, you can set a mirror device between the main ones, if not needed, skip this step:
 
 - Choose Local Package Sources and enable Mirror device. Set Primary Server where the packages are located, 10.155.136.50. Check Interval **minimum** setting can be set to 00:07:12, at which the device will connect using Winbox to a main device and check for packages.  
   If new packages are available, it will begin to download, please note the download process is slow and may require some time when a large amount of files are used. In case of some failures, download will resume on next Check.
 
-<center>![](./img/upgrade-04.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-04.webp)</center>
 
 - A new `packs` folder is created, where the mirror device will store packages:
 
-<center>![](./img/upgrade-05.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-05.webp)</center>
 
 - Add a new package source on the device which will be updated, in this example we use mirror device 10.155.136.71:
 
-<center>![](./img/upgrade-06.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-06.webp)</center>
 
 - Once you click **Refresh** in the Local Update packages tab,  the device using Winbox will try to connect to the source and check if there are new packages.
 
-<center>![](./img/upgrade-07.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-07.webp)</center>
 
 - Choose packages and click **Download**, after download completes, the device will need to reboot for update.
 
-<center>![](./img/upgrade-08.webp)</center>
+<center>![](/docs/getting-started/installation-and-upgrade/img/upgrade-08.webp)</center>
 
 - Use `/system/package/local-update/refresh` to automate this in your scripts. Fetch tool can be used to download packages from our web page, for example:
 

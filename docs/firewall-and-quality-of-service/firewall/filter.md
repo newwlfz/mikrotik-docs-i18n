@@ -17,7 +17,7 @@ On the other hand, when securing a customer network, it would be an administrati
 
 A firewall filter consists of three predefined chains that cannot be deleted:
 
-![](./img/filter-01.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/filter-01.webp)
 
 - **input** - used to process packets **entering the router** through one of the interfaces with the destination IP address which is one of the router's addresses. Packets passing through the router are not processed against the rules of the input chain.
 - **forward** - used to process packets **passing through the router**.

@@ -21,7 +21,7 @@ It is now common for Ethernet interfaces to support physical MTU values above th
 
 |  |  |
 | :-- | :-- |
-| ![](./img/mtu-in-routeros-01.webp)  |  Mikrotik RouterOS recognizes several types of MTU: IP/Layer-3/L3 MTUMPLS/Layer-2.5/L2.5 MTUMAC/Layer-2/L2 MTUFull frame MTU |
+| ![](/docs/hardware/img/mtu-in-routeros-01.webp)  |  Mikrotik RouterOS recognizes several types of MTU: IP/Layer-3/L3 MTUMPLS/Layer-2.5/L2.5 MTUMAC/Layer-2/L2 MTUFull frame MTU |
 
 ### Full frame MTU
 
@@ -157,25 +157,25 @@ In these examples, we will take a look at frames entering and leaving the router
 
 The image shows the packet MTU size for simple routing, packet size is not modified.
 
-![](./img/mtu-in-routeros-02.webp)
+![](/docs/hardware/img/mtu-in-routeros-02.webp)
 
 ### Routing with VLAN Encap
 
 Each VLAN tag is 4 bytes long. The VLAN tag is added by a router. L2-MTU is increased by 4 bytes.
 
-![](./img/mtu-in-routeros-03.webp)
+![](/docs/hardware/img/mtu-in-routeros-03.webp)
 
 ### Simple MPLS with Tags
 
 When MPLS is used as a plain replacement for IP routing, only one label is attached to every packet, therefore packet size increases by 4 bytes. We have the situation with two MPLS labels. In order to be able to forward standard size (1500 bytes) IP packets without fragmentation, MPLS MTU must be set to at least 1508 for two MPLS labels.
 
-![](./img/mtu-in-routeros-04.webp)
+![](/docs/hardware/img/mtu-in-routeros-04.webp)
 
 ### VPLS Tunnel
 
 Two MPLS labels are present when a remote endpoint is not directly attached. One MPLS label is used to get to a remote endpoint; the second label is used to identify the VPLS tunnel.
 
-![](./img/mtu-in-routeros-05.webp)
+![](/docs/hardware/img/mtu-in-routeros-05.webp)
 
 ## Advanced Setup Examples
 
@@ -189,4 +189,4 @@ In this setup we will have 3 routers:
 
 - MPLS Edge router - will remove VPLS and VLAN tags and bridge the packet to the client Ethernet network.
 
-![](./img/mtu-in-routeros-06.webp)
+![](/docs/hardware/img/mtu-in-routeros-06.webp)

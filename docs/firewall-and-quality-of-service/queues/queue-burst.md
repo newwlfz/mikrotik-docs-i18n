@@ -26,7 +26,7 @@ The client will try to download two 4MB (32Mb) blocks of data, the first downloa
 
 #### Burst-time=16s
 
-![](./img/queue-burst-01.webp)![](./img/queue-burst-02.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-burst-01.webp)![](/docs/firewall-and-quality-of-service/queues/img/queue-burst-02.webp)
 
 As we can see as soon as the client requested bandwidth it was able to get 4Mbps burst for 6 seconds. This is the longest possible burst with given values *(longest-burst-time = burst-threshold \* burst-time / burst-limit)*. As soon as the burst runs out, the rest of the data will be downloaded with 2Mbps. This way, a block of data was downloaded in 10 seconds - without burst, it would take 16 seconds. Burst has 7 seconds to recharge before the next download will start.
 
@@ -71,7 +71,7 @@ The average rate is calculated every 1/16 of burst time so in this case 1s.
 
 #### Burst-time=8s
 
-![](./img/queue-burst-03.webp)![](./img/queue-burst-04.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queue-burst-03.webp)![](/docs/firewall-and-quality-of-service/queues/img/queue-burst-04.webp)
 
 If we decrease burst-time to 8 seconds - we are able to see that in this case, bursts are only at the beginning of downloads. The average rate is calculated every 1/16th of burst time, so in this case every 0.5 seconds.
 

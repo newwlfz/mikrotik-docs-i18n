@@ -101,18 +101,18 @@ Follow these steps to purchase a Prepaid Key:
 7. Click **Place key in the cart**.
 8. Click **Proceed to checkout** to complete your purchase.
 
-![Prepaid Key Purchase](./img/purchase-prepaid_01.png)
+![Prepaid Key Purchase](/docs/getting-started/routeros-licensing/chr/img/purchase-prepaid_01.png)
 
 ### Completing Your Purchase
 
 1. Review your order details.
 2. Complete payment using **Credit Card** (CC) or **PayPal**.
 
-![Prepaid Key Purchase Complete](./img/purchase-prepaid_02.png)
+![Prepaid Key Purchase Complete](/docs/getting-started/routeros-licensing/chr/img/purchase-prepaid_02.png)
 
 Congratulations! You have successfully purchased a Prepaid Key.
 
-![Prepaid Key](./img/prepaid_key_01.png)
+![Prepaid Key](/docs/getting-started/routeros-licensing/chr/img/prepaid_key_01.png)
 
 ## Registering a CHR Instance
 
@@ -127,16 +127,16 @@ This registration associates the CHR System ID with your MikroTik.com account an
 1. Open WinBox and connect to your CHR instance.
 2. Navigate to `/system/license` and press **Renew License**.
 
-![Free to Trial upgrade](./img/chr_free_to_trial_01.png)
-![Free to Trial upgrade](./img/chr_free_to_trial_02.png)
+![Free to Trial upgrade](/docs/getting-started/routeros-licensing/chr/img/chr_free_to_trial_01.png)
+![Free to Trial upgrade](/docs/getting-started/routeros-licensing/chr/img/chr_free_to_trial_02.png)
 
 1. Enter your MikroTik.com account credentials and select the desired license level.
 
-![Free to Trial upgrade](./img/chr_free_to_trial_03.png)
+![Free to Trial upgrade](/docs/getting-started/routeros-licensing/chr/img/chr_free_to_trial_03.png)
 
 1. Confirm the upgrade.
 
-![Free to Trial upgrade](./img/chr_free_to_trial_04_1.png)
+![Free to Trial upgrade](/docs/getting-started/routeros-licensing/chr/img/chr_free_to_trial_04_1.png)
 
 #### Using the Command-Line Interface (CLI)
 
@@ -196,17 +196,17 @@ To upgrade from a Trial license to a Paid license:
 1. Go to the [MikroTik account server](https://www.mikrotik.com/client).
 2. In the **CHR LICENCES** section, select **All CHR keys**.
 
-![All CHR Keys](./img/payment01.png)
+![All CHR Keys](/docs/getting-started/routeros-licensing/chr/img/payment01.png)
 
 1. A list of your CHR instances and their corresponding licenses levels will be displayed.
 
-![Trial to Paid upgrade](./img/license_trial_to_paid_02.png)
+![Trial to Paid upgrade](/docs/getting-started/routeros-licensing/chr/img/license_trial_to_paid_02.png)
 
 1. Click **Upgrade** next to the instance you want to upgrade.
 
 2. Select the desired license level (this can differ from your current trial license level).
 
-![Trial to Paid upgrade](./img/payment02.png)
+![Trial to Paid upgrade](/docs/getting-started/routeros-licensing/chr/img/payment02.png)
 
 1. Click **Upgrade** to confirm.
 
@@ -216,7 +216,7 @@ If you have **Prepaid keys** available, you can use them to pay for CHR licenses
 
 1. Click **Pay using Prepaid key**.
 
-![Trial to Paid upgrade](./img/payment03.png)
+![Trial to Paid upgrade](/docs/getting-started/routeros-licensing/chr/img/payment03.png)
 
 1. If you don't have prepaid keys or prefer not to use them, click **Proceed to checkout**.
 
@@ -227,7 +227,7 @@ You can pay using either:
 - Credit card (CC).
 - PayPal.
 
-![Trial to Paid upgrade](./img/payment04.png)
+![Trial to Paid upgrade](/docs/getting-started/routeros-licensing/chr/img/payment04.png)
 
 ## Upgrading a Perpetual License Level
 
@@ -259,27 +259,27 @@ The P-Unlimited (perpetual-unlimited) license is the highest tier available. It 
 2. Select the CHR instance you want to upgrade.
 3. Click **Upgrade**.
 
-    ![License Upgrade Level](./img/license_upgade_level_01.png)
+    ![License Upgrade Level](/docs/getting-started/routeros-licensing/chr/img/license_upgade_level_01.png)
 
 4. Choose the desired license level (P10 or P-Unlimited) and click **Upgrade**.
 
-    ![License Upgrade Level Select target](./img/license_upgrade02.png)
+    ![License Upgrade Level Select target](/docs/getting-started/routeros-licensing/chr/img/license_upgrade02.png)
 
 5. Select a payment option:
 
 - **Pay using Prepaid key** — if you have prepaid keys(s) available
 
-    ![License Upgrade Level](./img/license_upgade_level_03.png)
+    ![License Upgrade Level](/docs/getting-started/routeros-licensing/chr/img/license_upgade_level_03.png)
 
 - **Proceed to checkout** — if you prefer to pay another way
 
-    ![License Upgrade Level](./img/license_upgade_level_04.png)
+    ![License Upgrade Level](/docs/getting-started/routeros-licensing/chr/img/license_upgade_level_04.png)
 
 1. Choose your payment method:
 
 - Credit card (CC).
 - PayPal.
-    ![License Upgrade Level](./img/license_upgade_level_05.png)
+    ![License Upgrade Level](/docs/getting-started/routeros-licensing/chr/img/license_upgade_level_05.png)
 
 1. Complete the payment process.
 
@@ -338,7 +338,7 @@ Follow these steps to transfer your license:
 
 - Go to your account's **All CHR keys** section.
 
-    ![Transfer button location](./img/chr_transfer01.png)
+    ![Transfer button location](/docs/getting-started/routeros-licensing/chr/img/chr_transfer01.png)
 
   - Click the **Transfer** button for the System ID you want to transfer.
 
@@ -346,13 +346,13 @@ Follow these steps to transfer your license:
 
    Choose the System ID you are transferring the license to from the list.
 
-   ![Select target instance](./img/chr_transfer02.png)
+   ![Select target instance](/docs/getting-started/routeros-licensing/chr/img/chr_transfer02.png)
 
 2. **Confirm the transfer**
 
    Click **Transfer subscription** to complete the process.
 
-   ![Confirm transfer](./img/chr_transfer03.png)
+   ![Confirm transfer](/docs/getting-started/routeros-licensing/chr/img/chr_transfer03.png)
 
 ### Troubleshooting Transfer Errors
 

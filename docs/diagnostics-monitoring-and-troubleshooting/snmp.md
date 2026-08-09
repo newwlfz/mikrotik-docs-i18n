@@ -8,7 +8,7 @@ Simple Network Management Protocol (SNMP) is an Internet-standard protocol used 
 
 SNMP write access is available only for selected OIDs. For supported OIDs, write operations are available using SNMP v1, v2c, or v3. SNMP replies are sent through the same interface on which the request was received, ensuring that the response uses the same source address as the destination address used in the original request to the router.
 
-![](./img/snmp-01.webp)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/snmp-01.webp)
 
 :::warning
 The SNMP service collects data from various services running on the system. If communication between SNMP and one of these services takes longer than expected, the system may log a warning such as timeout while waiting for program or SNMP did not get OID data within the expected time, ignoring OID. The timeout is 30 seconds per service, or up to 5 minutes for the routing service. After such a timeout, the affected service may temporarily stop responding to SNMP data requests before attempting to retrieve the requested information again.

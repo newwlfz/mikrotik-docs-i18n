@@ -27,11 +27,11 @@ Access the login page via your browser and log in. Go to the "**Devices**" menu.
 
 Create a new device by clicking on the add button "+" and "Add new device":
 
-![](./img/mqtt-and-thingsboard-configuration-01.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-01.webp)
 
 Enter the name of the device and click on "Add":
 
-![](./img/mqtt-and-thingsboard-configuration-02.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-02.webp)
 
 By default, access token authentication is selected for the newly created device.
 
@@ -39,7 +39,7 @@ By default, access token authentication is selected for the newly created device
 
 You can change the token by clicking on the created device and entering the "**Manage Credentials**" settings (in the "**Details**" section):
 
-![](./img/mqtt-and-thingsboard-configuration-03.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-03.webp)
 
 This token will be used as a "username" for the MQTT publisher (in RouterOS settings).
 
@@ -49,7 +49,7 @@ You can find more information by following the [link](https://thingsboard.io/doc
 
 You can change the credentials type in the "**Device Credentials**" section for the specific device:
 
-![](./img/mqtt-and-thingsboard-configuration-04.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-04.webp)
 
 MQTT Basic scenario allows you to specify the Client ID, Username, and Password for the MQTT authentication.
 
@@ -83,7 +83,7 @@ To generate a client certificate, use [this guide](https://thingsboard.io/docs/u
 
 You can change the credentials type in the "**Device Credentials**" section for the specific device:
 
-![](./img/mqtt-and-thingsboard-configuration-05.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-05.webp)
 
 X.509 scenario uses a client certificate for authentication.
 
@@ -127,7 +127,7 @@ In this scenario, RouterOS needs to have a server certificate imported into its 
 
 Drag and drop the server certificate that was installed into ThingsBoard, into the router's "File List" menu:
 
-![](./img/mqtt-and-thingsboard-configuration-06.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-06.webp)
 
 Import server certificate:
 
@@ -251,4 +251,4 @@ To run the script, you can use the command line:
 
 You can check the received/published data for the device under the "Latest telemetry" section:
 
-![](./img/mqtt-and-thingsboard-configuration-07.webp)
+![](/docs/internet-of-things/mqtt/img/mqtt-and-thingsboard-configuration-07.webp)

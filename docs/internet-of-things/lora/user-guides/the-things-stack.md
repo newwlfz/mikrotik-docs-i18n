@@ -6,7 +6,7 @@
 
 [The Things Stack](https://console.cloud.thethings.network/) is a new version of The Things network.
 
-![](./img/the-things-stack-01.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-01.webp)
 
 Choose your region and log in with The Things network account or other credentials.
 
@@ -14,11 +14,11 @@ Choose your region and log in with The Things network account or other credentia
 
 Once logged in, navigate to "Go to gateways":
 
-![](./img/the-things-stack-02.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-02.webp)
 
 Register a gateway by clicking on the "**+ Register gateway**" button:
 
-![](./img/the-things-stack-03.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-03.webp)
 
 From here, there are two ways a gateway can connect to the server:
 
@@ -37,11 +37,11 @@ UDP is a legacy method of the communication between the server and the gateway.
 
 Fill in the blank spaces. Input **Gateway EUI**. Make sure to select a correct frequency plan. Do not enable the "**Require authenticated connection**" option (it is used for LNS and CUPS)!
 
-![](./img/the-things-stack-04.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-04.webp)
 
 In RouterOS, the **Gateway EUI** value can be found under "**IoT>LoRa>Devices>Gateway ID**":
 
-![](./img/the-things-stack-05.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-05.webp)
 
 For additional information check their [documentation page](https://www.thethingsindustries.com/docs/getting-started/).
 
@@ -49,7 +49,7 @@ For additional information check their [documentation page](https://www.thething
 
 Double-check that the correct TTN server is selected by the LoRa device (in RouterOS) and that the server setting uses "UDP" protocol:
 
-![](./img/the-things-stack-06.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-06.webp)
 
 ### LNS and CUPS scenario
 
@@ -59,17 +59,17 @@ Double-check that the correct TTN server is selected by the LoRa device (in Rout
 
 Fill in the blank spaces. Input **Gateway EUI**. Make sure to select a correct frequency plan. Enable "**Require authenticated connection**" and the follow-up (for LNS) "**Generate API key for LNS**" and (for CUPS) "**Generate API key for CUPS**" options:
 
-![](./img/the-things-stack-07.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-07.webp)
 
 In RouterOS, the **Gateway EUI** value can be found under "**IoT>LoRa>Devices>Gateway ID**":
 
-![](./img/the-things-stack-05.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-05.webp)
 
 After clicking on the "**Register gateway**" button, you should be prompted to download the keys. Download them.
 
 To view LNS and CUPS keys, inspect download files. LNS key should also be visible under the "**LoRa Basics Station LNS authentication Key**" field:
 
-![](./img/the-things-stack-08.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-08.webp)
 
 For additional information check their [documentation page](https://www.thethingsindustries.com/docs/getting-started/).
 
@@ -77,7 +77,7 @@ For additional information check their [documentation page](https://www.thething
 
 Make sure that the correct TTN server is selected, that the correct port is configured (TTN expects LNS over 8887), that LNS protocol is chosen, that the LNS key (from the "**LoRa Basics Station LNS authentication Key**" field) is input and that "**SSL**" checkbox is enabled:
 
-![](./img/the-things-stack-09.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-09.webp)
 
 In case you are using default settings, gateway's internal [**builtin-trust-store**](/docs/authentication-authorization-accounting/certificates#settings) should be enabled for the **lora** service and should already have required Root CA pre-installed. **You can skip to the next step**.
 
@@ -85,17 +85,17 @@ In case you are using default settings, gateway's internal [**builtin-trust-stor
 
 After the certificate file was downloaded, drag and drop it into the RouterOS file menu and import the certificate list:
 
-![](./img/the-things-stack-10.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-10.webp)
 
 This should make the certificate list trusted:
 
-![](./img/the-things-stack-11.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-11.webp)
 
 #### CUPS protocol RouterOS settings
 
 Make sure that the correct TTN server is selected, that the correct port is configured (TTN expects CUPS over 443), that CUPS protocol is chosen, that the CUPS key is input (obtained from the downloaded cups.key file during the gateway registration step) and that the "**SSL**" checkbox is enabled:
 
-![](./img/the-things-stack-12.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-12.webp)
 
 In case you are using default settings, gateway's internal [**builtin-trust-store**](/docs/authentication-authorization-accounting/certificates#settings) should be enabled for the **lora** service and should already have required Root CA pre-installed. **You can skip to the next step**.
 
@@ -103,21 +103,21 @@ In case you are using default settings, gateway's internal [**builtin-trust-stor
 
 After the certificate file was downloaded, drag and drop it into the RouterOS file menu and import the certificate list:
 
-![](./img/the-things-stack-10.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-10.webp)
 
 This should make the certificate list trusted:
 
-![](./img/the-things-stack-11.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-11.webp)
 
 ### Gateway registration verification
 
 If everything is configured correctly, right after you enable the LoRa interface in RouterOS ("**IoT>LoRa>Devices>Enable**"):
 
-![](./img/the-things-stack-13.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-13.webp)
 
 You should see the gateway connection "Live data" update:
 
-![](./img/the-things-stack-14.webp)
+![](/docs/internet-of-things/lora/user-guides/img/the-things-stack-14.webp)
 
 ## Registering the node
 
@@ -129,21 +129,21 @@ The same principles apply to other vendor nodes/sensors/tags.
 
 On the TTS portal, navigate to the "**Applications**" tab and click on "**add application**":
 
-![](./img/tts_appli_1.png)
+![](/docs/internet-of-things/lora/user-guides/img/tts_appli_1.png)
 
 Input the ID you want it to have, name it, add description, and create it ("**Create application**"):
 
-![](./img/tts_appli_2.png)
+![](/docs/internet-of-things/lora/user-guides/img/tts_appli_2.png)
 
 ### Register end device
 
 Under the application you've just created, navigate to "**End devices**" tab and "**+ Register end device**":
 
-![](./img/tts_device_1.png)
+![](/docs/internet-of-things/lora/user-guides/img/tts_device_1.png)
 
 You can "Select the end device in the LoRaWAN Device Repository" (and automate the process) or you can add it manually ("Enter end device specifics manually"):
 
-![](./img/tts_device_2.png)
+![](/docs/internet-of-things/lora/user-guides/img/tts_device_2.png)
 
 - Input "**Frequency plan**" (for example, *Europe 863-870 MHz (SF9 for RX2 - recommended)*, depending on which frequency your tag supports);
 - "**LoRaWAN version**" ("*LoRaWAN Specification 1.0.4*");
@@ -151,7 +151,7 @@ You can "Select the end device in the LoRaWAN Device Repository" (and automate t
 
 Find "**JoinEUI**", "**DevEUI**" and "**AppKey**" printed on the label within the package and continue with provisioning information:
 
-![](./img/tts_device_3.png)
+![](/docs/internet-of-things/lora/user-guides/img/tts_device_3.png)
 
 - Input "**JoinEUI**" from the label, "Confirm" it;
 - Input "**DevEUI**" from the label;
@@ -168,14 +168,14 @@ If you skip this step, TTS portal will only display "raw hex" payloads.
 In order for the server to display the tag's data in a readable/understandable format, it first needs to be able to "decode" the payloads it receives.
 You can input decoder script in the "[Payload formatters](https://www.thethingsindustries.com/docs/integrations/payload-formatters/)" section under the newly created tag options:
 
-![](./img/payload_decoder.png)
+![](/docs/internet-of-things/lora/user-guides/img/payload_decoder.png)
 
 - Select "Custom Javascript formatter";
 - Copy/Paste the content of the [provided script **tg-lrx2-2.0-ul-dec.js**](/docs/internet-of-things/lora/user-guides/tg-lr-setup-guide#quickstart-guide) into the "Formatter code" field and "Save changes".
 
 ### Power on the tag
 
-Please check our full guide on the [TG-LR options](https://manual.mikrotik.com/docs/internet-of-things/lora/user-guides/tg-lr-setup-guide).
+Please check our full guide on the [TG-LR options](/docs/internet-of-things/lora/user-guides/tg-lr-setup-guide).
 
 From the get-go, the tag will be in the "Shutdown" mode (sleeping).
 
@@ -189,8 +189,8 @@ End device will send "Join-request" packet and will expect "Join-accept" in retu
 
 In RouterOS, you can see the exchange in the "**IoT>LoRa>Traffic**" tab:
 
-![](./img/joinreq_joinacpt.png)
+![](/docs/internet-of-things/lora/user-guides/img/joinreq_joinacpt.png)
 
 Lastly, you should be able to confirm registration per the TTS logs:
 
-![](./img/tag_reg_verification.png)
+![](/docs/internet-of-things/lora/user-guides/img/tag_reg_verification.png)

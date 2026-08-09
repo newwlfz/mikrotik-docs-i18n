@@ -10,7 +10,7 @@ Additionally, the mangle facility is used to modify some fields in the IP header
 
 Firewall mangle rules consist of five predefined chains that cannot be deleted:
 
-![](./img/mangle-01.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/mangle-01.webp)
 
 - The **PREROUTING** chain: Rules in this chain apply to packets as they just arrive on the network interface.
 - The **INPUT** chain: Rules in this chain apply to packets just before they’re given to a local process.

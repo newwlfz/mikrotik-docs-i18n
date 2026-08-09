@@ -134,43 +134,43 @@ Make sure you configure your e-mail server's settings under `/tool/e-mail` and c
 
 All data is written evenly over all disks in this RAID, this configuration does not provide any fault tolerance but provides best performance.
 
-![](./img/raid-01.webp)
+![](/docs/storage/raid/img/raid-01.webp)
 
 ### RAID 1
 
 The same data is written to all drives (data is mirrored), this configuration provides best fault tolerance, but performance-wise write speeds will be equal to the slowest disk used in the array.
 
-![](./img/raid-02.webp)
+![](/docs/storage/raid/img/raid-02.webp)
 
 ### RAID 4
 
 Block-level data is striped across data disks, with parity bits stored on a dedicated disk. Performance will be limited to the parity writing speed.
 
-![](./img/raid-03.webp)
+![](/docs/storage/raid/img/raid-03.webp)
 
 ### RAID 5
 
 Block-level data is striped evenly over the available disks. It can be recovered from 1 disk failure.
 
-![](./img/raid-04.webp)
+![](/docs/storage/raid/img/raid-04.webp)
 
 ### RAID 6
 
 Block-level data is striped evenly over the available disks. It can be recovered from 2 disk failures.
 
-![](./img/raid-05.webp)
+![](/docs/storage/raid/img/raid-05.webp)
 
 ### RAID Linear
 
 Data is appended over multiple disks combining them into a single large disk. Provides no redundancy and is limited to the single disk read/write speed.
 
-![](./img/raid-06.webp)
+![](/docs/storage/raid/img/raid-06.webp)
 
 ### Nested RAID
 
 Combination of multiple RAID configurations into another RAID. For example RAID 10 (RAID 1+0) combines disk mirroring (RAID 1) and disk striping (RAID 0)
 
-![](./img/raid-07.webp)
+![](/docs/storage/raid/img/raid-07.webp)
 
 #### Configuration example
 

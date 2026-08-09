@@ -10,7 +10,7 @@ User Manager is a RADIUS server implementation in RouterOS which provides centra
 
 User Manager is one of the RouterOS features, that is limited by the RouterOS license level. Depending on the [License level](../getting-started/routeros-licensing/x86/index.md#routeros-license-key-levels), the number of active sessions will be limited, including multiple connections per user (not unique accounts).
 
-![](./img/user-manager-01.webp)
+![](/docs/authentication-authorization-accounting/img/user-manager-01.webp)
 
 ## Attributes
 
@@ -477,7 +477,7 @@ set [find name=username] password=mypass otp-secret=mysecret
 
 To calculate the TOTP token on the supplicant side, many widely available applications can be used, for example, Google Authenticator or [https://totp.app/](https://totp.app/). Adding mysecret to the TOTP token generator will provide a new unique 6-digit code that must be added to the user password.
 
-![](./img/user-manager-02.webp)
+![](/docs/authentication-authorization-accounting/img/user-manager-02.webp)
 
 The following example will accept the user's authentication with a calculated TOTP token added to the common password until a new TOTP token is generated.
 
@@ -501,7 +501,7 @@ The generated voucher card is available by accessing the router using a WEB brow
 
 By default, the printable card looks like this:
 
-![](./img/user-manager-03.webp)
+![](/docs/authentication-authorization-accounting/img/user-manager-03.webp)
 
 :::warning
 To access the PRIVATE path of the /um/ directory by the WEB browser, *private-username* and *private-password* must be configured. See **Settings** section.
@@ -560,19 +560,19 @@ generate-report report-template=report_default.html columns=username,uptime,down
 
 The generated report is available by accessing the router using a WEB browser and navigating to */um/PRIVATE/GENERATED/reports/gen\_report\_default.html*
 
-*![](./img/user-manager-04.webp)*
+*![](/docs/authentication-authorization-accounting/img/user-manager-04.webp)*
 
 ### Purchasing a profile
 
 After logging into the user's private profile by accessing the router's */um/* directory using a WEB browser, for example, http://example.com/um/, he will be able to see all available **Profiles** in the respective menu. Profiles that have specified *price* values will have a *Buy this Profile* button available.
 
-![](./img/user-manager-05.webp)
+![](/docs/authentication-authorization-accounting/img/user-manager-05.webp)
 
 After pressing the *Buy this Profile* button, the user will be asked to choose from available transaction service providers (currently only PayPal is available) and later redirected to PayPal's payment processing page.
 
-![](./img/user-manager-06.webp)
+![](/docs/authentication-authorization-accounting/img/user-manager-06.webp)
 
-When the payment is completed, the User Manager will ask PayPal to approve the transaction. After approval, the profile is assigned to the user and is ready to use.![](./img/user-manager-07.webp)
+When the payment is completed, the User Manager will ask PayPal to approve the transaction. After approval, the profile is assigned to the user and is ready to use.![](/docs/authentication-authorization-accounting/img/user-manager-07.webp)
 
 ### Migrating from RouterOS v6
 
@@ -584,7 +584,7 @@ The import process will try to convert such configuration - users, profiles, use
 
 ### Basic L2TP/IPsec server with User Manager authentication
 
-![](./img/user-manager-08.webp)
+![](/docs/authentication-authorization-accounting/img/user-manager-08.webp)
 
 #### User Manager configuration
 
@@ -685,4 +685,4 @@ To login to your MikroTik device, open Winbox/Console and connect to your router
 
 The password is changed every 30 seconds and it is available from your favorite app.
 
-![](./img/user-manager-qr-code.jpg)
+![](/docs/authentication-authorization-accounting/img/user-manager-qr-code.jpg)

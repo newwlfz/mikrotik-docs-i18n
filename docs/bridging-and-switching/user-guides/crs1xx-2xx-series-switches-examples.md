@@ -115,7 +115,7 @@ For CRS3xx series devices, you must use bridge VLAN filtering; you can read more
 
 #### Example 1 (Trunk and Access ports)
 
-![Access Ports](./img/crs1xx-2xx-series-switches-examples-01.webp)
+![Access Ports](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-01.webp)
 
 Switch together the required ports:
 
@@ -173,7 +173,7 @@ It is possible to use the built-in switch chip and the CPU at the same time to c
 
 #### Example 2 (Trunk and Hybrid Ports)
 
-![Hybrid Ports](./img/crs1xx-2xx-series-switches-examples-02.webp)
+![Hybrid Ports](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-02.webp)
 
 Switch together the required ports:
 
@@ -223,7 +223,7 @@ set drop-if-invalid-or-src-port-not-member-of-vlan-on-ports=ether2,ether6,ether7
 
 ### Protocol Based VLAN
 
-![Protocol Based VLAN](./img/crs1xx-2xx-series-switches-examples-03.webp)
+![Protocol Based VLAN](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-03.webp)
 
 Switch together the required ports:
 
@@ -271,7 +271,7 @@ add port=ether8 protocol=0x809B set-customer-vid-for=all new-customer-vid=400
 Internally, all MAC addresses in MAC-based VLANs are hashed. Certain MAC addresses can have the same hash, which will prevent a MAC address from being loaded into the switch chip if the hash matches with a hash from a MAC address that has been already loaded, for this reason, it is recommended to use Port-based VLANs in combination with MAC-based VLANs. This is a hardware limitation.
 :::
 
-![MAC Based VLAN](./img/crs1xx-2xx-series-switches-examples-04.webp)
+![MAC Based VLAN](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-04.webp)
 
 Switch together the required ports:
 
@@ -312,7 +312,7 @@ Additionally, add entries to the VLAN table, specify VLAN membership for each po
 
 ### InterVLAN Routing
 
-![VLAN Routing](./img/crs1xx-2xx-series-switches-examples-05.webp)
+![VLAN Routing](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-05.webp)
 
 InterVLAN routing configuration consists of two main parts – VLAN tagging in switch-chip and routing in RouterOS. This configuration can be used in many applications by combining it with a DHCP server, Hotspot, PPP, and other features for each VLAN.
 
@@ -404,7 +404,7 @@ This example covers a typical VLAN tunneling use case where service provider dev
 This example contains only the Service VLAN tagging part. It is recommended to additionally set Unknown/Invalid VLAN filtering configuration on ports.
 :::
 
-![QinQ](./img/crs1xx-2xx-series-switches-examples-06.webp)
+![QinQ](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-06.webp)
 
 **CRS-1**: The first switch on the edge of the service provider network has to properly identify traffic from the customer VLAN ID on port and assign a new service VLAN ID with ingress VLAN translation rules. VLAN trunk port configuration for service provider VLAN tags is in the same `egress-vlan-tag` table. The main difference from basic Port-Based VLAN configuration is that the CRS switch-chip has to be set to do forwarding according to service (*outer*) VLAN ID instead of customer (*inner*) VLAN ID.
 
@@ -532,7 +532,7 @@ Since the switch is set to look up VLAN ID based on the service tag, which is ov
 
 ---
 
-![Mirroring](./img/crs1xx-2xx-series-switches-examples-07.webp)
+![Mirroring](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-07.webp)
 
 The Cloud Router Switches support three types of mirroring. Port-based mirroring can be applied to any switch-chip ports, VLAN-based mirroring works for all specified VLANs regardless of switch-chip ports, and MAC-based mirroring copies traffic sent or received from a specific device reachable from the port configured in the Unicast Forwarding Database.
 
@@ -588,7 +588,7 @@ add port=ether8 mirror=yes svl=yes mac-address=E7:16:34:A1:CD:18
 
 ---
 
-![Trunking 3](./img/crs1xx-2xx-series-switches-examples-08.webp)
+![Trunking 3](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-08.webp)
 
 Trunking in the Cloud Router Switches provides static link aggregation groups with hardware automatic failover and load balancing. The IEEE802.3ad and IEEE802.1ax compatible Link Aggregation Control Protocol is not supported yet. Up to 8 Trunk groups are supported with up to 8 Trunk member ports per Trunk group.
 
@@ -657,7 +657,7 @@ set ether7 learn-limit=1
 
 ### Port Level Isolation
 
-![Port Level Isolation](./img/crs1xx-2xx-series-switches-examples-09.webp)
+![Port Level Isolation](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-09.webp)
 
 Port-level isolation is often used for Private VLAN, where:
 
@@ -725,7 +725,7 @@ add port-profile=3 ports=ether2,ether9,ether10 type=dst
 
 ### Protocol Level Isolation
 
-![Protocol Level Isolation](./img/crs1xx-2xx-series-switches-examples-10.webp)
+![Protocol Level Isolation](/docs/bridging-and-switching/user-guides/img/crs1xx-2xx-series-switches-examples-10.webp)
 
 Protocol level isolation on CRS switches can be used to enhance network security. For example, restricting DHCP traffic between the users (ether2, ether3, ether4, ether5) and allowing it only to trusted DHCP server ports (ether1) can prevent security risks like DHCP spoofing attacks. The following example shows how to configure it on CRS.
 

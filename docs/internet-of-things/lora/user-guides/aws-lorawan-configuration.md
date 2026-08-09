@@ -18,7 +18,7 @@ The first step is to register the LoRaWAN gateway.
 
 Navigate to the [Gateways](https://eu-central-1.console.aws.amazon.com/iot/home?region=eu-central-1#/wireless/gateways) section (under [LPWAN devices](https://eu-central-1.console.aws.amazon.com/iot/home?region=eu-central-1#/wireless/landing)).
 
-![](./img/aws-lorawan-configuration-01.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-01.webp)
 
 Click on the "**Add gateway**" button.
 
@@ -28,13 +28,13 @@ Click on the "**Add gateway**" button.
 - Select device's frequency band.
 - Configure optional fields if required.
 
-![](./img/aws-lorawan-configuration-02.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-02.webp)
 
 Finish the step by clicking on the "**Add gateway**" once again.
 
 In RouterOS settings, gateway's EUI and frequency plan can be checked under the **IoT>LoRa>Devices** tab:
 
-![](./img/aws-lorawan-configuration-03.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-03.webp)
 
 ### Step 2 - configure your gateway
 
@@ -42,7 +42,7 @@ In RouterOS settings, gateway's EUI and frequency plan can be checked under the 
 - Copy CUPS and LNS endpoints and download server trust certificates ("**Download server trust certificates**" button).
 - Add suggested gateway permissions.
 
-![](./img/aws-lorawan-configuration-04.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-04.webp)
 
 Finish the step by clicking on "**Submit**".
 
@@ -62,15 +62,15 @@ You still need to import unique device certificates.
 
 Before we proceed with the setup, you need to download [Amazon Root CA](https://www.amazontrust.com/repository/) and upload it, together with the gateway certificate file and its key, into the RouterOS file list menu:
 
-![](./img/aws-lorawan-configuration-05.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-05.webp)
 
 After the files were uploaded, import the certificates, one by one (under **System>Certificates**):
 
-![](./img/aws-lorawan-configuration-06.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-06.webp)
 
 Make sure to upload the gateway certificate first and then its key (so that the gateway certificate has both K-key and T-trusted flags present). In the end, you should have all 3 files imported, like so:
 
-![](./img/aws-lorawan-configuration-07.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-07.webp)
 
 ### Server configuration
 
@@ -78,7 +78,7 @@ Make sure to upload the gateway certificate first and then its key (so that the 
 
 Navigate to the **IoT>LoRa>Servers** tab and add a new server:
 
-![](./img/aws-lorawan-configuration-08.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-08.webp)
 
 - Name the server.
 - Input the LNS endpoint address (without `wss://` and `:443`).
@@ -89,7 +89,7 @@ Navigate to the **IoT>LoRa>Servers** tab and add a new server:
 
 Make sure to apply the newly configured server under the **IoT>LoRa>Devices** tab:
 
-![](./img/aws-lorawan-configuration-09.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-09.webp)
 
 And then, **enable** the LoRa interface.
 
@@ -97,7 +97,7 @@ And then, **enable** the LoRa interface.
 
 Navigate to the **IoT>LoRa>Servers** tab and add a new server:
 
-![](./img/aws-lorawan-configuration-10.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-10.webp)
 
 - Name the server.
 - Input the CUPS endpoint address (without `https://` and `:443`).
@@ -108,7 +108,7 @@ Navigate to the **IoT>LoRa>Servers** tab and add a new server:
 
 Make sure to apply the newly configured server under the **IoT>LoRa>Devices** tab:
 
-![](./img/aws-lorawan-configuration-11.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-11.webp)
 
 And then, **enable** the LoRa interface.
 
@@ -116,4 +116,4 @@ And then, **enable** the LoRa interface.
 
 If everything is configured correctly, you should see a "connected" status on the AWS portal:
 
-![](./img/aws-lorawan-configuration-12.webp)
+![](/docs/internet-of-things/lora/user-guides/img/aws-lorawan-configuration-12.webp)

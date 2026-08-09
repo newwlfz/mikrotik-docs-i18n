@@ -321,7 +321,7 @@ It works! Now you can use this pool, for example, for pppoe clients.
 
 Consider the following setup:
 
-![](./img/dhcp-01.webp)
+![](/docs/network-management/img/dhcp-01.webp)
 
 - ISP is routing prefix 2001:DB8::/62 to the router R1.
 - Router R1 runs a DHCPv6 server to delegate /64 prefixes to the customer routers CE1 and CE2.
@@ -1256,7 +1256,7 @@ Let us consider that you have several IP networks 'behind' other routers, but yo
 
 This example will show you how to configure a DHCP server and a DHCP relay that serves 2 IP networks - 192.168.1.0/24 and 192.168.2.0/24 that are behind a router DHCP-Relay.
 
-![](./img/dhcp-02.webp)
+![](/docs/network-management/img/dhcp-02.webp)
 
 ## IP Address Configuration
 

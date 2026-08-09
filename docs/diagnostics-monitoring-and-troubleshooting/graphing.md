@@ -21,11 +21,11 @@ Graphing consists of two parts - the first part collects information and the oth
 
 Alternatively, look for the menu **â‰¡** (triple bar sign) in the top right corner of the WebFig interface, allowing you to find "graphs":
 
-![](./img/graphing-example.png)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/graphing-example.png)
 
 Example of memory graphs:
 
-![](./img/graphing-01.webp)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/graphing-01.webp)
 
 ## Configuration
 
@@ -96,4 +96,4 @@ Winbox allows viewing the same collected information as on the web page. Open th
 
 The image below shows WinBox graphs of memory usage:
 
-![](./img/graphing-02.webp)
+![](/docs/diagnostics-monitoring-and-troubleshooting/img/graphing-02.webp)

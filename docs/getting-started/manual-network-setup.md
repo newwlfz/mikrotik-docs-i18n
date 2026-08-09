@@ -28,7 +28,7 @@ The router will reboot without any default settings, firewall rules, or services
 
 Or from WinBox:
 
-![](./img/reset-config-to-default_01.png)
+![](/docs/getting-started/img/reset-config-to-default_01.png)
 
 ## Create a bridge and assign an IP address
 
@@ -55,17 +55,17 @@ Create a bridge interface, add the desired Ethernet port as a bridge port, and a
 1. Open the **Bridge** window, ensuring the **Bridge** tab is selected.
    - Click the <kbd>**New**</kbd> or <kbd>**+**</kbd> button to open a new dialog box. You can either enter a custom bridge name or retain the default **bridge1**, then click <kbd>**OK**</kbd> to proceed.
 
-     ![](./img/add_bridge.png)
+     ![](/docs/getting-started/img/add_bridge.png)
 2. Switch to the **Ports** tab and click the <kbd>**New**</kbd> or <kbd>**+**</kbd> button to open another dialog box.
    - Select **ether2** as the interface and **bridge1** as the bridge, then click <kbd>**OK**</kbd>. Repeat this step for each additional port that you want to add to the bridge.
 
-     ![](./img/add_bridge_port.png)
+     ![](/docs/getting-started/img/add_bridge_port.png)
    - You may close the bridge dialog.
 3. Access the **IP** menu and navigate to the **Address** dialog.
    - Click the <kbd>**New**</kbd> or <kbd>**+**</kbd> button to open a new dialog box.
    - Enter IP address **`192.168.88.1/24`** and select interface **bridge1** from the dropdown list.
 
-     ![](./img/ip_addr_add.png)
+     ![](/docs/getting-started/img/ip_addr_add.png)
    - Click <kbd>**OK**</kbd> to confirm the settings.
 
 </TabItem>
@@ -108,7 +108,7 @@ The DHCP Server Setup wizard is also available in [WinBox](../management-tools/w
 - Navigate to the **IP â†’ DHCP Server** window, ensuring the **DHCP** tab is selected.
 - Click the <kbd>**DHCP Setup**</kbd> button to open a new dialog.
 
-  ![](./img/dhcp_setup_01.png)
+  ![](/docs/getting-started/img/dhcp_setup_01.png)
 
 - Select **bridge1** as the **DHCP Server Interface** and click <kbd>**Next**</kbd>.
 - Follow the wizard to complete the setup.

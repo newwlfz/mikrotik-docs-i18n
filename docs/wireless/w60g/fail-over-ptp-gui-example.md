@@ -18,7 +18,7 @@ After configuration reset - only mac-telnet is possible. In the main WinBox scre
 2. The default login is "**admin**" and no password is set.
 3. Press **Connect.**
 
-![](./img/fail-over-ptp-gui-example-01.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-01.webp)
 
 ### Configure bridge
 
@@ -28,7 +28,7 @@ Add new bridge:
 2. Press on "+" to add a new bridge;
 3. Apply your changes.
 
-![](./img/fail-over-ptp-gui-example-02.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-02.webp)
 
 *Later in the instructions it requires assigning bridge members to it. This will allow passing traffic from Ethernet to W60G interface without routing.*
 
@@ -46,7 +46,7 @@ Configure **bridge** device as follows:
 6. Apply your changes;
 7. Press Enable to start transmitting.
 
-![](./img/fail-over-ptp-gui-example-03.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-03.webp)
 
 Configure **station** device as follows:
 
@@ -57,7 +57,7 @@ Configure **station** device as follows:
 5. Apply your changes;
 6. Press enable to start transmitting.
 
-![](./img/fail-over-ptp-gui-example-04.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-04.webp)
 
 ### Set up 5Ghz wireless connection
 
@@ -69,7 +69,7 @@ Configure **station** device as follows:
 4. Choose **a name**, **mode**, **authentication type** and a secure password;
 5. **Apply** the configuration.
 
-**![](./img/fail-over-ptp-gui-example-05.webp)**
+**![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-05.webp)**
 
 #### For bridge device
 
@@ -79,13 +79,13 @@ Configure **station** device as follows:
 4. Set **SSID**, **password** and **country**;
 5. Press on the **Advanced Mode**;
 
-![](./img/fail-over-ptp-gui-example-06.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-06.webp)
 
 1. Choose your **Security Profile**;
 2. **Apply** your changes;
 3. Press **enable** to start transmitting.
 
-![](./img/fail-over-ptp-gui-example-07.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-07.webp)
 
 #### For station device
 
@@ -98,10 +98,10 @@ Configure **station** device as follows:
 7. **Apply** your changes;
 8. Press **enable** to start transmitting.
 
-![](./img/fail-over-ptp-gui-example-08.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-08.webp)
 
 *If everything is done correctly - running (R) flags should appear as shown in the screenshot:*  
-![](./img/fail-over-ptp-gui-example-09.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-09.webp)
 
 ### Configure bonding
 
@@ -116,7 +116,7 @@ Configure **station** device as follows:
 5. Choose Mode as **active backup**;
 6. **Apply** the configuration.
 
-![](./img/fail-over-ptp-gui-example-10.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-10.webp)
 
 #### For station device
 
@@ -127,7 +127,7 @@ Configure **station** device as follows:
 5. Choose Mode as **active backup**;
 6. **Apply** the configuration.
 
-![](./img/fail-over-ptp-gui-example-11.webp)
+![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-11.webp)
 
 ### Configure bridge
 
@@ -138,14 +138,14 @@ Configure **station** device as follows:
 3. Add the interface member as **ether1** and the Bridge member as **bridge1**;
 4. **Apply** the configuration;
 
-*![](./img/fail-over-ptp-gui-example-12.webp)*
+*![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-12.webp)*
 
 1. Press on the **Bridge** sub-menu;
 2. Add a new member with "**+**";
 3. Add the interface member as **bonding1** and the Bridge member as **bridge1**;
 4. **Apply** the configuration.
 
-*![](./img/fail-over-ptp-gui-example-13.webp)*
+*![](/docs/wireless/w60g/img/fail-over-ptp-gui-example-13.webp)*
 
 ### Additional configuration
 

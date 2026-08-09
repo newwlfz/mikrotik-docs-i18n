@@ -14,7 +14,7 @@ Whenever NAT rules are changed or added, the connection tracking table should be
 
 ## Types of NAT
 
-![](./img/nat-01.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/nat-01.webp)
 
 There are two types of NAT:
 
@@ -28,7 +28,7 @@ Since RouterOS v7 the firewall NAT has two new *INPUT* and *OUTPUT* chains which
 
 ### Destination NAT
 
-![](./img/nat-02.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/nat-02.webp)
 
 Network address translation works by modifying network address information in the packet's IP header. Let's take a look at the common setup where a network administrator wants to access an office server from the internet.
 
@@ -83,7 +83,7 @@ Though Source NAT and masquerading perform the same fundamental function: mappin
 
 #### CGNAT (NAT444)
 
-![](./img/nat-03.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/nat-03.webp)
 
 To combat IPv4 address exhaustion, RFC 6598 was deployed. The idea is to use the shared 100.64.0.0/10 address space inside the carrier's network and perform NAT on the carrier's edge router to a single public IP or public IP range.
 
@@ -239,7 +239,7 @@ Flags: X - disabled, I - invalid; D - dynamic
 
 Hairpin network address translation (*NAT Loopback*) is where a device on the LAN can access another machine on the LAN via the public IP address of the gateway router.
 
-![](./img/nat-02.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/nat-02.webp)
 
 In the above example, the gateway router has the following `dst-nat` configuration rule:
 
@@ -255,7 +255,7 @@ When a user from the PC at home establishes a connection to the web server, the 
 4. The router determines that the packet is part of a previous connection and undoes the destination NAT, and puts the original destination IP address into the source IP address field. The destination IP address is 192.168.88.1, and the source IP address is 172.16.16.1.
 5. The client receives the reply packet it expects, and the connection is established.
 
-![](./img/nat-04.webp)
+![](/docs/firewall-and-quality-of-service/firewall/img/nat-04.webp)
 
 But there will be a **problem** when a client on the same network as the web server requests a connection to the web server's **public** IP address:
 

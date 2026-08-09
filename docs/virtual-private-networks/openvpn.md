@@ -153,7 +153,7 @@ It is very important that the router date is within the validity period of the i
 
 ### Setup Overview
 
-![](./img/openvpn-01.webp)
+![](/docs/virtual-private-networks/img/openvpn-01.webp)
 
 Assume that the office public IP address is `2.2.2.2`, and two remote OVPN clients need access to the `10.5.8.20` host and the `192.168.55.0/24` network located behind the office gateway.
 

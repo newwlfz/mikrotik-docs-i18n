@@ -47,7 +47,7 @@ In a case where **limit-at** is the highest value, extra tokens need to be issue
 
 ### The Diagram
 
-![](./img/htb-hierarchical-token-bucket-01.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/htb-hierarchical-token-bucket-01.webp)
 
 ### Bucket Size in action
 
@@ -188,7 +188,7 @@ Our HTB structure will consist of 5 queues:
 
 #### Example 1: Usual case
 
-![](./img/htb-hierarchical-token-bucket-02.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/htb-hierarchical-token-bucket-02.webp)
 
 - **Queue01** limit-at=0Mbps max-limit=10Mbps
 - **Queue02** limit-at=4Mbps max-limit=10Mbps
@@ -205,7 +205,7 @@ Our HTB structure will consist of 5 queues:
 
 #### Example 2: Usual case with max-limit
 
-![](./img/htb-hierarchical-token-bucket-03.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/htb-hierarchical-token-bucket-03.webp)
 
 - **Queue01** limit-at=0Mbps max-limit=10Mbps
 - **Queue02** limit-at=4Mbps max-limit=10Mbps
@@ -222,7 +222,7 @@ Our HTB structure will consist of 5 queues:
 
 #### Example 3: Inner queue limit-at
 
-![](./img/htb-hierarchical-token-bucket-04.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/htb-hierarchical-token-bucket-04.webp)
 
 - **Queue01** limit-at=0Mbps max-limit=10Mbps.
 - **Queue02** limit-at=8Mbps max-limit=10Mbps.
@@ -239,7 +239,7 @@ Our HTB structure will consist of 5 queues:
 
 #### Example 4: Leaf queue limit-at
 
-![](./img/htb-hierarchical-token-bucket-05.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/htb-hierarchical-token-bucket-05.webp)
 
 - **Queue01** limit-at=0Mbps max-limit=10Mbps.
 - **Queue02** limit-at=4Mbps max-limit=10Mbps.

@@ -34,7 +34,7 @@ Step by step requires two quick steps:
 
 - Login to the Wiliot registration page →  [https://deployment-tool.wiliot.com](https://deployment-tool.wiliot.com)
 
-![](./img/wiliot-01.webp)
+![](/docs/internet-of-things/img/wiliot-01.webp)
 
 - Select "Gateway Registration".
 - Select "Manual input" (top right corner of the screen).

@@ -8,7 +8,7 @@ LAC/LNS setup, otherwise known as Virtual Private DialUp Network (VPDN), allows 
 
 A Dial-up client uses PPPOE to connect to a L2TP access concentrator (LAC), LAC determines that the session should be forwarded through an IP network to the L2TP Network Server (LNS), creates L2TP tunnel and forwards PPP frames to the server where the client is authenticated and the session is established (see diagram below).
 
-![](./img/lac-and-lns-setup-with-cisco-as-lac-01.svg)
+![](/docs/virtual-private-networks/l2tp/img/lac-and-lns-setup-with-cisco-as-lac-01.svg)
 
 At the time of writing this article RouterOS cannot be used in the LAC role. For this reason, the article will demonstrate how to set up a very basic network with RouterOS as an LNS and a Cisco router as a LAC.
 
@@ -124,7 +124,7 @@ Vcid, Circuit
 
 Let's look closely at how client sessions get authenticated and established over the LAC.
 
-![](./img/lac-and-lns-setup-with-cisco-as-lac-02.svg)
+![](/docs/virtual-private-networks/l2tp/img/lac-and-lns-setup-with-cisco-as-lac-02.svg)
 
 - Client initiates PPPoE call.
 - LAC and Client begin LCP negotiation.

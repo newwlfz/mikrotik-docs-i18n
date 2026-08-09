@@ -308,7 +308,7 @@ This section will show how to configure multiple switches to use bonding interfa
 
 For this network topology, we will be using two CRS326-24G-2S+, one CRS317-1G-16S+, and one CCR1072-1G-8S+.
 
-![CRS3xx VLANs with Bonds](./img/marvell-prestera-switch-chip-features-01.webp)
+![CRS3xx VLANs with Bonds](/docs/bridging-and-switching/img/marvell-prestera-switch-chip-features-01.webp)
 
 In this setup, SwitchA and SwitchC will tag all traffic from ports ether1-ether8 to VLAN ID 10, ether9-ether16 to VLAN ID 20, and ether17-ether24 to VLAN ID 30. Management will only be possible if a user is connecting with tagged traffic with VLAN ID 99 from ether1 on SwitchA or SwitchB. Connecting to all devices will also be possible from the router using tagged traffic with VLAN ID 99. The SFP+ ports in this setup are going to be used as VLAN trunk ports while being in a bond to create a LAG interface.
 
@@ -818,7 +818,7 @@ Since RouterOS v6.42 it is possible to enable traffic storm control. A traffic s
 
 For example, if a network loop has been created and no loop avoidance mechanisms are used (e.g. [Spanning Tree Protocol](./user-guides/spanning-tree-protocol.md)), broadcast or multicast frames can quickly overwhelm the network, causing degraded network performance or even complete network breakdown. Using MikroTik devices with a Marvell Prestera switch, it is possible to limit broadcast, unknown multicast and unknown unicast traffic. Unknown unicast traffic is considered when a switch does not contain a host entry for the destined MAC address. Unknown multicast traffic is considered when a switch does not contain a multicast group entry in the `/interface/bridge/mdb` menu. Storm control settings should be applied to ingress ports; the egress traffic will be limited.
 
-![Traffic Storm](./img/marvell-prestera-switch-chip-features-02.webp)
+![Traffic Storm](/docs/bridging-and-switching/img/marvell-prestera-switch-chip-features-02.webp)
 
 :::warning
 The storm control parameter is specified as a percentage (%) of the link speed. If your link speed is 1Gbps, then specifying `storm-rate` as `10` will allow only 100Mbps of broadcast, unknown multicast and/or unknown unicast traffic to be forwarded.

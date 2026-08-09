@@ -111,13 +111,13 @@ A Prepaid Key is a type of license that can be purchased in advance for MikroTik
 7. Click the **"Place key in the cart"** button.
 8. Click **"Proceed to checkout"** to finalize your purchase.
 
-![](./img/purchase-prepaid-01.png)
+![](/docs/getting-started/routeros-licensing/x86/img/purchase-prepaid-01.png)
 
 ## Review and Complete Your Purchase
 
 Review your order details carefully, then proceed with payment using either a **Credit Card** (CC) or **PayPal**.
 
-![](./img/purchase-prepaid_02.png)
+![](/docs/getting-started/routeros-licensing/x86/img/purchase-prepaid_02.png)
 
 Congratulations! You have successfully purchased a RouterOS license key.
 
@@ -137,14 +137,14 @@ Congratulations! You have successfully purchased a RouterOS license key.
    - Select the desired Prepaid Key from the list.
    - Enter the **Software ID** of the x86 device you want to license, or the **Software ID** of the router for which you want to upgrade the license level.
 
-![](./img/convert-prepaid_01.png)
+![](/docs/getting-started/routeros-licensing/x86/img/convert-prepaid_01.png)
 
 1. **Generate the License Key.**
 
    - Press "Generate".
    - A confirmation message will appear: "Successfully converted prepaid key to a new licence!".
 
-![](./img/convert-prepaid_02.png)
+![](/docs/getting-started/routeros-licensing/x86/img/convert-prepaid_02.png)
 
 1. **Apply the License Key.**
 
@@ -172,7 +172,7 @@ Before a Replacement Key is issued, MikroTik Support may require proof that the 
    - Once the MikroTik support team confirms that the replacement key has been added to your account, log in and navigate to the **"Make a key from replacement key"** section.
    - Proceed with the activation.
 
-![](./img/Replacement_license_1.png)
+![](/docs/getting-started/routeros-licensing/x86/img/Replacement_license_1.png)
 
 1. **Select the License Level**
    - Select the license level at which you wish to apply the replacement.
@@ -183,7 +183,7 @@ Before a Replacement Key is issued, MikroTik Support may require proof that the 
 3. **Complete the Purchase**
    - Click **"Add license replacement to cart"** to proceed to checkout and complete the payment.
 
-![](./img/Replacement_license_2.png)
+![](/docs/getting-started/routeros-licensing/x86/img/Replacement_license_2.png)
 
 1. **Retrieve Your Key**
    - A confirmation e-mail containing the new license key will be sent to your account's registered e-mail address.
@@ -259,7 +259,7 @@ A replacement key is available for a fee of $10.
 
 No, simply copy the key and paste it into **System** → **License** → **Paste Key**, then confirm the reboot.
 
-![](./img/manual_x86_key_01.png)
+![](/docs/getting-started/routeros-licensing/x86/img/manual_x86_key_01.png)
 
 Alternatively, paste the key directly into the CLI and press **Y** to reboot.
 

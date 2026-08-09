@@ -87,4 +87,4 @@ A: QuickSet uses WPA2 pre-shared key by default. It means that the minimal passw
 
 #### QuickSet interface
 
-![Screenshot from 2026-04-28 11-14-11.png](./img/quick-set-01.webp)
+![Screenshot from 2026-04-28 11-14-11.png](/docs/management-tools/img/quick-set-01.webp)

@@ -82,7 +82,7 @@ It's important to note that even though the hash function discussed in this arti
 
 Let's assume this configuration:
 
-![](./img/per-connection-classifier-01.webp)
+![](/docs/high-availability-solutions/load-balancing/img/per-connection-classifier-01.webp)
 
 ### IP Addresses
 

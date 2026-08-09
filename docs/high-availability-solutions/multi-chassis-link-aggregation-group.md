@@ -33,7 +33,7 @@ In networks with a larger number of hosts, MLAG on these switches may lead to un
 
 :::
 
-![](./img/multi-chassis-link-aggregation-group-01.png)
+![](/docs/high-availability-solutions/img/multi-chassis-link-aggregation-group-01.png)
 
 ### Packet forwarding and load balancing
 
@@ -61,7 +61,7 @@ The unicast traffic behaves similarly, but there is one key difference when comp
 
 In this example, CRS317 and CRS309 devices are used as MLAG peers, and any device with two SFP+ interfaces can be used as an LACP client. The SFP+1 interface is used on both peer nodes to create `mlag-peer-port`, and it is used for ICCP, see a network scheme below.
 
-![](./img/multi-chassis-link-aggregation-group-02.png)Configure bonding interfaces for MLAG on **Peer1** and **Peer2** devices, use a matching `mlag-id` setting on both peer devices, and set the 1-second LACPDU transmission rate:
+![](/docs/high-availability-solutions/img/multi-chassis-link-aggregation-group-02.png)Configure bonding interfaces for MLAG on **Peer1** and **Peer2** devices, use a matching `mlag-id` setting on both peer devices, and set the 1-second LACPDU transmission rate:
 
 ```ros
 # Peer1

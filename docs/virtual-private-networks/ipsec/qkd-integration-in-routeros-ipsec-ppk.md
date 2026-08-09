@@ -18,7 +18,7 @@ RouterOS supports three PPK sources:
 
 Dynamic keys (PSK/QKD) are consumed and invalidated after use. Static keys remain valid across sessions but offer weaker security if reused.
 
-### ![](./img/qkd-integration-in-routeros-ipsec-ppk-01.webp)
+### ![](/docs/virtual-private-networks/ipsec/img/qkd-integration-in-routeros-ipsec-ppk-01.webp)
 
 ### 2. Concepts
 

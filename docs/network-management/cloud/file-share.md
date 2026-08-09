@@ -48,7 +48,7 @@ Now, if you copy the "URL", you can share it with other people, regardless of wh
 
 When you send the URL to a friend, they can then see all the files in the shared directory and can download them. If you enabled uploads in the share creation process, they can also upload files into your router. Keep this URL safe, or specify an "expires" date to avoid other people accessing these files.
 
-![](./img/file-share_01.png)
+![](/docs/network-management/cloud/img/file-share_01.png)
 
 | Property | Description |
 | :-- | :-- |
@@ -62,11 +62,11 @@ When you send the URL to a friend, they can then see all the files in the shared
 
 To share the file, access the "File Shares" menu located under the IP â†’ Cloud "Configuration" section.
 
-![](./img/file-share_02.png)
+![](/docs/network-management/cloud/img/file-share_02.png)
 
 To create a new share, set the "Path", "Expires" and "Auto uploads" options.
 
-![](./img/file-share_03.png)
+![](/docs/network-management/cloud/img/file-share_03.png)
 
 ```ros
 [admin@MikroTik] > /ip/cloud/back-to-home-file/print detail 

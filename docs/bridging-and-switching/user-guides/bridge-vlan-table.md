@@ -40,7 +40,7 @@ Before explaining bridge VLAN filtering in-depth, you should understand a few ba
 
 Below you can find a very common diagram for a very typical type of setup that consists of a trunk port and multiple access ports:
 
-![Trunk and Access Setup](./img/bridge-vlan-table-01.webp)
+![Trunk and Access Setup](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-01.webp)
 
 This setup is very common since it gives the possibility to divide your network into multiple segments while using a single switch and maybe a single router. Such a requirement is very common for companies that want to separate multiple departments. With VLANs you can use different DHCP Servers, which can give out an IP address from a different subnet based on the VLAN ID, which makes creating Firewall rules and QoS a lot easier.
 
@@ -91,7 +91,7 @@ add bridge=bridge1 tagged=ether1 untagged=ether2,ether3 vlan-ids=20,30
 
 Do **NOT** use multiple VLAN IDs on access ports. This will unintentionally allow both **VLAN20** and **VLAN30** on both access ports. In the example above, **ether3** is supposed to set a VLAN tag for all ingress packets to use **VLAN30** (since `PVID=30`), but this does not limit the allowed VLANs on this port when VLANs are being sent out through this port. The bridge VLAN table is responsible for deciding whether a VLAN is allowed to be sent through a specific port or not. The entry above specifies that both **VLAN20** and **VLAN30** are allowed to be sent out through **ether2** and **ether3** and on top of that the entry specifies that packets should be sent out without a VLAN tag (packets are sent out as untagged packets). As a result, you may create a packet leak from VLANs to ports that are not even supposed to receive such traffic, see the image below.
 
-![Trunk and Access Setup Bad](./img/bridge-vlan-table-02.webp)
+![Trunk and Access Setup Bad](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-02.webp)
 
 A misconfigured VLAN table allows VLAN20 to be sent through ether3; it will also allow VLAN30 through ether2
 
@@ -125,7 +125,7 @@ Flags: X - disabled, D - dynamic
 
 There is a dynamic entry added for **VLAN1** since `PVID=1` is set by default to all bridge ports (including our trunk port, **ether1**), but you should also notice that the **bridge1** interface (the CPU port) is also added dynamically. You should be aware that **bridge1** is also a bridge port and therefore might get added to the bridge VLAN table dynamically. There is a chance that you might unintentionally allow access to the device because of this feature. For example, if you have followed this guide and left **PVID=1** set for the trunk port (**ether1**) and did not change the PVID for the CPU port (**bridge1**) as well, then access through **ether1** to the device using untagged traffic is allowed. This is also visible when you print out the bridge VLAN table. This scenario is illustrated in the image below:
 
-![Trunk and Access Setup Unintentional Management](./img/bridge-vlan-table-03.webp)
+![Trunk and Access Setup Unintentional Management](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-03.webp)
 
 Unintentionally allowed management access using untagged traffic through the trunk port
 
@@ -153,7 +153,7 @@ Allowing access to the device using untagged traffic is not considered a good se
 add bridge=bridge1 tagged=bridge1,ether3 vlan-ids=99
 ```
 
-![Trunk and Access Setup Management Access](./img/bridge-vlan-table-04.webp)
+![Trunk and Access Setup Management Access](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-04.webp)
 
 Management access using tagged traffic through an access port (which makes it a hybrid port)
 
@@ -208,7 +208,7 @@ When `frame-type=admit-only-vlan-tagged` is used on a port, then the port is not
 
 While `frame-type` can be used to drop a certain type of packet, the `ingress-filtering` can be used to filter out packets before they can be sent out. To fully understand the need for ingress filtering, consider the following scenario: **VLAN99** is allowed on **ether3** and **bridge1**, but you can still send **VLAN99** traffic from **ether1** to **ether3**. This is because the bridge VLAN table checks if a port is allowed to carry a certain VLAN only on egress ports. In our case, **ether3** is allowed to carry **VLAN99** and for this reason, it is forwarded. To prevent this, you **MUST** use ingress-filtering. With ingress filtering, ingress packets are also checked. In our case, the bridge VLAN table does not contain an entry that **VLAN99** is allowed on **ether1**, and therefore the packet will be dropped immediately. Of course, in our scenario without ingress filtering, the connection cannot be established since **VLAN99** can be forwarded only from **ether1** to **ether3**, but not from **ether3** to **ether1**, though there are still possible attacks that can be used in such a misconfiguration (for example, ARP poisoning). The packet dropping behavior is illustrated in the image below:
 
-![Trunk and Access Setup Ingress](./img/bridge-vlan-table-05.webp)
+![Trunk and Access Setup Ingress](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-05.webp)
 
 Trunk/access port setup with and without ingress filtering. Ingress filtering can prevent unwanted traffic from being forwarded. Note that ether1 is not allowed to carry VLAN99 in the bridge VLAN table.
 
@@ -229,7 +229,7 @@ Even though you can limit the allowed VLANs and packet types on a port, it is ne
 add bridge=bridge1 tagged=bridge1,ether1 vlan-ids=99
 ```
 
-![Basic VLAN Switching](./img/bridge-vlan-table-06.webp)
+![Basic VLAN Switching](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-06.webp)
 
 ## VLAN Tunnelling setup
 
@@ -237,7 +237,7 @@ add bridge=bridge1 tagged=bridge1,ether1 vlan-ids=99
 
 In some cases, you might want to forward already tagged traffic through certain switches. This is a quite common setup for backbone infrastructures since it provides a possibility to encapsulate traffic from, for example, your edge routers and seamlessly forward it over your backbone to another edge router. Below you can find an example of a VLAN tunneling topology:
 
-![Provider Bridge](./img/bridge-vlan-table-07.webp)
+![Provider Bridge](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-07.webp)
 
 Provider bridge topology
 
@@ -306,7 +306,7 @@ add bridge=bridge1 tagged=ether3 untagged=ether2 vlan-ids=300
 
 In this example, we are assuming that all routers are passing traffic that is using a regular/customer VLAN tag. Such traffic on switches will be considered as untagged traffic based on the principle described above. Switches will encapsulate this traffic using a Service VLAN tag (the outer 802.1ad tag) and traffic between **SW1** and **SW2** will be considered as tagged. Before traffic reaches its destination, the switches will decapsulate the outer tag and forward the original 802.1Q tagged frame. See a packet example below:
 
-![Service VLAN 802.1ad](./img/bridge-vlan-table-08.webp)A packet example before and after 802.1ad VLAN encapsulation
+![Service VLAN 802.1ad](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-08.webp)A packet example before and after 802.1ad VLAN encapsulation
 
 :::warning
 All principles that apply to the regular trunk/access port setup using IEEE 802.1Q also apply to VLAN tunneling setups. Make sure you are limiting VLANs and packet type properly using the bridge VLAN table and ingress filtering.
@@ -337,7 +337,7 @@ The VLAN tag that is going to be added depends on `ether-type` and `PVID`. For e
 
 To explain how VLAN tagging and untagging works with tag stacking, let us use the same network topology as before:
 
-![Basic VLAN Switching 2](./img/bridge-vlan-table-09.webp)
+![Basic VLAN Switching 2](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-09.webp)
 
 What we want to achieve is that regardless of what is being received on **ether2** and **ether3**, a new VLAN tag will be added to encapsulate the traffic that is coming from those ports. `Tag-stacking` forces a new VLAN tag, so we can use this property to achieve our desired setup. We are going to be using the same configuration as in the Trunk/Access port setup, but with `tag-stacking` enabled on the access ports:
 
@@ -363,6 +363,6 @@ Similar to other setups, the bridge VLAN table is going to be used to determine 
 
 From the access port perspective, the same principles as in the Trunk/Access port setup apply. All packets that are received on **ether2** will get a new VLAN tag with the VLAN ID that is specified in PVID, in this case, a new VLAN tag will be added with **VLAN20** and this VLAN will be subjected to VLAN filtering. See a packet example below:
 
-![Tag Stacking](./img/bridge-vlan-table-10.webp)
+![Tag Stacking](/docs/bridging-and-switching/user-guides/img/bridge-vlan-table-10.webp)
 
 A packet example before and after tag stacking

@@ -4,9 +4,9 @@
 
 # Distance guide
 
-![](./img/distance-guide-01.webp)
+![](/docs/wireless/w60g/img/distance-guide-01.webp)
 
-![](./img/distance-guide-02.webp)![](./img/distance-guide-03.webp)
+![](/docs/wireless/w60g/img/distance-guide-02.webp)![](/docs/wireless/w60g/img/distance-guide-03.webp)
 
 For Point To Multi Point as an **AP** device with license level 4 or higher is required.
 

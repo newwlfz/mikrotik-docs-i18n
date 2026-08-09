@@ -242,7 +242,7 @@ ether1 ether 1500 1588 9204 64:D1:54:61:D5:E0
 
 WebFig and Winbox will notify the user under interfaces:
 
-![](./img/poe-out-01.webp)
+![](/docs/hardware/img/poe-out-01.webp)
 
 ## How it works
 

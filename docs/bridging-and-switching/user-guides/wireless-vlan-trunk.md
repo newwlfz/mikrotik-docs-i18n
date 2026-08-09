@@ -6,7 +6,7 @@
 
 A very common task is to forward only a certain set of VLANs over a Wireless Point-to-Point (PtP) link. This can be done using bridge VLAN filtering and should be used instead of any other methods (including bridging VLAN interfaces). Let's say we need to forward 2 different VLANs over a Wireless link and all other VLAN IDs should be dropped. VLAN 10 is going to be our Internet traffic while VLAN 99 is going to be for our management traffic. Below you can find the network topology:
 
-![Wireless VLAN Trunk](./img/wireless-vlan-trunk-01.webp)
+![Wireless VLAN Trunk](/docs/bridging-and-switching/user-guides/img/wireless-vlan-trunk-01.webp)
 
 ## Configuration
 

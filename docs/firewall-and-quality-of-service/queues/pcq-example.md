@@ -10,7 +10,7 @@ Per Connection Queue (PCQ) is a queuing discipline that can be used to dynamical
 
 PCQ type can be used through the Queue Tree and Simple Queues to equalize the bandwidth [and set max limit] for a number of users. We will set the 64kbps download and 32kbps upload limits.
 
-![](./img/pcq-example-01.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/pcq-example-01.webp)
 
 ### Step 1: add PCQ in Queue Types
 

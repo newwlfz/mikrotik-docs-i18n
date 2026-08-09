@@ -25,10 +25,10 @@ When the server finishes deploying, proceed to the next step.
 1. In your web browser, navigate to the [MikroTik download page](https://mikrotik.com/download).
 2. Locate the latest Stable RAW CHR disk image. Vultr requires version **7.2.3 Stable** or later.
 3. Right-click the floppy disk icon to copy the URL. Don't download the image now; you'll download it to the server in a later step.  
-   ![](./img/vultr-01.webp)
+   ![](/docs/getting-started/installation-and-upgrade/install/chr-installation/img/vultr-01.webp)
 4. Navigate to the server's information page in the [Vultr customer portal](https://my.vultr.com/).
 5. Connect to the [web console](https://www.vultr.com/docs/vultr-web-console-faq/).  
-   ![](./img/vultr-02.webp)
+   ![](/docs/getting-started/installation-and-upgrade/install/chr-installation/img/vultr-02.webp)
 6. In the web console, download the CHR image to the server with "wget". If you copied the download URL to your clipboard, you can [send it to the server](https://www.vultr.com/docs/vultr-web-console-faq/) through the web console.
 
    Substitute your version for x.x.x in the examples that follow.

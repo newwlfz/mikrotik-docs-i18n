@@ -4,8 +4,12 @@ fetch_docs.py - 增量拉取官方 Markdown 文档，基于 ETag/Last-Modified �
 职责：
 1. 从 /llms.txt 获取官方完整列表
 2. 清理孤儿文件（英文文档和翻译文档）
-3. 基于 ETag/Last-Modified 增量下载
-4. 维护 sync_state.json
+3. 自动删除非激活语种的翻译目录
+4. 基于 ETag/Last-Modified 增量下载
+5. 下载后自动修正：
+   - 官方绝对链接 -> 相对路径 (/docs/xxx)
+   - 相对图片链接 -> 官方 CDN 绝对路径
+6. 维护 sync_state.json
 """
 
 import os
@@ -13,10 +17,10 @@ import re
 import time
 import json
 import requests
+import shutil
 from urllib.parse import urlparse
 from datetime import datetime
 import email.utils
-import shutil
 
 # ========== 配置 ==========
 BASE_URL = "https://manual.mikrotik.com"
@@ -88,6 +92,26 @@ def compute_md5(filepath):
         return hashlib.md5(f.read()).hexdigest()
 
 
+def fix_document_content(content, rel_path):
+    """
+    修正下载后的文档内容：
+    1. 将官方绝对链接替换为相对路径（如 /docs/xxx）
+    2. 将相对图片链接替换为官方 CDN 绝对路径
+    """
+    # 1. 官方绝对链接 -> 相对路径
+    content = re.sub(r'https?://manual\.mikrotik\.com/docs/([a-zA-Z0-9_\-/\#]+)', r'/docs/\1', content)
+
+    # 2. 相对图片链接 -> 官方 CDN 绝对路径
+    dir_name = os.path.dirname(rel_path)
+    if dir_name:
+        base_url = f"https://manual.mikrotik.com/docs/{dir_name}/"
+        content = re.sub(r'\(\.?/img/', f'({base_url}img/', content)
+    else:
+        content = re.sub(r'\(\.?/img/', '(https://manual.mikrotik.com/docs/img/', content)
+
+    return content
+
+
 def head_request_with_retry(url):
     """发送 HEAD 请求获取响应头，支持重试"""
     headers = {"User-Agent": USER_AGENT}
@@ -122,8 +146,7 @@ def fetch_page_with_retry(url, headers=None):
                 print(f"   GET 尝试 {attempt}/{RETRY_COUNT} 状态码 {resp.status_code}")
                 if attempt < RETRY_COUNT:
                     time.sleep(RETRY_DELAY * attempt)
-                    # 重置条件头（避免携带可能已失效的 If-None-Match）
-                    headers = {"User-Agent": USER_AGENT}
+                    headers = {"User-Agent": USER_AGENT}  # 重置条件头
         except Exception as e:
             print(f"   GET 尝试 {attempt}/{RETRY_COUNT} 异常: {e}")
             if attempt < RETRY_COUNT:
@@ -154,6 +177,7 @@ def cleanup_orphan_files(official_paths, state, active_locales):
     清理孤儿文件：
     - 删除 docs/ 下不在 official_paths 中的英文文件
     - 删除 i18n/ 下不在 official_paths 中的翻译文件
+    - 删除非激活语种的整个目录
     - 从 state 中删除不在 official_paths 中的条目
     """
     print("\n🧹 清理孤儿文件...")
@@ -172,26 +196,45 @@ def cleanup_orphan_files(official_paths, state, active_locales):
                 removed_english += 1
 
     # 2. 清理翻译文档
-    for lang in active_locales:
-        lang_root = os.path.join(I18N_DIR, lang, "docusaurus-plugin-content-docs", "current")
-        if not os.path.exists(lang_root):
-            continue
-        for root, _, files in os.walk(lang_root):
-            for file in files:
-                if file.endswith(".md") or file.endswith(".mdx"):
-                    trans_path = os.path.join(root, file)
-                    rel_path = os.path.relpath(trans_path, lang_root)
-                    if rel_path not in official_paths:
-                        os.remove(trans_path)
-                        print(f"   🗑️ 删除翻译 [{lang}]: {rel_path}")
-                        removed_translation += 1
-        # 尝试删除空目录
-        try:
-            os.removedirs(lang_root)
-        except OSError:
-            pass
+    # 首先删除非激活语种的整个目录
+    if os.path.exists(I18N_DIR):
+        for lang_dir in os.listdir(I18N_DIR):
+            if lang_dir not in active_locales:
+                full_path = os.path.join(I18N_DIR, lang_dir)
+                if os.path.isdir(full_path):
+                    shutil.rmtree(full_path)
+                    print(f"   🗑️ 删除非激活语种目录: {lang_dir}")
+                    # 从状态中清除该语种的所有翻译记录
+                    for rel_path, file_state in state.items():
+                        if "translations" in file_state and lang_dir in file_state["translations"]:
+                            del file_state["translations"][lang_dir]
+                    removed_state += 1  # 简化计数
 
-    # 3. 清理状态文件
+        # 然后对激活语种进行文件级清理
+        for lang in active_locales:
+            lang_root = os.path.join(I18N_DIR, lang, "docusaurus-plugin-content-docs", "current")
+            if not os.path.exists(lang_root):
+                continue
+            for root, _, files in os.walk(lang_root):
+                for file in files:
+                    if file.endswith(".md") or file.endswith(".mdx"):
+                        trans_path = os.path.join(root, file)
+                        rel_path = os.path.relpath(trans_path, lang_root)
+                        if rel_path not in official_paths:
+                            os.remove(trans_path)
+                            print(f"   🗑️ 删除翻译 [{lang}]: {rel_path}")
+                            removed_translation += 1
+                            # 从状态中清除该文件的该语种记录
+                            if rel_path in state and "translations" in state[rel_path]:
+                                if lang in state[rel_path]["translations"]:
+                                    del state[rel_path]["translations"][lang]
+            # 尝试删除空目录
+            try:
+                os.removedirs(lang_root)
+            except OSError:
+                pass
+
+    # 3. 清理状态文件（移除不再存在的文档条目）
     for key in list(state.keys()):
         if key not in official_paths:
             del state[key]
@@ -207,7 +250,7 @@ def cleanup_orphan_files(official_paths, state, active_locales):
 
 
 def process_downloads(official_paths, state):
-    """下载或更新每个文件"""
+    """下载或更新每个文件，并修正内容"""
     print("\n📥 处理文件下载...")
     updated_count = 0
     skipped_count = 0
@@ -241,10 +284,15 @@ def process_downloads(official_paths, state):
         elif resp.status_code == 200:
             # 下载成功
             os.makedirs(os.path.dirname(local_path), exist_ok=True)
-            with open(local_path, "w", encoding="utf-8") as f:
-                f.write(resp.text)
 
-            # 更新状态
+            # 1. 修正内容（链接 + 图片）
+            fixed_content = fix_document_content(resp.text, rel_path)
+
+            # 2. 写入文件
+            with open(local_path, "w", encoding="utf-8") as f:
+                f.write(fixed_content)
+
+            # 3. 更新状态
             new_etag = resp.headers.get("ETag")
             new_last_modified = resp.headers.get("Last-Modified")
             new_md5 = compute_md5(local_path)

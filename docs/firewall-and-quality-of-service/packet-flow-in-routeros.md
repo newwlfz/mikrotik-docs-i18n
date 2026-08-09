@@ -18,13 +18,13 @@ It would be very complicated to represent what is going on with the packet in on
 
 Let's look at the overall diagram. It looks complicated at first, but after we go through the diagram with examples it will become much clearer.
 
-![](./img/packet-flow-in-routeros-01.svg)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-01.svg)
 
 There are 4 boxes in the center of the diagram: Bridging, Routing, MPLS decisions, and local router processes. So for example, if the packet needs to be routed through the router, a packet will flow as illustrated in the image below. Without looking deeper into each facility, the packet enters the in-interface, the router determines that it is IP traffic and needs to be routed, the packet goes through all routing processes and exits the out-interface.
 
-![](./img/packet-flow-in-routeros-02.webp)Let's take a look at another example that will illustrate what happens if the packet's destination is a router. For example, the in-interface receives an ICMP (ping) packet, its destination is the router itself, so the packet will go for *local-in* processing. After the packet is processed, an ICMP (ping) reply is generated inside the router *(local-out* processing) and will be sent out over the out-interface.
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-02.webp)Let's take a look at another example that will illustrate what happens if the packet's destination is a router. For example, the in-interface receives an ICMP (ping) packet, its destination is the router itself, so the packet will go for *local-in* processing. After the packet is processed, an ICMP (ping) reply is generated inside the router *(local-out* processing) and will be sent out over the out-interface.
 
-![](./img/packet-flow-in-routeros-03.webp)A simple explanation of each box before we go further with examples:
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-03.webp)A simple explanation of each box before we go further with examples:
 
 - **Physical in-interface** - the starting point of the packet received by the router.
 - **Logical in-interface** - the starting point of the decapsulated packet (from tunnels, IPsec, etc).
@@ -36,7 +36,7 @@ There are 4 boxes in the center of the diagram: Bridging, Routing, MPLS decision
 
 Now it is time to take a deeper look at what is happening inside bridging, MPLS, and routing flows.
 
-![](./img/packet-flow-in-routeros-04.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-04.webp)
 
 A simple explanation of each box before we go further with examples:
 
@@ -58,7 +58,7 @@ RouterOS consists of a few default chains. These chains allow you to filter pack
 
 Each of the prerouting, input, forward, output, and postrouting blocks contains even more facilities, which are illustrated in the third part of the packet flow diagram:
 
-![](./img/packet-flow-in-routeros-05.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-05.webp)
 
 A simple explanation of each box before we go further with examples:
 
@@ -111,9 +111,9 @@ We already learned that a packet goes into the in-interface, the router determin
    5. Process packet through simple queues.
 5. Check if there is IPsec and then process through IPsec policies.
 
-![](./img/packet-flow-in-routeros-06.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-06.webp)
 
-![](./img/packet-flow-in-routeros-07.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-07.webp)
 
 #### Input
 
@@ -133,9 +133,9 @@ We already learned that the packet goes into the in-interface, the router determ
    4. - Process packet through simple queues.
 4. Check if there is IPsec and then process it through IPsec policies.
 
-![](./img/packet-flow-in-routeros-08.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-08.webp)
 
-![](./img/packet-flow-in-routeros-09.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-09.webp)
 
 #### Output
 
@@ -157,13 +157,13 @@ Or when a packet is originated from the router (routing output):
    5. - Process the packet through simple queues.
 4. Check if there is IPsec and then process through IPsec policies.
 
-![](./img/packet-flow-in-routeros-10.webp)![](./img/packet-flow-in-routeros-11.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-10.webp)![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-11.webp)
 
 ### Flow of Bridged Packet
 
 Below is discussed a general bridging process in RouterOS. Most of the packets will always follow the same processing path, but in certain configurations (e.g. with enabled VLAN filtering, horizon, STP, DHCP, or IGMP snooping) some packets can be treated differently. Please visit the bridging manual for more specific information.
 
-#### ![](./img/packet-flow-in-routeros-12.webp)
+#### ![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-12.webp)
 
 #### Bridge Forward
 
@@ -177,7 +177,7 @@ Bridge forward is a process that takes place when a packet is forwarded from one
 6. A packet goes through the bridge NAT src-nat chain, where MAC source and priority can be changed, apart from that, a packet can be simply accepted, dropped, or marked.
 7. Checks whether the use-ip-firewall option is enabled in the bridge settings.
 
-![](./img/packet-flow-in-routeros-13.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-13.webp)
 
 :::info
 **For RouterOS v6:**  
@@ -201,7 +201,7 @@ Bridge input is a process that takes place when a packet is destined for the bri
 3. Run packet through the bridge host table to make a forwarding decision. A packet where the destination MAC address matches the bridge MAC address will be passed to the bridge input chain. A packet that ends up being flooded (e.g. broadcast, multicast, unknown unicast traffic) also reaches the bridge input chain as the bridge interface itself is one of the many destinations.
 4. A packet goes through the bridge filter input chain, where priority can be changed or the packet can be simply accepted, dropped, or marked.
 
-![](./img/packet-flow-in-routeros-14.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-14.webp)
 
 #### Bridge Output
 
@@ -212,7 +212,7 @@ Bridge output is a process that takes place when a packet should exit the device
 3. A packet goes through the bridge NAT src-nat chain, where MAC source and priority can be changed, apart from that, a packet can be simply accepted, dropped, or marked.
 4. Checks whether the use-ip-firewall option is enabled in the bridge settings.
 
-![](./img/packet-flow-in-routeros-15.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-15.webp)
 
 #### Forward With Firewall Enabled
 
@@ -229,19 +229,19 @@ In certain network configurations, you might need to enable additional processin
 9. With the use-ip-firewall option enabled, the packet will be further processed in the postrouting chain.
 10. A packet enters postrouting processing.
 
-![](./img/packet-flow-in-routeros-16.webp)![](./img/packet-flow-in-routeros-17.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-16.webp)![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-17.webp)
 
 ### Flow of Hardware Offloaded Packet
 
 On the previous topic, we solely discussed software bridging that requires the main CPU processing to forward packets through the correct bridge port. Most of the MikroTik devices are equipped with dedicated switching hardware, the so-called switch chip or switch ASIC. This allows us to offload some of the bridging functions, like packet forwarding between bridge ports or packet filtering, to this specialized hardware chip without consuming any CPU resources. In RouterOS, we have named this function Bridge Hardware (HW) Offloading. Different MikroTik devices might have different switch chips and each chip has a different set of features available, so make sure to visit this article to get more details - [Bridge Hardware Offloading](../bridging-and-switching/index.md#bridge-hardware-offloading).
 
-![](./img/packet-flow-in-routeros-18.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-18.webp)
 
 :::warning
 Interface HTB will not work correctly when the out-interface is hardware offloaded and the bridge Fast Path is not active.
 :::
 
-![](./img/packet-flow-in-routeros-19.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-19.webp)
 
 - **Switching decision** - widely depends on the switch model. This block controls all the switching-related tasks, like host learning, packet forwarding, filtering, VLAN tagging/untagging, etc. Certain switch configurations can alter the packet flow.
 - **switch-cpu port** - a special purpose switch port for communication between the main CPU and other switch ports. Note that the switch-cpu port does not show up anywhere on RouterOS except for the switch menu. None of the software-related configurations (e.g. interface-list) can be applied to this port. Packets that reach the CPU are automatically associated with the physical in-interface.
@@ -259,7 +259,7 @@ We will further discuss a packet flow when bridge hardware offloading is enabled
 1. The switch checks whether the in-interface is a hardware offloaded interface.
 2. The switch runs a packet through the switch host table to make a forwarding decision. If the switch finds a match for the destination MAC address, the packet is sent out through the physical interface. A packet that ends up being flooded (e.g. broadcast, multicast, unknown unicast traffic) gets multiplied and sent out to every hardware offloaded switch port.
 
-![](./img/packet-flow-in-routeros-20.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-20.webp)
 
 #### Switch to CPU Input
 
@@ -277,7 +277,7 @@ See the packet walkthrough when an in-interface is hardware offloaded:
 2. Runs a packet through the switch host table to make a forwarding decision. In case any of the above-mentioned points are true, the packet gets forwarded to the switch-cpu port.
 3. The packet exits through the switch-cpu port and it will be further processed by the RouterOS packet flow.
 
-![](./img/packet-flow-in-routeros-21.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-21.webp)
 
 :::warning
 Any received packet that was flooded by the switch chip will not get flooded again by the software bridge to the same HW offloaded switch group. This prevents the formation of duplicate packets.
@@ -291,7 +291,7 @@ This process takes place when a packet exits the RouterOS software processing an
 2. The switch checks whether the out-interface is a hardware offloaded interface.
 3. The switch runs a packet through the switch host table to make a forwarding decision. If the switch finds a match for the destination MAC address, the packet is sent out through the physical interface. A packet that ends up being flooded (e.g. broadcast, multicast, unknown unicast traffic) gets multiplied and sent out to every hardware offloaded switch port.
 
-![](./img/packet-flow-in-routeros-22.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-22.webp)
 
 :::warning
 A software bridge that sends a flooded packet through HW offloaded interfaces will only send a single packet copy per HW offloaded switch group rather than per HW offloaded interface. The actual flooding will be done by the switch chip; this prevents the formation of duplicate packets.
@@ -299,19 +299,19 @@ A software bridge that sends a flooded packet through HW offloaded interfaces wi
 
 ### Flow of MPLS Packet
 
-![](./img/packet-flow-in-routeros-23.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-23.webp)
 
 #### Pop Label
 
-![](./img/packet-flow-in-routeros-24.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-24.webp)
 
 #### Switch Label
 
-![](./img/packet-flow-in-routeros-25.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-25.webp)
 
 #### Push Label
 
-![](./img/packet-flow-in-routeros-26.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-26.webp)
 
 ### MPLS IP VPN
 
@@ -374,7 +374,7 @@ But there can be an exception. If the destination IP of the reply packet is loca
 
 So far we have looked at examples when in or out interfaces are actual physical interfaces (Ethernet, wireless), but how will packets flow if the router receives tunnel encapsulated packets?
 
-![](./img/packet-flow-in-routeros-27.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-27.webp)
 
 Let's assume that there is an IPIP packet coming into the router. Since it is a regular IPv4 packet it will be processed through all routing-related facilities ( until "J" in the diagram). Then the router will look if the packet needs to be decapsulated. In this case, it is an IPIP packet so "yes" send the packet to decapsulation. After that the packet will go another loop through all the facilities but this time as a decapsulated IPv4 packet.
 
@@ -390,11 +390,11 @@ Let's take a look at another tunnel type - IPSec. This type of VPN does not have
 
 Instead of logical interfaces, packets are processed through IPSec policies. After routing decision (2) and input firewall processing (3), the router tries to match the source and destination to the IPsec policy. When policy matches the packet, it is sent to decryption (5). After the decryption, the packet enters PREROUTING processing again (6) and starts another processing loop, but now with the decapsulated packet.
 
-![](./img/packet-flow-in-routeros-28.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-28.webp)
 
 The same process applies to encapsulation but in reverse order. The first IP packet gets processed through facilities, then matched against IPsec policies (5), encapsulated (6), and then sent to processing on the second loop (7-10).
 
-![](./img/packet-flow-in-routeros-29.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-29.webp)
 
 ## Fast Path
 
@@ -404,7 +404,7 @@ From what we learned so far, it is quite obvious that such packet processing tak
 
 FastPath is an interface driver extension that allows a driver to talk directly to specific RouterOS facilities and skip all others.
 
-![](./img/packet-flow-in-routeros-30.svg)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-30.svg)
 
 The packet can be forwarded by a fast path handler only if at least the source interface supports a fast path. For complete fast-forwarding, destination interface support is also required.
 
@@ -477,13 +477,13 @@ The only interface queue that guarantees FastPath is only-hardware-queue. If you
 
 The packet may go Half-FastPath by switching from FastPath to SlowPath, but not the other way around. So, for example, if the receiving interface has FastPath support, but the out interface does not, then the router will process the packet by FastPath handlers as far as it can and then proceed with SlowPath. If the receiving interface does not support FastPath but the out interface does, the packet will be processed by SlowPath all the way through the router.
 
-![](./img/packet-flow-in-routeros-31.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-31.webp)
 
 ## FastTrack
 
 Fasttrack can be decoded as Fast Path + Connection Tracking. It allows marking connections as "fast-tracked", marking packets that belong to a fast-tracked connection will be sent the fast-path way. The connection table entry for such a connection now will have a fast-tracked flag.
 
-![](./img/packet-flow-in-routeros-32.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-32.webp)
 
 :::warning
 FastTrack packets bypass firewall, connection tracking, simple queues, queue tree with parent=global, ip traffic-flow, IP accounting, IPSec, hotspot universal client, VRF assignment, so it is up to the administrator to make sure FastTrack does not interfere with other configuration!
@@ -509,7 +509,7 @@ add chain=forward action=accept connection-state=established,related \
 
 Notice that the first rule marks established/related connections as fast-tracked, the second rule is still required to accept packets belonging to those connections. The reason for this is that, as was mentioned earlier, some random packets from fast-tracked connections are still sent through the slow pathway and only UDP and TCP are fast-tracked, but we still want to accept packets for other protocols.
 
-![](./img/packet-flow-in-routeros-33.webp)![](./img/packet-flow-in-routeros-34.webp)
+![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-33.webp)![](/docs/firewall-and-quality-of-service/img/packet-flow-in-routeros-34.webp)
 
 After adding the "FastTrack" rule, a special dummy rule appeared at the top of the list. This is not an actual rule, it is for visual information showing that some of the traffic is traveling FastPath and will not reach other firewall rules.
 

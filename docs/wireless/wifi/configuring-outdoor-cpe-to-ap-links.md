@@ -78,7 +78,7 @@ There is a "distance" parameter that you have to configure additionally if your 
 
 In case you already have a DHCP-server in the topology that is responsible for providing IP addresses to the network, and you want to install the AP behind it:
 
-![](./img/configuring-outdoor-cpe-to-ap-links-01.webp)
+![](/docs/wireless/wifi/img/configuring-outdoor-cpe-to-ap-links-01.webp)
 
 1. Ensure that the AP has a [bridge interface](../../bridging-and-switching/index.md#example) added and that all Ethernet and WiFi ports [are a part of it](../../bridging-and-switching/index.md#example-1).
 2. Set up [DHCP-client](../../network-management/dhcp.md#dhcp-client) on that bridge or, statically, add an [IP address](../../getting-started/networking-fundamentals/index.md#address-configuration) and a [default route](../../user-guides/routing-and-networking-protocols/routing-decision.md#default-route), instead.
@@ -88,7 +88,7 @@ In case you already have a DHCP-server in the topology that is responsible for p
 
 In case you want to have the AP itself act as a DHCP-server for stations:
 
-![](./img/configuring-outdoor-cpe-to-ap-links-02.webp)
+![](/docs/wireless/wifi/img/configuring-outdoor-cpe-to-ap-links-02.webp)
 
 1. Configure an ethernet port as an uplink/WAN port, i.e. set up a [DHCP-client](../../network-management/dhcp.md#dhcp-client) or [static IP](../../getting-started/networking-fundamentals/index.md#address-configuration) for the ethernet interface, set up a default [route](../../user-guides/routing-and-networking-protocols/routing-decision.md) and categorize the port as a "WAN" port in the [interface list](../../system-information-and-utilities/interface-lists.md) settings.
 2. Set up a [DHCP-server](../../network-management/dhcp.md#dhcp-server) on top of the WiFi interface (or on top of the bridge, which WiFi port is a part of) and add a respective  [IP address](../../getting-started/networking-fundamentals/index.md#address-configuration) to that interface.
@@ -125,7 +125,7 @@ Scenario where station's WiFi interface is categorized as a "WAN" interface, whi
 
 An example of such a topology:
 
-![](./img/configuring-outdoor-cpe-to-ap-links-03.webp)
+![](/docs/wireless/wifi/img/configuring-outdoor-cpe-to-ap-links-03.webp)
 
 This type of setup requires the CPE to have:
 
@@ -140,7 +140,7 @@ Scenario where you can bridge station's ports, so that the CPE itself and all CP
 
 An example of such a topology:
 
-![](./img/configuring-outdoor-cpe-to-ap-links-04.webp)
+![](/docs/wireless/wifi/img/configuring-outdoor-cpe-to-ap-links-04.webp)
 
 This type of setup requires the CPE to have:
 

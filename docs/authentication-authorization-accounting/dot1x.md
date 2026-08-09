@@ -92,7 +92,7 @@ Described below are the most common configuration examples for dot1x server and 
 
 ### RouterOS Authenticator configuration
 
-![](./img/dot1x-01.webp)
+![](/docs/authentication-authorization-accounting/img/dot1x-01.webp)
 
 Start off by adding a new RADIUS client. The authentication server (RADIUS) does not necessarily have to be in the same LAN as authenticator, but it must be reachable from the authenticator, so any firewall limitations must be considered.
 

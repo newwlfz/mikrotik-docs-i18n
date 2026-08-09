@@ -22,7 +22,7 @@ MikroTik RouterOS performs proxying of HTTP and HTTP-proxy (for FTP and HTTP pro
 
 A proxy server usually is placed at various points between users and the destination server (*also known as the origin server*) on the Internet.
 
-![](./img/proxy-01.webp)
+![](/docs/network-management/proxy/img/proxy-01.webp)
 
 A *Web proxy (cache)* watches requests coming from clients, saving copies of the responses for itself. Then, if there is another request for the same URL, it can use the response that it has, instead of asking the origin server for it again. If the proxy has not requested a file, it downloads that from the original server.
 

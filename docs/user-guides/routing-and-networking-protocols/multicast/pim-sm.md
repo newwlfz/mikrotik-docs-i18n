@@ -10,7 +10,7 @@ If both the sender and receiver for a multicast group are on the same local netw
 
 Protocol Independent Multicast - Sparse Mode (PIM-SM or PIM) enables RouterOS to support multicast streaming over the network area. PIM stands for Protocol Independent Multicast, meaning it's not tied to any particular unicast routing. SM stands for Sparse-Mode, which means that specific control messages ensure that data is delivered only to network segments where there are receivers that want it. In addition to the routing protocols that manage data transmission between network segments, routers need a way to discover local receivers on their directly connected network segment. For IPv4, this is achieved through the Internet Group Management Protocol (IGMP), and Multicast Listener Discovery (MLD) for IPv6.
 
-![](./img/pim-sm-01.webp)
+![](/docs/user-guides/routing-and-networking-protocols/multicast/img/pim-sm-01.webp)
 
 :::info
 RouterOS v7 has PIM-SM configuration available in the main **system** package. Older RouterOS versions need an additional **multicast** package installed in order to use PIM-SM. See more details about [Packages](../../../getting-started/installation-and-upgrade/packages.md).
@@ -22,7 +22,7 @@ The feature is not supported on SMIPS devices (hAP lite, hAP lite TC and hAP min
 
 Picture this scenario: you have got a router with two interfaces, namely ether1 and ether2, and each of them is set up in separate networks. Normally, the router will create connected routes and hosts on both networks will be able to communicate using unicast traffic. However, if you want to enable multicast communication between these networks, you'll need to configure multicast routing separately because it won't work otherwise. In this scenario, we are going to create a simple configuration. This involves creating a PIM instance and configuring the required interfaces.
 
-![](./img/pim-sm-02.webp)
+![](/docs/user-guides/routing-and-networking-protocols/multicast/img/pim-sm-02.webp)
 
 Begin by ensuring that IP addresses are set up on the router's interfaces.
 
@@ -94,7 +94,7 @@ Columns: INSTANCE, GROUP, SOURCE
 
 In the upcoming example, we'll be working with multiple PIM routers, as shown in the diagram below. PIM-SM uses shared trees, and to make this work, we need to designate a specific node as the multicast root distribution point. In PIM, this router is called the Rendezvous Point, or RP. There are various methods for selecting an RP in PIM, such as the Bootstrap Router (BSR) method. However, for this example, we'll be using a straightforward approach known as static RP configuration. This means that the administrator can manually specify one or more RPs for specific multicast groups.
 
-![](./img/pim-sm-03.webp)
+![](/docs/user-guides/routing-and-networking-protocols/multicast/img/pim-sm-03.webp)
 
 To get started, we'll need to configure IP addresses and set up unicast routing. In this example, we'll use OSPF to exchange routing information between the routers. See more details about [OSPF](../unicast/ospf/index.md).
 

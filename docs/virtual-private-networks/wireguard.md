@@ -136,7 +136,7 @@ When you encounter issues with reply traffic having the wrong source address, us
 
 Consider the setup as illustrated below. Two remote office routers are connected to the internet and office workstations are behind NAT. Each office has its own local subnet, 10.1.202.0/24 for Office1 and 10.1.101.0/24 for Office2. Both remote offices need secure tunnels to local networks behind routers.
 
-![](./img/wireguard-01.webp)
+![](/docs/virtual-private-networks/img/wireguard-01.webp)
 
 #### WireGuard interface configuration
 
@@ -305,17 +305,17 @@ add interface=wireguard1 list=LAN
 
 Download the WireGuard application from the App Store. Open it up and create a new configuration from scratch.
 
-![](./img/wireguard-02.webp)
+![](/docs/virtual-private-networks/img/wireguard-02.webp)
 
 First of all give your connection a "Name" and choose to generate a keypair. The generated public key is necessary for peer's configuration on the RouterOS side.
 
-**![](./img/wireguard-03.webp)**
+**![](/docs/virtual-private-networks/img/wireguard-03.webp)**
 
 Specify an IP address in the "Addresses" field that is in the same subnet as configured on the server side. This address will be used for communication. For this example, we used 192.168.100.1/24 on the RouterOS side. You can use 192.168.100.2 here.
 
 If necessary, configure the DNS servers. If allow-remote-requests is set to yes under the IP/DNS section on the RouterOS side, you can specify the remote WireGuard IP address here.
 
-**![](./img/wireguard-04.webp)**
+**![](/docs/virtual-private-networks/img/wireguard-04.webp)**
 
 Click "Add peer" which reveals more parameters.
 
@@ -325,7 +325,7 @@ The "Public key" value is the public key value that is generated on the WireGuar
 
 "Allowed IPs" are set to 0.0.0.0/0 to allow all traffic to be sent over the WireGuard tunnel.
 
-![](./img/wireguard-05.webp)
+![](/docs/virtual-private-networks/img/wireguard-05.webp)
 
 ```ros
 Depending on your configuration, you may need to add a NAT rule
@@ -337,7 +337,7 @@ chain=dstnat action=dst-nat to-ports=port protocol=udp in-interface=interface ds
 Download WireGuard installer from WireGuard  
 Run as Administrator.
 
-![](./img/wireguard-06.webp)
+![](/docs/virtual-private-networks/img/wireguard-06.webp)
 
 Press <kbd>Control</kbd>+<kbd>N</kbd> to add a new empty tunnel, add a name for the interface, Public key should be auto-generated. Copy it to RouterOS peer configuration.  
 Add it to the server configuration, so the full configuration looks like this (keep your auto-generated PrivateKey in the [Interface] section:

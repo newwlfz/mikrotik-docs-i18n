@@ -23,7 +23,7 @@ According to the RFC authentication is deprecated for VRRP v3.
 
 ## Protocol Overview
 
-![](./img/vrrp-01.webp)
+![](/docs/high-availability-solutions/img/vrrp-01.webp)
 
 The purpose of VRRP is to communicate with all VRRP routers associated with the Virtual Router ID and support router redundancy through a prioritized election process among them.
 
@@ -80,7 +80,7 @@ VR must contain at least one Backup router. A backup router must be configured w
 
 ### Virtual Address
 
-![](./img/vrrp-02.webp)
+![](/docs/high-availability-solutions/img/vrrp-02.webp)
 
 The Virtual IP associated with VR must be identical and set on all VR nodes. All virtual and real addresses should be from the same network.
 
@@ -105,7 +105,7 @@ As you may know, in IPv6 networks, the Neighbor Discovery protocol is used inste
 
 ## VRRP state machine
 
-![](./img/vrrp-03.webp)
+![](/docs/high-availability-solutions/img/vrrp-03.webp)
 
 As you can see from the diagram, each VRRP node can be in one of three states:
 

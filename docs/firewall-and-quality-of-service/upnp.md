@@ -48,7 +48,7 @@ In more complex setups with VLANs, where the VLAN interface is considered as the
 
 ## Configuration Example
 
-![](./img/upnp-01.webp)
+![](/docs/firewall-and-quality-of-service/img/upnp-01.webp)
 
 We have masquerading already enabled on our router:
 

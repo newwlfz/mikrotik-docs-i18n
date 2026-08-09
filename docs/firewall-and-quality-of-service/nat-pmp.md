@@ -22,7 +22,7 @@ NAT-PMP configuration is accessible from the `/ip/nat-pmp` menu.
 
 ## Configuration Example
 
-![](./img/nat-pmp-01.webp)
+![](/docs/firewall-and-quality-of-service/img/nat-pmp-01.webp)
 
 Let's consider that we already have this basic home setup illustrated above.
 

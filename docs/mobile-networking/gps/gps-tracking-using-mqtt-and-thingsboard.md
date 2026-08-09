@@ -30,11 +30,11 @@ This example will showcase [access-token](../../internet-of-things/mqtt/mqtt-and
 
 Navigate to the "**Devices**" menu and add a new device via the "**Add new device**" button → name it and create it (for example, LTAP):
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-01.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-01.webp)
 
 Click on the device you've just added, go to the "**Details**" section, and generate an access token under the "**Manage credentials/Device Credentials**" setting:
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-02.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-02.webp)
 
 ### MQTT broker configuration
 
@@ -149,7 +149,7 @@ To automate the process, add a [scheduler](../../system-information-and-utilitie
 
 Go to the "Latest telemetry" section under your created device and confirm that the data was posted:
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-03.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-03.webp)
 
 ## Data visualization using maps
 
@@ -157,20 +157,20 @@ ThingsBoard allows you to use [Widgets](https://thingsboard.io/docs/user-guide/u
 
 Select the latitude and longitude values and click on the "**Show on widget**" button:
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-04.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-04.webp)
 
 Find the "**Maps**" bundle and click on the "**Add to dashboard**":
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-05.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-05.webp)
 
 Select an existing dashboard or create a new one and name it however you like:
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-06.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-06.webp)
 
 Run the script via the scheduler or manually and check the result:
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-07.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-07.webp)
 
 Now, we can install it on a moving target and track its location:
 
-![](./img/gps-tracking-using-mqtt-and-thingsboard-08.webp)
+![](/docs/mobile-networking/gps/img/gps-tracking-using-mqtt-and-thingsboard-08.webp)

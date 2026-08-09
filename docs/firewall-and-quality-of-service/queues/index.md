@@ -43,7 +43,7 @@ Rate limiting can be performed in two ways:
 
 The next figure explains the difference between *rate limiting* and rate *equalizing*:
 
-![](./img/queues-01.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queues-01.webp)
 
 As you can see in the first case, all traffic exceeds a specific rate and is dropped. In another case, traffic exceeds a specific rate and is delayed in the queue and transmitted later when it is possible, but note that the packet can be delayed only while the queue is not full. If there is no more space in the queue buffer, packets are dropped.
 
@@ -145,7 +145,7 @@ And corresponding options for *global-total* HTB queue:
 
 In the following example, we have one SOHO device with two connected units PC and Server.
 
-![](./img/simple-queue-soho-example.jpg)
+![](/docs/firewall-and-quality-of-service/queues/img/simple-queue-soho-example.jpg)
 
 We have a 15 Mbps connection available from an ISP in this case. We want to be sure the server receives enough traffic, so we will configure a simple queue with a *limit-at* parameter to guarantee the server receives 5Mbps:
 
@@ -278,7 +278,7 @@ Every packet that cannot be enqueued (if the queue is full) is dropped. Large qu
 
 Random Early Drop is a queuing mechanism that tries to avoid network congestion by controlling the average queue size. The average queue size is compared to two thresholds: a minimum (min<sub>th</sub>) and a maximum (max<sub>th</sub>) threshold. If the average queue size (avg<sub>q</sub>) is less than the minimum threshold, no packets are dropped. When the average queue size is greater than the maximum threshold, all incoming packets are dropped. But if the average queue size is between the minimum and maximum thresholds, packets are randomly dropped with probability P<sub>d</sub>, where probability is exactly a function of the average queue size: P<sub>d</sub> = P<sub>max</sub>(avg<sub>q</sub> – min<sub>th</sub>)/ (max<sub>th</sub> - min<sub>th</sub>). If the average queue grows, the probability of dropping incoming packets grows too. P<sub>max</sub> is a ratio, which can adjust the packet discarding probability abruptness, (the simplest case P<sub>max</sub> can be equal to one). The 8.2 diagram shows the packet drop probability in the RED algorithm.
 
-![](./img/queues-02.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queues-02.webp)
 
 #### SFQ
 
@@ -286,7 +286,7 @@ Stochastic Fairness Queuing (SFQ) is ensured by hashing and round-robin algorith
 
 Traffic flow may be uniquely identified by 4 options (*src-address, dst-address, src-port,* and *dst-port*), so these parameters are used by the SFQ hashing algorithm to classify packets into one of 1024 possible sub-streams. Then the round-robin algorithm will start to distribute available bandwidth to all sub-streams, on each round giving **sfq-allot** bytes of traffic. The whole SFQ queue can contain 128 packets and there are 1024 sub-streams available. The 8.3 diagram shows the SFQ operation:
 
-![](./img/queues-03.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queues-03.webp)
 
 #### PCQ
 
@@ -301,7 +301,7 @@ PCQ parameters:
 
  It is possible to assign a speed limitation to sub-streams with the **pcq-rate** option. If "pcq-rate=0", sub-streams will divide available traffic equally.
 
-![](./img/queues-04.webp)
+![](/docs/firewall-and-quality-of-service/queues/img/queues-04.webp)
 
 For example, instead of having 100 queues with 1000kbps limitation for download, we can have one PCQ queue with 100 sub-streams.
 
@@ -395,6 +395,6 @@ In Winbox and Webfig, a green, yellow, or red icon visualizes each Simple and Tr
 
 |  |  |
 | :-- | :-- |
-| ![](./img/queue-usage-0-50.png)  | 0% - 50% of max-limit used |
-| ![](./img/queue-usage-50-75.png)  | >50% - 75% of max-limit used |
-| ![](./img/queue-usage-75-100.png)  | >75% - 100% of max-limit used |
+| ![](/docs/firewall-and-quality-of-service/queues/img/queue-usage-0-50.png)  | 0% - 50% of max-limit used |
+| ![](/docs/firewall-and-quality-of-service/queues/img/queue-usage-50-75.png)  | >50% - 75% of max-limit used |
+| ![](/docs/firewall-and-quality-of-service/queues/img/queue-usage-75-100.png)  | >75% - 100% of max-limit used |

@@ -157,13 +157,13 @@ ESP packages its fields in a very different way than AH. Instead of having just 
 
 In transport mode, the ESP header is inserted after the original IP header. The ESP trailer and authentication value are added to the end of the packet. In this mode only the IP payload is encrypted and authenticated; the IP header is not secured.
 
-![](./img/ipsec-01.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-01.webp)
 
 ### Tunnel mode
 
 In tunnel mode, an original IP packet is encapsulated within a new IP packet thus securing the IP payload and the IP header.
 
-![](./img/ipsec-02.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-02.webp)
 
 ### Encryption algorithms
 
@@ -549,7 +549,7 @@ This menu lists all imported public and private keys that can be used for peer a
 
 Consider the setup as illustrated below. RouterOS acts as a RoadWarrior client connected to Office allowing access to its internal resources.
 
-![](./img/ipsec-03.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-03.webp)
 
 A tunnel is established, a local mode-config IP address is received and a set of dynamic policies is generated.
 
@@ -753,7 +753,7 @@ add action=accept chain=srcnat protocol=udp src-port=500,4500 place-before=0
 
 Consider the setup as illustrated below. Two remote office routers are connected to the internet and office workstations are behind NAT. Each office has its own local subnet, 10.1.202.0/24 for Office1 and 10.1.101.0/24 for Office2. Both remote offices need secure tunnels to local networks behind the routers.
 
-![](./img/ipsec-04.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-04.webp)
 
 #### **Site 1 configuration**
 
@@ -876,7 +876,7 @@ add action=notrack chain=prerouting src-address=10.1.202.0/24 dst-address=10.1.1
 
 This example explains how it is possible to establish a secure and encrypted GRE tunnel between two RouterOS devices when one or both sites do not have a static IP address. Before making this configuration possible, it is necessary to have a DNS name assigned to one of the devices which will act as a responder (server). For simplicity, we will use the RouterOS built-in DDNS service IP/Cloud.
 
-![](./img/ipsec-05.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-05.webp)
 
 #### Site 1 (server) configuration
 
@@ -1030,7 +1030,7 @@ add dst-address=10.1.101.0/24 gateway=172.16.1.1
 
 This example explains how to establish a secure IPsec connection between a device connected to the Internet (road warrior client) and a device running RouterOS acting as a server.
 
-![](./img/ipsec-06.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-06.webp)
 
 #### RouterOS server configuration
 
@@ -1252,7 +1252,7 @@ installed-sa print
 
 If we look at the generated dynamic policies, we see that only traffic with a specific (received by mode config) source address will be sent through the tunnel. But a router in most cases will need to route a specific device or network through the tunnel. In such a case, we can use source NAT to change the source address of packets to match the mode config address. Since the mode config address is dynamic, it is impossible to create a static source NAT rule. In RouterOS, it is possible to generate dynamic source NAT rules for mode config clients.
 
-![](./img/ipsec-07.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-07.webp)
 
 For example, we have a local network 192.168.88.0/24 behind the router and we want all traffic from this network to be sent over the tunnel. First of all, we have to make a new IP/Firewall/Address list which consists of our local network.
 
@@ -1283,9 +1283,9 @@ Make sure the dynamic mode config address is not a part of a local network.
 
 #### Windows client configuration
 
-Open the PKCS12 format certificate file on the Windows computer. Install the certificate by following the instructions. Make sure you select the Local Machine store location.![](./img/ipsec-08.webp) You can now proceed to Network and Internet settings -> VPN and add a new configuration. Fill in the Connection name, Server name, or address parameters. Select IKEv2 under VPN type. When it is done, it is necessary to select "Use machine certificates". This can be done in Network and Sharing Center by clicking the Properties menu for the VPN connection. The setting is located under the Security tab.
+Open the PKCS12 format certificate file on the Windows computer. Install the certificate by following the instructions. Make sure you select the Local Machine store location.![](/docs/virtual-private-networks/ipsec/img/ipsec-08.webp) You can now proceed to Network and Internet settings -> VPN and add a new configuration. Fill in the Connection name, Server name, or address parameters. Select IKEv2 under VPN type. When it is done, it is necessary to select "Use machine certificates". This can be done in Network and Sharing Center by clicking the Properties menu for the VPN connection. The setting is located under the Security tab.
 
-![](./img/ipsec-09.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-09.webp)
 
 Currently, Windows 10 is compatible with the following Phase 1 (profiles) and Phase 2 (proposals) proposal sets:
 
@@ -1318,11 +1318,11 @@ Currently, Windows 10 is compatible with the following Phase 1 (profiles) and Ph
 
 Open the PKCS12 format certificate file on the macOS computer and install the certificate in the "System" keychain. It is necessary to mark the CA certificate as trusted manually since it is self-signed. Locate the certificate in the macOS Keychain Access app under the System tab and mark it as Always Trust.
 
-![](./img/ipsec-10.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-10.webp)
 
 You can now proceed to System Preferences -> Network and add a new configuration by clicking the + button. Select Interface: VPN, VPN Type: IKEv2 and name your connection. Remote ID must be set equal to the common-name or subjAltName of the server's certificate. Local ID can be left blank. Under Authentication Settings select None and choose the client certificate. You can now test the connectivity.
 
-![](./img/ipsec-11.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-11.webp)
 
 Currently, macOS is compatible with the following Phase 1 ( profiles) and Phase 2 ( proposals) proposal sets:
 
@@ -1346,11 +1346,11 @@ Currently, macOS is compatible with the following Phase 1 ( profiles) and Phase 
 
 Typically, a PKCS12 bundle also contains a CA certificate, but iOS does not install this CA, so a self-signed CA certificate must be installed separately using PEM format. Open these files on the iOS device and install both certificates by following the instructions. It is necessary to mark the self-signed CA certificate as trusted on the iOS device. This can be done in the Settings -> General -> About -> Certificate Trust Settings menu. When it is done, check whether both certificates are marked as "verified" under the Settings -> General -> Profiles menu.
 
-![](./img/ipsec-12.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-12.webp)
 
 You can now proceed to Settings -> General -> VPN menu and add a new configuration. Remote ID must be set equal to common-name or subjAltName of the server's certificate. Local ID can be left blank.
 
-![](./img/ipsec-13.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-13.webp)
 
 Currently, iOS is compatible with the following Phase 1 (profiles) and Phase 2 (proposals) proposal sets:
 
@@ -1378,7 +1378,7 @@ If you are connected to the VPN over WiFi, the iOS device can go into sleep mode
 
 Currently, there is no IKEv2 native support in Android, however, it is possible to use strongSwan from the Google Play Store which brings IKEv2 to Android. StrongSwan accepts PKCS12 format certificates, so before setting up the VPN connection in strongSwan, make sure you download the PKCS12 bundle to your Android device. When it is done, create a new VPN profile in strongSwan, type in the server IP, and choose "IKEv2 Certificate" as VPN Type. When selecting a User certificate, press Install and follow the certificate extraction procedure by specifying the PKCS12 bundle. Save the profile and test the connection by pressing on the VPN profile.
 
-![](./img/ipsec-14.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-14.webp)
 
 It is possible to specify custom encryption settings in strongSwan by ticking the "Show advanced settings" checkbox. Currently, strongSwan by default is compatible with the following Phase 1 (profiles) and Phase 2 (proposals) proposal sets:
 
@@ -1454,7 +1454,7 @@ ipsec up ikev2
 
 This example explains how to establish a secure IPsec connection between a device connected to the Internet (road warrior client) and a device running RouterOS acting as an IKEv2 server and User Manager. It is possible to run User Manager on a separate device in the network, however in this example both User Manager and IKEv2 server will be configured on the same device (Office).
 
-![](./img/ipsec-06.webp)
+![](/docs/virtual-private-networks/ipsec/img/ipsec-06.webp)
 
 #### RouterOS server configuration
 

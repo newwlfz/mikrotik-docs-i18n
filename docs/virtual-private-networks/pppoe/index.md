@@ -172,7 +172,7 @@ The default *keepalive-timeout* value of 10s is OK in most cases. If you set it 
 
 ## Quick Example
 
-![](./img/pppoe-network-topology.jpg)
+![](/docs/virtual-private-networks/pppoe/img/pppoe-network-topology.jpg)
 
 ### PPPoE Client
 
